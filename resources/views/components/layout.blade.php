@@ -22,7 +22,7 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#215442",
+                            laravel: "#2e4aff",
                         },
                     },
                 },
@@ -33,7 +33,7 @@
         
         <style>
                 body {
-        background-color: #fefbfc; /* Change this color to the desired background color */
+        background-color: #fbfbfe; /* Change this color to the desired background color */
     }
             .btn {
                 display: inline-block;

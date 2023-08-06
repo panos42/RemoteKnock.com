@@ -74,6 +74,8 @@ class ListingController extends Controller
             'website' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
+            'min_salary'=>'required',
+            'max_salary'=>'required',
             'description' => 'required'
            //'description' => 'required|min:50',
         ]);

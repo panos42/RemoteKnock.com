@@ -89,7 +89,78 @@
         @error('tags')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
         @enderror
+
+        {{--  --}}
+        {{-- <div class="mb-6">
+        <label for="min_salary" class="inline-block text-lg mb-2">
+          Min Salary
+        </label>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="min_salary"
+          placeholder="" value="{{$listing->min_salary}}" />
+
+        @error('salary')
+        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        @enderror
       </div>
+
+      <div class="mb-6">
+        <label for="max_salary" class="inline-block text-lg mb-2">
+          Max Salary
+        </label>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="max_salary"
+          placeholder="" value="{{$listing->max_salary}}" />
+
+        @error('salary')
+        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        @enderror
+      </div> --}}
+
+      <div class="mb-6 flex items-center">
+        <div class="mr-4">
+          <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
+          <select class="border border-gray-200 rounded p-2 w-full" name="min_salary">
+            <option value="">Select minimum salary</option>
+            <option value="10k" @if ($listing->min_salary == 10.000) selected @endif>USD 10,000 per year</option>
+            <option value="20k" @if ($listing->min_salary == 20.000) selected @endif>USD 20,000 per year</option>
+            <option value="30k" @if ($listing->min_salary == 30.000) selected @endif>USD 30,000 per year</option>
+            <option value="40k" @if ($listing->min_salary == 40.000) selected @endif>USD 40,000 per year</option>
+            <option value="50k" @if ($listing->min_salary == 50.000) selected @endif>USD 50,000 per year</option>
+            <option value="60k" @if ($listing->min_salary == 60.000) selected @endif>USD 60,000 per year</option>
+            <option value="70k" @if ($listing->min_salary == 70.000) selected @endif>USD 70,000 per year</option>
+            <option value="80k" @if ($listing->min_salary == 80.000) selected @endif>USD 80,000 per year</option>
+            <option value="90k" @if ($listing->min_salary == 80.000) selected @endif>USD 80,000 per year</option>
+
+
+            <!-- Add more options as needed -->
+          </select>
+          @error('min_salary')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+        
+        <div>
+          <label for="max_salary" class="inline-block text-lg mb-2">Maximum Salary</label>
+          <select class="border border-gray-200 rounded p-2 w-full" name="max_salary">
+            <option value="">Select maximum salary</option>
+            <option value="10k" @if ($listing->max_salary == 10.000) selected @endif>USD 10,000 per year</option>
+            <option value="20k" @if ($listing->max_salary == 20.000) selected @endif>USD 20,000 per year</option>
+            <option value="30k" @if ($listing->max_salary == 30.000) selected @endif>USD 30,000 per year</option>
+            <option value="40k" @if ($listing->max_salary == 40.000) selected @endif>USD 40,000 per year</option>
+            <option value="50k" @if ($listing->max_salary == 50.000) selected @endif>USD 50,000 per year</option>
+            <option value="60k" @if ($listing->max_salary == 60.000) selected @endif>USD 60,000 per year</option>
+            <option value="70k" @if ($listing->max_salary == 70.000) selected @endif>USD 70,000 per year</option>
+            <option value="80k" @if ($listing->max_salary == 80.000) selected @endif>USD 80,000 per year</option>
+            <option value="90k" @if ($listing->max_salary == 90.000) selected @endif>USD 90,000 per year</option>
+            <!-- Add more options as needed -->
+          </select>
+          @error('max_salary')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+      </div>
+      
+
+      {{--  --}}
 
       <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">
@@ -139,15 +210,29 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
     <script>
-      var quill = new Quill('#editor', {
-        theme: 'snow'
+      // var quill = new Quill('#editor', {
+      //   theme: 'snow'
+      // });
+
+      // // Add an event listener to update the hidden input field when the editor content changes
+      // quill.on('text-change', function () {
+      //   var html = quill.root.innerHTML;
+      //   document.getElementById('descriptionInput').value = html;
+      // });
+
+          var quill = new Quill('#editor', {
+      theme: 'snow'
       });
 
-      // Add an event listener to update the hidden input field when the editor content changes
+      // Set the initial content of the Quill editor
+      quill.root.innerHTML = {!! json_encode($listing->description) !!};
+
+      // Update the hidden input field with the initial content
+      document.getElementById('descriptionInput').value = quill.root.innerHTML;
       quill.on('text-change', function () {
-        var html = quill.root.innerHTML;
-        document.getElementById('descriptionInput').value = html;
-      });
+  var html = quill.root.innerHTML;
+  document.getElementById('descriptionInput').value = html;
+});
     </script>
 
 

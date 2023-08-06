@@ -69,26 +69,29 @@
         max-width: 200;
     }
 
+    .text-sm {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+    /* td.circular-logo{
 
-    td.circular-logo{
+    } */
 
-    }
-
-    td.px-4{
+    /* td.px-4{
         max-width: ;
-    }
+    } */
 
-    td.hidden.md\:table-cell {
+    /* td.hidden.md\:table-cell {
 
-    }
+    } */
     
 
     /* Add media query for mobile devices */
     @media (max-width: 767px) {
         .circular-logo {
             /* Adjust the size and alignment of the logo on mobile devices */
-            width: 3.125rem;
-            height: 3.125rem;
+            width: 5.2rem;
+            height: 5.2rem;
             border-radius: 25%; /* Adjust the border-radius to make it a perfect circle */
             object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
         }
@@ -164,10 +167,10 @@
 <x-card class="rounded-lg" onclick="window.location='/listings/{{$listing->id}}';" style="cursor: pointer;">
     <table>
         <tr>
-            <td class="circular-logo">
-                <img class="circular-logo w-48 mr-6 md:w-auto" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
+            <td class="circular-logo" style="padding-right: 20px;">
+                <img class="circular-logo w-64 h-64 md:w-48 md:h-48 mr-6 md:w-auto" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
             </td>
-            <td class="px-4" style="width: 426.933px;"> <!-- Set specific width and max-width, add padding to create space -->
+            <td class="px-4" style="width: 426.933px;">
                 <h3 class="text-2xl font-bold" style="max-width: 426.933px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{$listing->title}}
                 </h3>
@@ -177,6 +180,12 @@
                 <div class="text-lg" style="max-width: 426.933px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{$listing->location}}
                 </div>
+
+                <div class="card">
+                    <div class="card__content">${{$listing->min_salary}} - ${{$listing->max_salary}}💸
+                    </div>
+                </div>
+
             </td>
             <td class="px-4 hidden md:table-cell" style="width: 341.533px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"> <!-- Set specific width and truncate content -->
                 <x-listing-tags :tagsCsv="$listing->tags" />
@@ -186,6 +195,35 @@
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}
                 </div>
             </td>
+            {{-- <div class="text-lg" style="max-width: 426.933px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                
+            </div> --}}
+
+            
         </tr>
     </table>
 </x-card>
+
+    <style>
+.card {
+  width: 110px;
+  border-radius: 20px;
+  padding: 3px;
+  display: flex;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  /* height: auto; */ /* Uncomment this line to use auto height */
+}
+
+.card__content {
+  text-align: center; /* Center the text within the content */
+  color: white; /* Set the text color to white */
+  background: rgb(5, 6, 45); /* Background color for the text content */
+  border-radius: 17px;
+  width: 110%;
+  /* height: 100%; */ /* No need to set height in this case */
+}
+
+    </style>
