@@ -182,7 +182,10 @@
                 </div>
 
                 <div class="card">
-                    <div class="card__content">${{$listing->min_salary}} - ${{$listing->max_salary}}💸
+                    {{-- <div class="card__content">${{$listing->min_salary}} - ${{$listing->max_salary}}💸 --}}
+                        <div class="card__content">
+                            <span class="salary">{{ $listing->min_salary }}</span> - <span class="salary">{{ $listing->max_salary }}</span>💸
+                        </div>
                     </div>
                 </div>
 
@@ -226,4 +229,28 @@
   /* height: 100%; */ /* No need to set height in this case */
 }
 
-    </style>
+</style>
+
+
+<!-- Add this script section at the bottom of your template, before the closing </body> tag -->
+<!-- Update the formatSalary() function in the script section -->
+<script>
+    function formatSalary(salary) {
+        if (salary >= 1000) {
+            return Math.floor(salary / 1000) + 'k';
+        } else {
+            return salary;
+        }
+    }
+
+    // Get all elements with class "salary" and format their content
+    document.addEventListener('DOMContentLoaded', function() {
+        const salaryElements = document.querySelectorAll('.salary');
+        salaryElements.forEach(element => {
+            const originalSalary = parseFloat(element.textContent);
+            if (!isNaN(originalSalary)) {
+                element.textContent = '$' + formatSalary(originalSalary);
+            }
+        });
+    });
+</script>

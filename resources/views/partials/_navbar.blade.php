@@ -137,7 +137,7 @@ a {
 <header class="header">
     
     <nav class="navbar">
-        <a href="/" class="nav-logo">RemoteKnock.</a>
+        <a href="/" class="nav-logo">RemoteKnock</a>
         <ul class="nav-menu">
             {{-- <li class="nav-item">
                 <a href="#" class="nav-link">Services</a>

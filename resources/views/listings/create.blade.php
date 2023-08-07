@@ -106,27 +106,26 @@
           </div>
         </div> --}}
         
-
         <div class="mb-6 flex items-center">
           <div class="mr-4">
             <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
             <select class="border border-gray-200 rounded p-2" name="min_salary">
               <option value="">Select minimum salary</option>
-              <option value="10k">USD 10.000 per year</option>
-              <option value="20k">USD 20.000 per year</option>
-              <option value="30k">USD 30.000 per year</option>
-              <option value="40k">USD 40.000 per year</option>
-              <option value="50k">USD 50.000 per year</option>
-              <option value="60k">USD 60.000 per year</option>
-              <option value="70k">USD 70.000 per year</option>
-              <option value="80k">USD 80.000 per year</option>
-              <option value="90k">USD 90.000 per year</option>
-              <option value="100k">USD 100.000 per year</option>
-              <option value="110k">USD 110.000 per year</option>
-              <option value="120k">USD 120.000 per year</option>
-              <option value="130k">USD 130.000 per year</option>
-              <option value="140k">USD 140.000 per year</option>
-              <option value="150k">USD 150.000 per year</option>
+              <option value="10.000">USD 10.000 per year</option>
+              <option value="20.000">USD 20.000 per year</option>
+              <option value="30.000">USD 30.000 per year</option>
+              <option value="40.000">USD 40.000 per year</option>
+              <option value="50.000">USD 50.000 per year</option>
+              <option value="60.000">USD 60.000 per year</option>
+              <option value="70.000">USD 70.000 per year</option>
+              <option value="80.000">USD 80.000 per year</option>
+              <option value="90.000">USD 90.000 per year</option>
+              <option value="100.000">USD 100.000 per year</option>
+              <option value="110.000">USD 110.000 per year</option>
+              <option value="120.000">USD 120.000 per year</option>
+              <option value="130.000">USD 130.000 per year</option>
+              <option value="140.000">USD 140.000 per year</option>
+              <option value="150.000">USD 150.000 per year</option>
 
 
               <!-- Add more options as needed -->
@@ -140,21 +139,21 @@
             <label for="max_salary" class="inline-block text-lg mb-2">Maximum Salary</label>
             <select class="border border-gray-200 rounded p-2" name="max_salary">
               <option value="">Select maximum salary</option>
-              <option value="10k">USD 10.000 per year</option>
-              <option value="20k">USD 20.000 per year</option>
-              <option value="30k">USD 30.000 per year</option>
-              <option value="40k">USD 40.000 per year</option>
-              <option value="50k">USD 50.000 per year</option>
-              <option value="60k">USD 60.000 per year</option>
-              <option value="70k">USD 70.000 per year</option>
-              <option value="80k">USD 80.000 per year</option>
-              <option value="90k">USD 90.000 per year</option>
-              <option value="100k">USD 100.000 per year</option>
-              <option value="110k">USD 110.000 per year</option>
-              <option value="120k">USD 120.000 per year</option>
-              <option value="130k">USD 130.000 per year</option>
-              <option value="140k">USD 140.000 per year</option>
-              <option value="150k">USD 150.000 per year</option>
+              <option value="10.000">USD 10.000 per year</option>
+              <option value="20.000">USD 20.000 per year</option>
+              <option value="30.000">USD 30.000 per year</option>
+              <option value="40.000">USD 40.000 per year</option>
+              <option value="50.000">USD 50.000 per year</option>
+              <option value="60.000">USD 60.000 per year</option>
+              <option value="70.000">USD 70.000 per year</option>
+              <option value="80.000">USD 80.000 per year</option>
+              <option value="90.000">USD 90.000 per year</option>
+              <option value="100.000">USD 100.000 per year</option>
+              <option value="110.000">USD 110.000 per year</option>
+              <option value="120.000">USD 120.000 per year</option>
+              <option value="130.000">USD 130.000 per year</option>
+              <option value="140.000">USD 140.000 per year</option>
+              <option value="150.000">USD 150.000 per year</option>
 
               <!-- Add more options as needed -->
             </select>
@@ -165,6 +164,8 @@
         </div>
         
         {{--  --}}
+
+        
       <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">Company Logo</label>
         <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" id="logoInput" />
