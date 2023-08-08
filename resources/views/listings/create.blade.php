@@ -8,13 +8,30 @@
   <!-- Include Quill CSS -->
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
-
+{{--  --}}
+@auth
+@if (!auth()->user()->hasVerifiedEmail())
+  <div class="bg-yellow-200 p-4 rounded mb-4">
+    <p>
+      Please verify your email before creating a job listing. Check your email for a verification link, or
+      <form action="{{ route('verification.send') }}" method="POST" class="d-inline">
+        @csrf
+        <button type="submit" class="d-inline btn btn-link p-0 text-blue-500 focus:outline-none">
+          click here to request another
+        </button>
+      </form>
+    </p>
+  </div>
+@endif
+@endauth
+{{--  --}}
 <x-layout>
   <x-card class="p-10 max-w-lg mx-auto mt-24">
     <header class="text-center">
       <h2 class="text-2xl font-bold uppercase mb-1">Create a Job</h2>
       <p class="mb-4">Post a job to find a developer</p>
     </header>
+
 
     <form method="POST" action="/listings" enctype="multipart/form-data">
       @csrf

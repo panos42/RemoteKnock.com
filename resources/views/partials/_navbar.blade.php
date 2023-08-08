@@ -77,11 +77,16 @@ a {
 }
 
 .nav-logo {
-    font-family: 'Pacifico', cursive; /* Apply Pacifico font family */
-        font-size: 2.1rem;
+    font-family: 'Pacifico', cursive; 
+        font-size: 1.8rem;
     font-weight: 500;
     color: #482ff7;
-}
+} 
+
+
+
+
+
 
 
 @media only screen and (max-width: 768px) {
@@ -134,10 +139,17 @@ a {
 
 </style>
 
+
+
+
 <header class="header">
     
     <nav class="navbar">
         <a href="/" class="nav-logo">RemoteKnock</a>
+        
+        
+        
+        
         <ul class="nav-menu">
             {{-- <li class="nav-item">
                 <a href="#" class="nav-link">Services</a>

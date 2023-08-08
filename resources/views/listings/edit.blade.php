@@ -14,7 +14,7 @@
 <body>
 
   <div class="container">
-    <div class="edit-layout">
+  <div class="edit-layout">
 
 <x-layout>
   <x-card class="p-10 max-w-lg mx-auto mt-24">
@@ -238,7 +238,7 @@
       quill.root.innerHTML = {!! json_encode($listing->description) !!};
 
       // Update the hidden input field with the initial content
-      document.getElementById('descriptionInput').value = quill.root.innerHTML;
+      // document.getElementById('descriptionInput').value = quill.root.innerHTML;
       quill.on('text-change', function () {
   var html = quill.root.innerHTML;
   document.getElementById('descriptionInput').value = html;
@@ -249,16 +249,6 @@
 
 
 
-  <!-- Add this modal code at the end of your <body> tag -->
-    <div id="custom-modal" class="modal">
-      <div class="modal-content">
-        <p>Are you sure you want to perform this action?</p>
-        <div class="modal-buttons">
-          <button id="confirm-button">Confirm</button>
-          <button id="cancel-button">Cancel</button>
-        </div>
-      </div>
-    </div> 
 
      
     <style>
@@ -390,8 +380,30 @@
       font-size: 16px;
     }
   }
+
+  /* Center the container horizontally and vertically */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Add a background color for visualization */
+}
+
 </style>
 
+
+  <!-- Add this modal code at the end of your <body> tag -->
+    <div id="custom-modal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to perform this action?</p>
+        <div class="modal-buttons">
+          <button id="confirm-button">Confirm</button>
+          <button id="cancel-button">Cancel</button>
+        </div>
+      </div>
+    </div> 
 
 </body>
 </html>

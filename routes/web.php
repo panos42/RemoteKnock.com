@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\ListingController;
-use App\Http\Controllers\UserController;
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Listing;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,9 +49,37 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 // Manage Listings
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
+// Route::middleware(['auth', 'verified'])->group(function () {
+//     Route::get('/listings/manage', [ListingController::class, 'manage']);
+//     // Other routes that require a verified email
+// });
 
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
+
+
+//  Auto leitourgei gia kapoio logo....
+Route::get('/email/verify', function () {
+    return view('verification.notice');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/'); // Nomizw oti mexri edw douleuei , gt meta to "click to verify" anoigei to homepage panta...
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+ 
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+// ////////////////////////////////////////
+
+
 
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
@@ -71,3 +100,6 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+
+

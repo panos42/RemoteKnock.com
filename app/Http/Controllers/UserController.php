@@ -28,7 +28,7 @@ class UserController extends Controller
         // Create User
         $user = User::create($formFields);
 
-       // event(new Registered($user));
+       event(new Registered($user));
         
         // Login
         auth()->login($user);
@@ -62,7 +62,7 @@ class UserController extends Controller
         if(auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            return redirect('/')->with('message', 'You are now logged in!');
+            return redirect('/')->with('message', 'You are now logged in! Verification Required for posting!');
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

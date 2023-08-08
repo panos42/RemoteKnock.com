@@ -1,10 +1,32 @@
+{{--  --}}
+@auth
+@if (!auth()->user()->hasVerifiedEmail())
+  <div class="bg-yellow-200 p-4 rounded mb-4">
+    <p>
+      Please verify your email before managing job listings. Check your email for a verification link, or
+      <form action="{{ route('verification.send') }}" method="POST" class="d-inline">
+        @csrf
+        <button type="submit" class="d-inline btn btn-link p-0 text-blue-500 focus:outline-none">
+          click here to request another
+        </button>
+      </form>
+    </p>
+  </div>
+@endif
+@endauth
+{{--  --}}
+
 <x-layout>
   <x-card class="p-10">
+
     <header>
       <h1 class="text-3xl text-center font-bold my-6 uppercase">
         Manage Job Listings
       </h1>
     </header>
+
+  
+
 
     <table class="w-full table-auto rounded-sm">
       <tbody>
