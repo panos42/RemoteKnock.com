@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\AboutController;
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -59,6 +60,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 //  Auto leitourgei gia kapoio logo....
 Route::get('/email/verify', function () {
@@ -100,6 +102,8 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+
 
 
 

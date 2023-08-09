@@ -201,6 +201,11 @@ a {
                  <a href="/listings/create" class="bg-black text-white py-4 px-7 rounded-md">Post a Remote job</a>
             
             </li>
+
+            <li class="nav-item">
+                <a href="{{ route('about') }}">About</a>
+
+            </li>
         </ul>
         <div class="hamburger">
             <span class="bar"></span>
