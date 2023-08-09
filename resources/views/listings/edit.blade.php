@@ -220,17 +220,8 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
     <script>
-      // var quill = new Quill('#editor', {
-      //   theme: 'snow'
-      // });
 
-      // // Add an event listener to update the hidden input field when the editor content changes
-      // quill.on('text-change', function () {
-      //   var html = quill.root.innerHTML;
-      //   document.getElementById('descriptionInput').value = html;
-      // });
-
-          var quill = new Quill('#editor', {
+      var quill = new Quill('#editor', {
       theme: 'snow'
       });
 
@@ -238,11 +229,11 @@
       quill.root.innerHTML = {!! json_encode($listing->description) !!};
 
       // Update the hidden input field with the initial content
-      // document.getElementById('descriptionInput').value = quill.root.innerHTML;
+      document.getElementById('descriptionInput').value = quill.root.innerHTML;
       quill.on('text-change', function () {
-  var html = quill.root.innerHTML;
-  document.getElementById('descriptionInput').value = html;
-});
+      var html = quill.root.innerHTML;
+      document.getElementById('descriptionInput').value = html;
+      });
     </script>
 
 
@@ -297,9 +288,6 @@
   </style> 
 
      
-
-
-
 
   <!-- Add the CSS for the two-column layout here -->
   <style>
@@ -382,14 +370,14 @@
   }
 
   /* Center the container horizontally and vertically */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0; /* Add a background color for visualization */
-}
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Add a background color for visualization */
+  }
 
 </style>
 

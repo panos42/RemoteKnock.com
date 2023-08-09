@@ -46,19 +46,25 @@
     <div class="invisible-box">
         <form action="/" class="search-container">
             <div class="InputContainer">
-                <input placeholder="Search for jobs..." id="searchInput" class="input" name="search" type="text">
+                <input
+                    placeholder="Search for jobs..."
+                    id="searchInput"
+                    class="input"
+                    name="search"
+                    type="text"
+                >
+                <input
+                    type="text"
+                    name="min_salary"
+                    placeholder="Min Salary"
+                    value="{{ request('min_salary') }}"
+                >
+                <button type="submit">Search</button>
             </div>
         </form>
+        
     </div>
 
-    <script>
-        function performSearch(tag) {
-            const searchInput = document.getElementById('searchInput');
-            searchInput.value = tag;
-            // You can add additional code here to trigger the search action
-            // For now, we'll just log the tag to the console
-            console.log('Searching for:', tag);
-        }
-    </script>
+
 </body>
 </html>

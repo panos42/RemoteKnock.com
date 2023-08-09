@@ -198,7 +198,7 @@ a {
             <li class="nav-item">
                 {{-- <a href="#" class="nav-link">Contact</a> --}}
                  <!-- Move "Post Job" button to the right -->
-                 <a href="/listings/create" class="bg-black text-white py-4 px-7 rounded-md">For Employers</a>
+                 <a href="/listings/create" class="bg-black text-white py-4 px-7 rounded-md">Post a Remote job</a>
             
             </li>
         </ul>
