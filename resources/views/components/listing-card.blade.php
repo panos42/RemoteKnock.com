@@ -23,21 +23,6 @@
         background-color: #222222;
     }
 
-    /* Add styles for the tags */
-    .tag {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color: #e2e8f0;
-    border-radius: 4px;
-    margin-right: 4px;
-    cursor: pointer;
-    font-size: 12px; /* Adjust the font size as per your preference */
-    }
-
-    .tag:hover {
-        background-color: #a0aec0;
-        font-size: 12px; /* Same as the tag class, adjust the font size if needed */
-    }
 
     /* Center the card content */
     .card-container {
@@ -141,26 +126,6 @@
     use Carbon\Carbon;
 @endphp
 
-{{-- <x-card class="hover:bg-gray-100 rounded-lg" onclick="window.location='/listings/{{$listing->id}}';" style="cursor: pointer;">
-    <div class="flex card-container max-h-32
-    ">
-        <img class="circular-logo w-48 mr-6 md:w-auto" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
-        <div>
-            <h3 class="text-2xl font-bold adapt-text-color">
-                {{$listing->title}}
-            </h3>
-            <div class="text-xl mb-4 adapt-text-color">{{$listing->company}}</div>
-            <div class="text-lg mt-4 adapt-text-color">
-                {{$listing->location}}
-            </div>
-        </div>
-        <div class="ml-auto">
-            <x-listing-tags :tagsCsv="$listing->tags" />
-            <div class="text-sm text-gray-500 mt-2">
-                {{ Carbon::parse($listing->created_at)->diffForHumans() }}            </div>
-        </div>
-    </div>
-</x-card> --}}
 
 
 
@@ -193,6 +158,8 @@
             <td class="px-4 hidden md:table-cell" style="width: 341.533px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"> <!-- Set specific width and truncate content -->
                 <x-listing-tags :tagsCsv="$listing->tags" />
             </td>
+
+           
             <td class="px-4" style="width: 72.8px;"> <!-- Set specific width -->
                 <div class="text-sm text-gray-500" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}

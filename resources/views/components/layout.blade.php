@@ -22,7 +22,7 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#2e4aff",
+                            laravel: "#0F2137",
                         },
                     },
                 },
@@ -47,6 +47,7 @@
                 background-color: #0070f3; /* Default button color */
                 color: #fff; /* Default text color */
                 border: 2px solid #0070f3; /* Default border color */
+                rgba(59,130,246,.5)
             }
         
             .btn:hover {

@@ -33,10 +33,40 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    background-color: white; /* Add a background color if needed */
-    z-index: 1000; /* A higher value than other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    background-color: white; 
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
+
+/* Color of the links BEFORE scroll */
+/* .navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+} */
+
+/* Color of the links AFTER scroll */
+/* .navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+} */
+
+/* Color of the navbar AFTER scroll */
+/* .navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+} */
 
 
 .hamburger {
@@ -144,7 +174,7 @@ a {
 
 <header class="header">
     
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
         <a href="/" class="nav-logo">RemoteKnock</a>
         
         

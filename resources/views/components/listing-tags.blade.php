@@ -5,7 +5,8 @@
     .tag {
         display: inline-block;
         padding: 4px 8px;
-        background-color: #e2e8f0;
+        color: #1e40af;
+        background-color: #dbeafe;
         border-radius: 4px;
         margin-right: 4px;
         cursor: pointer; /* Cursor changes to a pointer on hover */
@@ -13,7 +14,8 @@
 
     /* Add hover style for the tags */
     .tag:hover {
-        background-color: #a0aec0;
+        color:white;
+        background-color: #60a5fa;
     }
 </style>
 
