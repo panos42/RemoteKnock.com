@@ -10,18 +10,22 @@ use Illuminate\Support\Facades\Storage;
 
 class ListingController extends Controller
 {
-    // Show all listings
+
+
     // public function index() {
     //     return view('listings.index', [
-    //         'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(20)
+    //         'listings' => Listing::latest()->filter(request(['tag', 'search', 'min_salary']))->paginate(20)
     //     ]);
     // }
 
     public function index() {
         return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search', 'min_salary']))->paginate(20)
+            'listings' => Listing::latest()
+                ->filter(request(['tag', 'search', 'min_salary', 'location']))
+                ->paginate(20)
         ]);
     }
+    
     
 
     //Show single listing

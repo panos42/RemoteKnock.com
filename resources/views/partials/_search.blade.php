@@ -151,7 +151,7 @@
                 >
 
                 <input 
-                    name="location_filter"
+                    name="location"
                     placeholder="Location" 
                     type="text" 
                     class="input2"
