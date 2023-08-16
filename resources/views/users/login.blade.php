@@ -42,7 +42,7 @@
 
             
             <div class="mb-6">
-                <button type="submit" class="bg-laravel text-white rounded py-2 w-full hover:bg-black">
+                <button type="submit" class="bg-black text-white rounded py-2 w-full">
                     Sign in
                 </button>
             </div>

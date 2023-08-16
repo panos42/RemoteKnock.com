@@ -3,61 +3,96 @@
 <head>
     <style>
 
+        .invisible-box {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;
+            /* height: 100vh; */
+        }
+
          .input:active {
         /* transform: scale(0.95); */
         } 
 
         .group {
-        display: flex;
-        line-height: 28px;
-        align-items: center;
-        position: relative;
-        max-width: 1000px;
+            display: flex;
+            line-height: 28px;
+            align-items: center;
+            position: relative;
+            max-width: 1000px;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: row;
+            gap: 10px; /* Vertical gap between input fields */
         }
 
         .input {
-        width: 1000px;
-        height: 40px;
-        line-height: 28px;
-        padding: 0 1rem;
-        padding-left: 2.5rem;
-        border: 2px solid transparent;
-        border-radius: 8px;
-        outline: none;
-        background-color: #f3f3f4;
-        color: #0d0c22;
-        transition: .3s ease;
+            font-size: 1.5rem;
+            width: 1000px;
+            height: 45px;
+            line-height: 28px;
+            padding: 0 1rem;
+            padding-left: 3rem;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            outline: none;
+            background-color: #081d46e7;
+            color: white;
+            transition: .3s ease;
+        }
+
+        .input2{
+            font-size: 1rem;
+            border-radius: 8px;
+            padding-left: 2.5rem;
+            color: white;
+            background-color: #081d46e7;
         }
 
         .input::placeholder {
-        color: #9e9ea7;
+            color: #9e9ea7;
         }
 
         .input:focus, input:hover {
-        outline: none;
-        border-color: rgba(14, 207, 250, 0.604);
-        background-color: #fff;
-        box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+            outline: none;
+            border-color: rgba(14, 207, 250, 0.604);
+            background-color: #081d46e7;
+            box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
         }
 
-        .icon {
+        /* .icon {
         position: absolute;
         left: 1rem;
         fill: #9e9ea7;
         width: 1rem;
         height: 1rem;
+        } */
+        .icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%; /* Vertically center the icon */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            fill: #9e9ea7;
+            width: 1.5rem; /* Increase icon size */
+            height: 1.5rem; /* Increase icon size */
+            font-weight: bold; /* Make the icon bold */
         }
 
 
+
+
         .main-search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%; /* Adjust the width as needed */
-    max-width: 1000px; /* Set a maximum width if desired */
-    margin: 0 auto; /* Center the container horizontally */
-    text-align: center;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%; /* Adjust the width as needed */
+            max-width: 1000px; /* Set a maximum width if desired */
+            margin: 0 auto; /* Center the container horizontally */
+            text-align: center;
+        }
 
 
 
@@ -75,7 +110,18 @@
             .input {
                 width: 300px;
                 height: 40px; /* Adjust height for smaller screens */
-                font-size: 12px; /* Adjust font size for smaller screens */
+                font-size: 20px; /* Adjust font size for smaller screens */
+            }
+            .input-group {
+                
+            flex-direction: column; /* Stack input fields vertically on smaller screens */
+            gap: 10px; /* Vertical gap between input fields */
+        }
+
+     
+
+            .group {
+                flex-direction: column;
             }
         }
     </style>
@@ -103,6 +149,7 @@
                     class="input2"
                     value="{{ request('min_salary') }}"
                 >
+
                 <input 
                     name="location_filter"
                     placeholder="Location" 

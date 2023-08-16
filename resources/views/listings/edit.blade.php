@@ -140,15 +140,15 @@
           <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
           <select class="border border-gray-200 rounded p-2 w-full" name="min_salary">
             <option value="">Select minimum salary</option>
-            <option value="10000" @if ($listing->max_salary == 10000) selected @endif>USD 10,000 per year</option>
-            <option value="20000" @if ($listing->max_salary == 20000) selected @endif>USD 20,000 per year</option>
-            <option value="30000" @if ($listing->max_salary == 30000) selected @endif>USD 30,000 per year</option>
-            <option value="40000" @if ($listing->max_salary == 40000) selected @endif>USD 40,000 per year</option>
-            <option value="50000" @if ($listing->max_salary == 50000) selected @endif>USD 50,000 per year</option>
-            <option value="60000" @if ($listing->max_salary == 60000) selected @endif>USD 60,000 per year</option>
-            <option value="70000" @if ($listing->max_salary == 70000) selected @endif>USD 70,000 per year</option>
-            <option value="80000" @if ($listing->max_salary == 80000) selected @endif>USD 80,000 per year</option>
-            <option value="90000" @if ($listing->max_salary == 90000) selected @endif>USD 90,000 per year</option>
+            <option value="10000" @if ($listing->min_salary == 10000) selected @endif>USD 10,000 per year</option>
+            <option value="20000" @if ($listing->min_salary == 20000) selected @endif>USD 20,000 per year</option>
+            <option value="30000" @if ($listing->min_salary == 30000) selected @endif>USD 30,000 per year</option>
+            <option value="40000" @if ($listing->min_salary == 40000) selected @endif>USD 40,000 per year</option>
+            <option value="50000" @if ($listing->min_salary == 50000) selected @endif>USD 50,000 per year</option>
+            <option value="60000" @if ($listing->min_salary == 60000) selected @endif>USD 60,000 per year</option>
+            <option value="70000" @if ($listing->min_salary == 70000) selected @endif>USD 70,000 per year</option>
+            <option value="80000" @if ($listing->min_salary == 80000) selected @endif>USD 80,000 per year</option>
+            <option value="90000" @if ($listing->min_salary == 90000) selected @endif>USD 90,000 per year</option>
             <option value="100000" @if ($listing->min_salary == 100000) selected @endif>USD 100,000 per year</option>
             <option value="110000" @if ($listing->min_salary == 110000) selected @endif>USD 110,000 per year</option>
             <option value="120000" @if ($listing->min_salary == 120000) selected @endif>USD 120,000 per year</option>
@@ -176,11 +176,11 @@
             <option value="70000" @if ($listing->max_salary == 70000) selected @endif>USD 70,000 per year</option>
             <option value="80000" @if ($listing->max_salary == 80000) selected @endif>USD 80,000 per year</option>
             <option value="90000" @if ($listing->max_salary == 90000) selected @endif>USD 90,000 per year</option>
-            <option value="100000" @if ($listing->min_salary == 100000) selected @endif>USD 100,000 per year</option>
-            <option value="110000" @if ($listing->min_salary == 110000) selected @endif>USD 110,000 per year</option>
-            <option value="120000" @if ($listing->min_salary == 120000) selected @endif>USD 120,000 per year</option>
-            <option value="130000" @if ($listing->min_salary == 130000) selected @endif>USD 130,000 per year</option>
-            <option value="140000" @if ($listing->min_salary == 140000) selected @endif>USD 140,000 per year</option>
+            <option value="100000" @if ($listing->max_salary == 100000) selected @endif>USD 100,000 per year</option>
+            <option value="110000" @if ($listing->max_salary == 110000) selected @endif>USD 110,000 per year</option>
+            <option value="120000" @if ($listing->max_salary == 120000) selected @endif>USD 120,000 per year</option>
+            <option value="130000" @if ($listing->max_salary == 130000) selected @endif>USD 130,000 per year</option>
+            <option value="140000" @if ($listing->max_salary == 140000) selected @endif>USD 140,000 per year</option>
             <!-- Add more options as needed -->
           </select>
           @error('max_salary')
@@ -225,7 +225,7 @@
       </div>
 
       <div class="mb-6">
-        <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+        <button class="text-white rounded py-2 px-4 bg-black">
           Update Gig
         </button>
 

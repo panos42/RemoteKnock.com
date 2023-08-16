@@ -96,7 +96,7 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
-// Log In User
+// Forgot Password
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 

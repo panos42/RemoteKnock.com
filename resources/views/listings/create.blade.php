@@ -123,26 +123,7 @@
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
         @enderror
       </div>
-        {{--  --}}
-        {{-- <div class="mb-6 flex items-center">
-          <div class="mr-4">
-            <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
-            <input type="text" class="border border-gray-200 rounded p-2" name="min_salary"
-              placeholder="Example: 50000" value="{{old('min_salary')}}" />
-            @error('min_salary')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
-          </div>
-        
-          <div>
-            <label for="max_salary" class="inline-block text-lg mb-2">Maximum Salary</label>
-            <input type="text" class="border border-gray-200 rounded p-2" name="max_salary"
-              placeholder="Example: 80000" value="{{old('max_salary')}}" />
-            @error('max_salary')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
-          </div>
-        </div> --}}
+
         
         <div class="mb-6 flex items-center">
           <div class="mr-4">
