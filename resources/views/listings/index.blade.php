@@ -6,7 +6,7 @@
         <div class="max-w-screen-lg mx-auto">
             @unless(count($listings) == 0)
                 @foreach($listings as $listing)
-                    <div class="mb-2"> <!-- Adjusted margin to reduce the gap -->
+                    <div class="mb-5"> <!-- Adjusted margin to reduce the gap -->
                         <x-listing-card :listing="$listing" />
                     </div>
                 @endforeach

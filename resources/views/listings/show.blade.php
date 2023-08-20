@@ -27,25 +27,31 @@
     <div>
         <x-card>
             <div>
+                <div class="card-content">
                 <img class=" w-48 mr-6 md:block" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt=""/>
                 <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
                 <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
                 <x-listing-tags :tagsCsv="$listing->tags" />
 
                 <div>
-                    <i class="fa-solid fa-location-dot"></i> {{$listing->location}} 
+                {{$listing->location}} 
                 </div>
 
                 <div class="border border-gray-200 w-full mb-6"></div>
 
                 <div>
-                    <div>
                            
-                                <div class="actions">
-                                <a href="mailto:{{$listing->email}}" class="contact-employer">Contact Employer</a>
-                                <a href="{{$listing->website}}" target="_blank" class="visit-website">Visit Website</a>
-                            </div>
+                    <div class="actions">
+                        <a href="mailto:{{$listing->email}}" class="contact-employer">Apply Now</a>
+                        <a href="{{$listing->website}}" target="_blank" class="visit-website">Visit Website</a>
                     </div>
+                </div>
+
+                <div class="text-xl font-awesome mb-4">👀 {{$listing->listing_views}} views</div>
+
+                </div>
+                <div>
+                    
                     
                     
                     <div>
@@ -73,12 +79,38 @@
 
     .description-font {
         font-size: 1.5rem;
-        line-height:30px ;
+        line-height:1.6;
         font-family: Sen, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
     }
 
+        /* Center content within the card */
+        .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+    /* Center the logo */
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Adjust margin for the job title */
+    .job-title {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+
     
     </style>
+
+
+    
 
 </body>
 </html>

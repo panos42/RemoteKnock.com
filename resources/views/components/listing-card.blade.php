@@ -201,7 +201,7 @@
             /* height: 100%; */ /* No need to set height in this case */
         }
 
-
+/* 
         .card2 {
             width: 90px;
             border-radius: 20px;
@@ -210,14 +210,14 @@
             box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
             background-image: linear-gradient(144deg, #251430, #5B42F3 50%, #00DDEB);
 
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            /* height: auto; */ /* Uncomment this line to use auto height */
+            justify-content: center;
+            align-items: center; 
         }
 
-
+ */
 
         .card__content2 {
+            padding:3px;
             text-align: center; /* Center the text within the content */
             color: white; /* Set the text color to white */
             background: rgb(5, 6, 45); /* Background color for the text content */

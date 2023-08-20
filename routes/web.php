@@ -50,6 +50,10 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 // Manage Listings
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
+
+// Testing Something about keeping track of applications_made
+Route::post('/listings/{listing}/track-application', [ListingController::class, 'trackApplication'])->name('listings.trackApplication');
+
 // Route::middleware(['auth', 'verified'])->group(function () {
 //     Route::get('/listings/manage', [ListingController::class, 'manage']);
 //     // Other routes that require a verified email

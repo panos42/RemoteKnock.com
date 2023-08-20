@@ -30,6 +30,17 @@ class ListingController extends Controller
 
     //Show single listing
     public function show(Listing $listing) {
+        // Check if this listing has been viewed in the current session
+        $viewedListings = session('viewed_listings', []);
+        if (!in_array($listing->id, $viewedListings)) {
+            // Increment the view count
+            $listing->listing_views++;
+            $listing->save();
+    
+            // Add the listing ID to the viewed listings in the session
+            session(['viewed_listings' => array_merge($viewedListings, [$listing->id])]);
+        }
+    
         return view('listings.show', [
             'listing' => $listing
         ]);
@@ -121,4 +132,17 @@ class ListingController extends Controller
     public function manage() {
         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
+
+////////////////////////////////////////
+// Testing...
+    public function trackApplication($id)
+    {
+        // You can perform additional validation or checks here
+        $listing = Listing::findOrFail($id);
+        $listing->increment('applications_made'); // Increment the applications_made column
+        $listing->save();
+
+        return response()->json(['success' => true]);
+    }
+
 }
