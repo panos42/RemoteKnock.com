@@ -154,6 +154,9 @@
             <option value="120000" @if ($listing->min_salary == 120000) selected @endif>USD 120,000 per year</option>
             <option value="130000" @if ($listing->min_salary == 130000) selected @endif>USD 130,000 per year</option>
             <option value="140000" @if ($listing->min_salary == 140000) selected @endif>USD 140,000 per year</option>
+            <option value="150000" @if ($listing->min_salary == 150000) selected @endif>USD 150,000 per year</option>
+            <option value="160000" @if ($listing->min_salary == 160000) selected @endif>USD 160,000 per year</option>
+            <option value="170000" @if ($listing->min_salary == 170000) selected @endif>USD 170,000 per year</option>
 
 
             <!-- Add more options as needed -->
@@ -181,6 +184,9 @@
             <option value="120000" @if ($listing->max_salary == 120000) selected @endif>USD 120,000 per year</option>
             <option value="130000" @if ($listing->max_salary == 130000) selected @endif>USD 130,000 per year</option>
             <option value="140000" @if ($listing->max_salary == 140000) selected @endif>USD 140,000 per year</option>
+            <option value="150000" @if ($listing->min_salary == 150000) selected @endif>USD 150,000 per year</option>
+            <option value="160000" @if ($listing->min_salary == 160000) selected @endif>USD 160,000 per year</option>
+            <option value="170000" @if ($listing->min_salary == 170000) selected @endif>USD 170,000 per year</option>
             <!-- Add more options as needed -->
           </select>
           @error('max_salary')

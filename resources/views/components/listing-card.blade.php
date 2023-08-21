@@ -5,7 +5,8 @@
     font-family: 'Poppins', sans-serif;
     }
     .rounded-lg{
-        /* background-color: #0e0f1e; */
+        box-shadow: 10px 10x rgba(173, 216, 230, 0.322);       
+         /* background-color: #0e0f1e; */
         /* border:#5B42F3; */
          /* width: 1200px; */
          /* display: flex;

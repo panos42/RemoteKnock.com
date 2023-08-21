@@ -81,6 +81,7 @@
         font-size: 1.5rem;
         line-height:1.6;
         font-family: Sen, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+        padding: 0 10px; /* Add padding to both sides */
     }
 
         /* Center content within the card */

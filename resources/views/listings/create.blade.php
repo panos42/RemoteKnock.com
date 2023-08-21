@@ -26,8 +26,8 @@
 @endauth
 {{--  --}}
 <x-layout>
-  <x-card class="p-10 max-w-lg mx-auto mt-24">
-    <header class="text-center">
+  <x-card class="p-10 max-w-5xl mx-auto mt-24"> <!-- Use max-w-5xl or any other desired width class -->
+  <header class="text-center">
       <h2 class="text-2xl font-bold uppercase mb-1">Create a Job</h2>
       <p class="mb-4">Post a job to find a developer</p>
     </header>
@@ -36,7 +36,7 @@
     <form method="POST" action="/listings" enctype="multipart/form-data">
       @csrf
       <div class="mb-6">
-        {{-- <label for="company" class="inline-block text-lg mb-2">Company Name</label> --}}
+        <label for="company" class="inline-block text-lg mb-2">Company Name</label>
         <input type="text"
          class="border border-gray-200 rounded p-2 w-full"
          name="company"
@@ -188,7 +188,7 @@
       <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">Company Logo</label>
         <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" id="logoInput" />
-        <img id="logoPreview" src="#" alt="Uploaded Logo" style="display:none; max-width: 200px;" />
+        <img id="logoPreview" src="#" alt="Uploaded Logo" style="display: none; max-width: 200px;" />
       
         @error('logo')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -216,11 +216,71 @@
       </div>
 
       <div class="mb-6">
-        <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+        <button class="bg-laravel text-white rounded py-2 px-4 bg-black">
           Create Post
         </button>
 
-        <a href="/" class="text-black ml-4"> Back </a>
+        <div id="previewCard" class="mb-6">
+
+          {{-- <div class="mb-6">
+            <x-card class="p-4 max-w-md mx-auto">
+                <div class="text-center">
+                    <img class="circular-logo w-48 h-48 mx-auto mb-4" src="/images/no-image.png" alt="Company Logo" class="logoPreview"/>
+                    <h3 class="text-2xl font-bold">Job Title</h3>
+                    <p class="text-xl">Company Name</p>
+                    <p class="text-lg">Job Location</p>
+                    <!-- Add more fields as needed -->
+                </div>
+            </x-card>
+          </div> --}}
+
+          <x-card class="Preview-rounded-lg hover:bg-gray-100" style="cursor: pointer;">
+            <div class="card-container flex justify-center items-center">
+                <table>
+                    <tr>
+                        <td class="circular-logo" style="padding-right: 20px;">
+                            <img class="circular-logo w-64 h-64 md:w-48 md:h-48 mr-6 md:w-auto"
+                                src="{{ asset('/images/no-image.png') }}" alt="" />
+                        </td>
+                        <td class="px-4">
+                            <h3 class="text-2xl font-bold" style="max-width: 426.933px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                Job Title
+                            </h3>
+                            <div class="text-xl" style="max-width: 300px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                Company Name
+                            </div>
+                            <div class="flex items-center">
+                                <div class="card2 ml-4">
+                                    <div class="card__content2">
+                                        <div class="text-lg" style="max-width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                            Job Location
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card ml-4">
+                                    <div class="card__content">
+                                        <span class="salary">10000</span> - <span class="salary">150000</span>💸
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-5 hidden md:table-cell" style="width: 341.533px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                            <x-listing-tags tagsCsv="Laravel, Backend, Postgres" />
+                        </td>
+                        <td class="px-5" style="width: 72.8px;">
+                            <div class="text-sm text-gray-500" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                2 hours ago
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </x-card>
+        
+
+              </div>
+      
+        {{-- <a href="/" class="text-black ml-4"> Back </a> --}}
       </div>
     </form>
   </x-card>
@@ -240,23 +300,14 @@
   });
 </script>
 
-<script>
-    // Image preview function
-    const logoInput = document.getElementById('logoInput');
-  const logoPreview = document.getElementById('logoPreview');
 
-  logoInput.addEventListener('change', function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.addEventListener('load', function () {
-        logoPreview.src = reader.result;
-        logoPreview.style.display = 'inline'; // Display the image
-      });
-      reader.readAsDataURL(file);
-    }
-  });
-</script>
+
+
+
+
+
+
+
 
 
 <!-- Add the following script before the closing </body> tag -->

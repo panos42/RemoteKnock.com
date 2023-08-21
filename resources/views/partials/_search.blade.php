@@ -11,7 +11,7 @@
         }
 
          .input:active {
-        /* transform: scale(0.95); */
+        transform: scale(0.95);
         } 
 
         .group {
@@ -45,9 +45,10 @@
         }
 
         .input2{
-            font-size: 1rem;
+            font-size: 1.2rem;
             border-radius: 8px;
-            padding-left: 2.5rem;
+            padding: 5px;
+            /* padding-left: 2.5rem; */
             color: white;
             background-color: #081d46e7;
         }
@@ -142,13 +143,32 @@
                 >
             </div>
             <div class="input-group"> <!-- New input-group container -->
-                <input 
+                {{-- <input 
                     name="min_salary"
                     placeholder="Minimum Salary" 
                     type="text" 
                     class="input2"
                     value="{{ request('min_salary') }}"
-                >
+                > --}}
+                <select class="input2" name="min_salary">
+                    <option value="">Select minimum salary</option>
+                    <option value="10000">$10.000 per year</option>
+                    <option value="20000">$20.000 per year</option>
+                    <option value="30000">$30.000 per year</option>
+                    <option value="40000">$40.000 per year</option>
+                    <option value="50000">$50.000 per year</option>
+                    <option value="60000">$60.000 per year</option>
+                    <option value="70000">$70.000 per year</option>
+                    <option value="80000">$80.000 per year</option>
+                    <option value="90000">$90.000 per year</option>
+                    <option value="100000">$100.000 per year</option>
+                    <option value="110000">$110.000 per year</option>
+                    <option value="120000">$120.000 per year</option>
+                    <option value="130000">$130.000 per year</option>
+                    <option value="140000">$140.000 per year</option>
+                    <option value="150000">$150.000 per year</option>
+                    <!-- Add more options as needed -->
+                </select>
 
                 <input 
                     name="location"
@@ -157,13 +177,30 @@
                     class="input2"
                     value="{{ request('location') }}"
                 >
-                <input 
+                {{-- <input 
                     name="job_position"
                     placeholder="Position" 
                     type="text" 
                     class="input2"
                     value="{{ request('job_position') }}"
+                > --}}
+                <select class="input2" name="job_position">
+                    <option value="">Select job position</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="manager">Manager</option>
+                    <option value="markeing">Marketer</option>
+
+                    <!-- Add more predefined options as needed -->
+                </select>
+                
+                <input 
+                    name="custom_job_position"
+                    placeholder="Enter custom job position"
+                    type="text"
+                    class="input2"
+                    value="{{ request('custom_job_position') }}"
                 >
+                
             </div>
             <button type="submit">Search</button>
             </div>
