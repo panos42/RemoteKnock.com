@@ -21,7 +21,7 @@ class ListingController extends Controller
     public function index() {
         return view('listings.index', [
             'listings' => Listing::latest()
-                ->filter(request(['tag', 'search', 'min_salary', 'location']))
+                ->filter(request(['tag', 'search', 'min_salary', 'location','job_position']))
                 ->paginate(20)
         ]);
     }

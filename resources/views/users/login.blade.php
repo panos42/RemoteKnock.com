@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 <x-layout> 
     <x-card class="p-10 rounded max-w-lg mx-auto mt-24">
         <header class="text-center">

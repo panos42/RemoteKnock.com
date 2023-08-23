@@ -52,7 +52,7 @@ Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware
 
 
 // Testing Something about keeping track of applications_made
-Route::post('/listings/{listing}/track-application', [ListingController::class, 'trackApplication'])->name('listings.trackApplication');
+// Route::post('/listings/{listing}/track-application', [ListingController::class, 'trackApplication'])->name('listings.trackApplication');
 
 // Route::middleware(['auth', 'verified'])->group(function () {
 //     Route::get('/listings/manage', [ListingController::class, 'manage']);
@@ -74,7 +74,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
  
-    return redirect('/'); // Nomizw oti mexri edw douleuei , gt meta to "click to verify" anoigei to homepage panta...
+    return redirect('/'); 
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
  

@@ -47,6 +47,10 @@ class Listing extends Model
             $query->where('location', 'like', '%' . $filters['location'] . '%');
         }
 
+        if ($filters['job_position'] ?? false) {
+            $query->where('title', 'like', '%' . $filters['job_position'] . '%');
+        }
+
         return $query;
     }
     

@@ -177,29 +177,28 @@
                     class="input2"
                     value="{{ request('location') }}"
                 >
-                {{-- <input 
+                <input 
                     name="job_position"
                     placeholder="Position" 
                     type="text" 
                     class="input2"
                     value="{{ request('job_position') }}"
-                > --}}
-                <select class="input2" name="job_position">
+                >
+                {{-- <select class="input2" name="job_position">
                     <option value="">Select job position</option>
                     <option value="engineer">Engineer</option>
                     <option value="manager">Manager</option>
                     <option value="markeing">Marketer</option>
 
-                    <!-- Add more predefined options as needed -->
-                </select>
+                </select> --}}
                 
-                <input 
-                    name="custom_job_position"
+                {{-- <input 
+                    name="job_position"
                     placeholder="Enter custom job position"
                     type="text"
                     class="input2"
-                    value="{{ request('custom_job_position') }}"
-                >
+                    value="{{ request('job_position') }}"
+                > --}}
                 
             </div>
             <button type="submit">Search</button>
