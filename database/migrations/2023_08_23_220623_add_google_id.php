@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('listings', function (Blueprint $table) {
-            $table->string('applications_made')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('google_id')->nullable();
 
         });
     }
@@ -22,9 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('listings', function (Blueprint $table) {
-            $table->dropColumn('applications_made');
-
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('google_id');
         });
     }
 };
