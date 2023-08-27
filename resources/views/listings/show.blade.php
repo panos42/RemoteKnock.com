@@ -67,7 +67,7 @@
                            
                     <div class="actions">
                         <a href="mailto:{{$listing->email}}" class="contact-employer">Apply Now</a>
-                        <a href="{{$listing->website}}" target="_blank" class="visit-website">Visit Website</a>
+                        {{-- <a href="{{$listing->website}}" target="_blank" class="visit-website">Visit Website</a> --}}
                     </div>
                 </div>
 

@@ -10,7 +10,7 @@
 
     /* Add the following styles for responsive listing cards */
     .rounded-lg {
-         background: #222222; 
+         background: #333333; 
          color: white;
         width: 100%;
         display: flex;
@@ -18,21 +18,22 @@
         height: auto;
         padding-left: 10px;
         padding-right: 10px; 
+        border: 1px solid rgb(252, 252, 252); /* Change this line to modify the border color */
+        border-radius: 15px;
+
+
     }
 
-    .card-container {
+    /* .rounded-lg {
         display: flex;
         align-items: flex-start; 
-        /* padding: 15px; */
         width: 100%;
-        /* max-width: 600px; */
         margin: 0 auto;
         background: #333333;
         border-radius: 15px;
-        justify-content: flex-start; /* Align content to the left */
-        border: 1px solid rgb(252, 252, 252); /* Change this line to modify the border color */
+        justify-content: flex-start; 
 
-    }
+    } */
 
 
     .circular-logo {
@@ -83,16 +84,13 @@
     @media (max-width: 767px) {
 
        
-        .card-container {
-            max-width: 100%; /* Adjust max-width for mobile */
-            margin: 5px auto; /* Adjust margin for spacing */
-            padding: 10px; /* Adjust padding for spacing */
+        .rounded-lg {
+            max-width: 100%; 
+            margin: 5px auto;
+            padding: 10px; 
         }
 
-        /* .circular-logo {
-            width: 60px;
-            height: 60px;
-        } */
+       
 
         .circular-logo {
         /* Adjust the size and alignment of the logo on mobile devices */
@@ -147,7 +145,7 @@
 
 
 <x-card class="rounded-lg" onclick="window.location='/listings/{{$listing->id}}';" style="cursor: pointer;">
-    <div class="card-container">  
+    {{-- <div class="rounded-lg">   --}}
         <table>
         <tr>
             <td class="circular-logo">
@@ -191,7 +189,7 @@
             </td>
         </tr>
     </table>
-    </div>
+    {{-- </div> --}}
 </x-card>
 
 
@@ -208,12 +206,12 @@
 
         }
 
-        .card-container table {
+        .rounded-lg table {
             width: 100%;
             table-layout: fixed;
         }
 
-        .card-container td {
+        .rounded-lg td {
             vertical-align: top;
             padding: 10px;
         }

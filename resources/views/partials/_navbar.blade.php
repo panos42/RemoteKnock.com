@@ -66,14 +66,16 @@
     }
     
     .nav-menu {
-        padding: 20px;
+        /* padding: 20px; */
         list-style-type: none; /* This removes the bullets/dots */
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 1000; /* A higher value than the hero section */
     }
-    
+    .nav-menu.active{
+        padding: 20px;
+    }
     .nav-item {
         list-style-type: none; /* This removes the bullets/dots */
         margin-left: 5rem;
