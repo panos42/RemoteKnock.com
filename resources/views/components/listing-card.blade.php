@@ -18,7 +18,7 @@
         height: auto;
         padding-left: 10px;
         padding-right: 10px; 
-        border: 1px solid rgb(252, 252, 252); /* Change this line to modify the border color */
+        border: 1px solid rgb(139, 139, 139); /* Change this line to modify the border color */
         border-radius: 15px;
 
 
@@ -87,7 +87,8 @@
         .rounded-lg {
             max-width: 100%; 
             margin: 5px auto;
-            padding: 10px; 
+            padding-left: 10px;
+            padding-right: 10px; 
         }
 
        

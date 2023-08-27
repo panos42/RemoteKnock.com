@@ -104,6 +104,7 @@
     
     @media only screen and (max-width: 768px) {
         .nav-menu {
+            color: white;
             position: fixed;
             left: -100%;
             top: 5rem;
@@ -175,37 +176,48 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
+                </li>--}}
+            {{-- <li class="nav-item">
                     <a href="#" class="nav-link">About</a>
-                </li> --}}
+                </li>   --}}
     
     
                 @auth
-                <li class="nav-item ml-6">
-                    <a href="/listings/manage">
+                <li class="nav-item ">
+                    <a href="/listings/manage" class="nav-link">
                         {{-- <i class="fa-solid fa-gear"></i> --}}
                          Manage Listings
                     </a>
                 </li>
-                <li>
-                    <form class="inline" method="POST" action="/logout" onsubmit="return confirmLogout()">
+                <li class="nav-item ml-6">
+                    {{-- <form class="inline" method="POST" action="/logout" onsubmit="return confirmLogout()">
                         @csrf
-                        <button type="submit" class="nav-item">
-                            {{-- <i class="fa-solid fa-door-closed"></i> --}}
+                        <button type="submit" 
+                        class="nav-link">
+                            <i class="fa-solid fa-door-closed"></i>
                              Logout
                         </button>
+                    </form> --}}
+
+
+                    <form class="inline" method="POST" action="/logout" onsubmit="return confirmLogout()">
+                        @csrf
+                        <button type="submit" class="nav-link" style="border: none; background: none; cursor: pointer;">
+                            <i class="fa-solid fa-door-closed"></i>
+                            Logout
+                        </button>
                     </form>
+                    
                 </li>
             @else
                 <li class="nav-item  ml-6">
-                    <a href="/register" >
+                    <a href="/register" class="nav-link">
                         {{-- <i class="fa-solid fa-user-plus"></i> --}}
                          Register
                     </a>
                 </li>
                 <li class="nav-item ml-6">
-                    <a href="/login">
+                    <a href="/login" class="nav-link">
                         {{-- <i class="fa-solid fa-arrow-right-to-bracket"></i> --}}
                          Login
                     </a>

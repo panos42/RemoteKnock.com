@@ -41,7 +41,7 @@
             outline: none;
             background-color: #333333;
             color: white;
-            transition: .3s ease;
+            transition: .4s ease;
             border-color: rgba(255, 255, 255, 0.604);
 
 
@@ -66,8 +66,9 @@
         .input:focus, input:hover {
             outline: none;
             border-color: rgba(14, 207, 250, 0.604);
-            background-color: #rgba(14, 207, 250, 0.604);
+            background-color: rgba(129, 129, 129, 0.604);
             box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+            
         }
 
         /* .icon {
