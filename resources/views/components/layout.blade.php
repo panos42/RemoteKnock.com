@@ -24,17 +24,17 @@
         
         
     </head>
-        <body class="mb-48">
- 
+         <!-- Change the background color here -->  
+
+    <body class="mb-48" style="background-color:#222222;">
         <main >
             {{$slot}}
          </main>
+         {{-- <main style="max-width: 100%; padding: 0 15px; margin: 0 auto;"> <!-- Add max-width and centering styles -->
+            {{$slot}}
+        </main> --}}
 
         <x-flash-message />
-
-
-        
-
 
     </body>
     <script>

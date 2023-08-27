@@ -9,14 +9,10 @@
 
     <div class="z-10">
         <!-- Text Content -->
-        <p class="text-2xl moto text-gray-500 my-4">
+        <p class="moto text-gray-500 my-4">
             Find your dream remote job without the hassle 💼🔍
         </p>
 
-        <!-- Search Form -->
-        <div>
-            @include('partials._search')
-        </div>
     </div>
 </section>
 

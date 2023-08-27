@@ -35,40 +35,20 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: white; 
+        background-color: #36393e ; 
         z-index: 1000; 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     }
     
-    /* Color of the links BEFORE scroll */
-    /* .navbar-scroll .nav-link,
-    .navbar-scroll .navbar-toggler-icon,
-    .navbar-scroll .navbar-brand {
-      color: #fff;
-    } */
-    
-    /* Color of the links AFTER scroll */
-    /* .navbar-scrolled .nav-link,
-    .navbar-scrolled .navbar-toggler-icon,
-    .navbar-scrolled .navbar-brand {
-      color: #fff;
-    } */
-    
-    /* Color of the navbar AFTER scroll */
-    /* .navbar-scroll,
-    .navbar-scrolled {
-      background-color: #cbbcb1;
-    }
-    
-    .mask-custom {
-      backdrop-filter: blur(5px);
-      background-color: rgba(255, 255, 255, .15);
-    }
-    
-    .navbar-brand {
-      font-size: 1.75rem;
-      letter-spacing: 3px;
-    } */
+
+
+    /* Styling for the post job button */
+.post_job_btn {
+    background-color: #5865F2;
+    color: white;
+    border-radius: 0.375rem; /* You can adjust this value */
+    padding: 1rem 1.75rem; /* Adjust padding as needed */
+}
     
     
     .hamburger {
@@ -82,10 +62,11 @@
         margin: 5px auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: #101010;
+        background-color: white;
     }
     
     .nav-menu {
+        padding: 20px;
         list-style-type: none; /* This removes the bullets/dots */
         display: flex;
         justify-content: space-between;
@@ -97,23 +78,24 @@
         list-style-type: none; /* This removes the bullets/dots */
         margin-left: 5rem;
         font-size: 1.3rem;
+        color:white;
     }
     
-    .nav-link{
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: #475569;
-    }
+    .nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffff;
+}
     
     .nav-link:hover{
-        color: #482ff7;
+        color: white;
     }
     
     .nav-logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
-    color: #482ff7;
+    color: #ffffff;
     }
 
      
@@ -124,8 +106,9 @@
             left: -100%;
             top: 5rem;
             flex-direction: column;
-            background-color: #fff;
+            background-color: #36393e;
             width: 100%;
+            justify-content: center; /* Vertically center the items */
             border-radius: 10px;
             text-align: center;
             transition: 0.3s;
@@ -136,11 +119,23 @@
         .nav-menu.active {
             left: 0;
         }
-    
-        .nav-item {
-            list-style-type: none; /* This removes the bullets/dots */
-            margin: 2.5rem 0;
+        .nav-menu.active .nav-link {
+            color: white; /* Set the color to white */
         }
+            
+        .nav-item {
+        list-style-type: none;
+        margin: 1rem 0; /* Adjust the margin values */
+        font-size: 1.3rem;
+        color: white;
+        
+        }
+        .nav-item {
+        list-style-type: none;
+        margin: 1rem 0; /* Adjust the vertical margin as needed */
+        font-size: 1.3rem;
+    }
+
     
         .hamburger {
             display: block;
@@ -167,7 +162,7 @@
     <header class="header">
         
         <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
-            <a href="/" class="nav-logo">RemoteKnock</a>
+            <a href="/" class="nav-logo">RemoteKnock🌍</a>
             
             
             
@@ -185,8 +180,8 @@
     
     
                 @auth
-                <li>
-                    <a href="/listings/manage" class="nav-item ml-6">
+                <li class="nav-item ml-6">
+                    <a href="/listings/manage">
                         {{-- <i class="fa-solid fa-gear"></i> --}}
                          Manage Listings
                     </a>
@@ -201,14 +196,14 @@
                     </form>
                 </li>
             @else
-                <li>
-                    <a href="/register" class="nav-item ml-6">
+                <li class="nav-item  ml-6">
+                    <a href="/register" >
                         {{-- <i class="fa-solid fa-user-plus"></i> --}}
                          Register
                     </a>
                 </li>
-                <li>
-                    <a href="/login" class="nav-item ml-6">
+                <li class="nav-item ml-6">
+                    <a href="/login">
                         {{-- <i class="fa-solid fa-arrow-right-to-bracket"></i> --}}
                          Login
                     </a>
@@ -216,18 +211,13 @@
             @endauth
             
     
-    
-                <li class="nav-item">
-                    {{-- <a href="#" class="nav-link">Contact</a> --}}
-                     <!-- Move "Post Job" button to the right -->
-                     <a href="/listings/create" class="bg-black text-white py-4 px-7 rounded-md">Post a Remote job</a>
-                
-                </li>
-    
-                <li class="nav-item">
+                {{-- <li class="nav-item ml-6">
                     <a href="{{ route('about') }}">About</a>
-    
-                </li>
+                </li> --}}
+
+                <li class="nav-item ml-6">
+                    <a href="/listings/create" class="post_job_btn">Post a Job</a>
+               </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

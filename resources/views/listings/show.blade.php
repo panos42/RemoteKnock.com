@@ -12,20 +12,44 @@
     {{-- <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script> --}}
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Sen', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Adjustments for small screens */
+        @media (max-width: 768px) {
+            .card-content {
+                padding: 20px; /* Increase padding for better spacing */
+                text-align: left; /* Align text to the left */
+            }
+            .card-content img {
+                width: 100%; /* Make the logo image responsive */
+            }
+            .job-title {
+                margin-top: 20px; /* Increase margin for the job title */
+            }
+        }
+    </style>
 
 </head>
+
+
 <body>
 <x-layout>
     {{-- @include('partials._search') --}}
     @include('partials._navbar')
     @include('partials._hero')
 
-    <a href="/" class="inline-block text-black ml-4 mb-4">
+    <a href="/" class="inline-block text-white ml-4 mb-4">
         <i class="fa-solid fa-arrow-left"></i> Back
     </a>
 
     <div>
-        <x-card>
+        <x-card class="whole_card">
             <div>
                 <div class="card-content">
                 <img class=" w-48 mr-6 md:block" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt=""/>
@@ -90,6 +114,11 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .whole_card{
+        background: #222425;
+        color: white;
+
     }
 
     
