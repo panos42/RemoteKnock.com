@@ -29,12 +29,12 @@
     }
 
 
-    .circular-logo {
+    /* .circular-logo {
         width:20%;
         height: 20%;
         border-radius: 50%;
-        object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
-    }
+        object-fit: contain; 
+    } */
 /* 
     .text-2xl {
         font-size: 1.5rem;
@@ -77,7 +77,11 @@
         width: 7rem;
         height: 7rem;
         border-radius: 25%;
-        object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
+        object-fit: contain; 
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px; /* Adjust this value as needed */
+  
     }
 
     .text-2xl:hover {
@@ -113,6 +117,7 @@
     height: 5.2rem;
     border-radius: 25%; /* Adjust the border-radius to make it a perfect circle */
     object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
+    padding-right: 10px; /* Adjust this value as needed */
     }
 
     td.circular-logo {
@@ -160,13 +165,11 @@
     {{-- <div class="rounded-lg">   --}}
         <table>
         <tr>
-            <td class="circular-logo">
+            <td class="circular-logo" style="vertical-align: middle;">
                 <img class="circular-logo " src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
             </td>
             <td class="px-4">
-                {{-- <h3 class="text-2xl font-awesome">
-                    {{$listing->title}}
-                </h3> --}}
+          
                 <h3 class="text-2xl font-awesome" style="max-width: calc(100% - 20px);"> <!-- Adjust the value based on your padding -->
                     {{$listing->title}}
                 </h3>
@@ -217,6 +220,8 @@
             justify-content: flex-start;
         } */
 
+        /* Center content vertically within td elements */
+
     td.px-4 {
         /* width: 100%; */
         padding: 0; 
@@ -227,6 +232,8 @@
     .rounded-lg table {
         width: 100%;
         table-layout: fixed;
+        
+
     }
 
     .rounded-lg td {
