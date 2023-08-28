@@ -10,8 +10,8 @@
 
     /* Add the following styles for responsive listing cards */
     .rounded-lg {
-         background: #333333; 
-         color: white;
+        background: #333333; 
+        color: white;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -22,20 +22,11 @@
         border-radius: 15px;
         /* align-items: center; 
         justify-content: center;  */
-
-
     }
 
-    /* .rounded-lg {
-        display: flex;
-        align-items: flex-start; 
-        width: 100%;
-        margin: 0 auto;
-        background: #333333;
-        border-radius: 15px;
-        justify-content: flex-start; 
-
-    } */
+    .rounded-lg:hover{
+        background: #252525;
+    }
 
 
     .circular-logo {
@@ -44,7 +35,7 @@
         border-radius: 50%;
         object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
     }
-
+/* 
     .text-2xl {
         font-size: 1.5rem;
         white-space: nowrap;
@@ -53,7 +44,18 @@
         max-width: 100%;
         margin: 5px 0;
         
+    } */
+    .text-2xl {
+    font-size: 1.75rem; /* Increase the font size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Adjust max-width to match the width of td.px-4 */
+    max-width: 100%; /* Remove this line */
+    margin: 5px 0;
+    max-height: 3.5rem;
     }
+
 
     .text-xl, .text-lg {
         font-size: 1.25rem;
@@ -62,6 +64,10 @@
         text-overflow: ellipsis;
         max-width: 100%;
     }
+
+    .date-card{
+            font-size:1.25rem;
+        }
 
     .text-sm {
         font-size: 0.875rem;
@@ -83,59 +89,61 @@
     }
 
 
+
     @media (max-width: 767px) {
 
-       
-        .rounded-lg {
-            max-width: 100%; 
-            margin: 5px auto;
-            padding-left: 10px;
-            padding-right: 10px; 
-            
-        }
-
-       
-
-        .circular-logo {
-        /* Adjust the size and alignment of the logo on mobile devices */
-        padding-right: 50x;
-        min-height: 5rem;
-        min-width: 5rem;
-        width: 5.2rem;
-        height: 5.2rem;
-        border-radius: 25%; /* Adjust the border-radius to make it a perfect circle */
-        object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
-        }
-
-        td.circular-logo {
-            min-width: 58.8667;
-            /* width: 58.866px; */
-        }
-
-        .text-2xl {
-            font-size: 1.25rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 60%;
-            margin: 3px 0;
-        }
-
-        .text-xl, .text-lg {
-            font-size: 1rem;
-            /* max-width: 100%; */
-            margin: 3px 0;
-        }
-
-        .tags-cell {
-            display: none;
-        }
-
+    .rounded-lg {
+        max-width: 100%; 
+        margin: 10px auto;
+        padding-left: 10px;
+        padding-right: 10px; 
         
-        /* Adjust date alignment */
-        .date-cell {
-            text-align: right;
-        }
+    }
+
+
+
+       
+
+    .circular-logo {
+    /* Adjust the size and alignment of the logo on mobile devices */
+    padding-right: 50x;
+    min-height: 5rem;
+    min-width: 5rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 25%; /* Adjust the border-radius to make it a perfect circle */
+    object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
+    }
+
+    td.circular-logo {
+        min-width: 58.8667;
+        /* width: 58.866px; */
+    }
+
+    .text-2xl {
+        font-size: 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 60%;
+        margin: 3px 0;
+    }
+
+    .text-xl, .text-lg {
+        font-size: 1rem;
+        /* max-width: 100%; */
+        margin: 3px 0;
+    }
+
+    .tags-cell {
+        display: none;
+    }
+
+    
+    /* Adjust date alignment */
+    .date-cell {
+        text-align: right;
+    }
     }
 </style>
 
@@ -156,7 +164,10 @@
                 <img class="circular-logo " src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
             </td>
             <td class="px-4">
-                <h3 class="text-2xl font-awesome">
+                {{-- <h3 class="text-2xl font-awesome">
+                    {{$listing->title}}
+                </h3> --}}
+                <h3 class="text-2xl font-awesome" style="max-width: calc(100% - 20px);"> <!-- Adjust the value based on your padding -->
                     {{$listing->title}}
                 </h3>
                 <div class="text-xl">
@@ -187,7 +198,7 @@
             
             
             <td class="px-5" style="width: 72.8px;"> <!-- Set specific width -->
-                <div class="text-sm text-gray-500" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                <div class="date_card" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}
                 </div>
             </td>
@@ -198,43 +209,46 @@
 
 
     <style>
+
+
         /* td.px-4 {
             padding: 0;
             display: flex;
             justify-content: flex-start;
         } */
-        td.px-4 {
-            /* width: 100%; */
-            padding: 0; 
-            justify-content: flex-start;
 
-        }
+    td.px-4 {
+        /* width: 100%; */
+        padding: 0; 
+        justify-content: flex-start;
 
-        .rounded-lg table {
-            width: 100%;
-            table-layout: fixed;
-        }
+    }
 
-        .rounded-lg td {
-            vertical-align: top;
-            padding: 10px;
-        }
+    .rounded-lg table {
+        width: 100%;
+        table-layout: fixed;
+    }
 
-        .card {
-            font-size: 1rem;
-            width: min-content;
-            border-radius: 20px;
-            padding: 3px;
-            display: flex;
-            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; 
-            background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-            /* justify-content: center; 
-            align-items: center;  */
-        }
+    .rounded-lg td {
+        vertical-align: top;
+        padding: 10px;
+    }
+
+    .card {
+        font-size: 1rem;
+        width: min-content;
+        border-radius: 20px;
+        padding: 2.5px;
+        display: flex;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; 
+        background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+        /* justify-content: center; 
+        align-items: center;  */
+    }
 
         .salary_card {
     padding: 5px;
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: center; 
     color: white; 
     background: rgb(5, 6, 45); 
@@ -242,7 +256,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
+    }
 
         /* .card2 {
             width: 90px;
@@ -257,6 +271,7 @@
         } */
 
         .location_card {
+            font-size: 1rem;
             padding:5px;
             text-align: center;
             color: white; 

@@ -113,7 +113,7 @@
   }
 
     .description-font {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         line-height:1.6;
         font-family: Sen, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
         padding: 0 10px; /* Add padding to both sides */

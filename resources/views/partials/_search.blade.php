@@ -7,7 +7,7 @@
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center;
-            /* height: 100vh; */
+            /* height: 20vh; */
         }
 
          .input:active {
@@ -67,8 +67,8 @@
             outline: none;
             border-color: rgba(14, 207, 250, 0.604);
             background-color: rgba(129, 129, 129, 0.604);
-            box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-            
+            /* box-shadow: 0 0 0 4px rgb(234 76 137 / 10%); */
+            box-shadow: 0 0 0 2px rgba(11, 142, 172, 0.604), 0 0 2px rgba(1, 63, 77, 0.604); /* Neon aqua blue box shadow */
         }
 
         /* .icon {
@@ -97,7 +97,7 @@
             flex-direction: column;
             align-items: center;
             width: 90%; /* Adjust the width as needed */
-            max-width: 1000px; /* Set a maximum width if desired */
+            max-width: 100px; /* Set a maximum width if desired */
             margin: 0 auto; /* Center the container horizontally */
             text-align: center;
         }

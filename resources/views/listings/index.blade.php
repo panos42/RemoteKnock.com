@@ -1,8 +1,16 @@
 <x-layout>
-    @include('partials._navbar')
-    @include('partials._hero')
-    @include('partials._search') <!-- Adjust the margin value as needed -->
+    <div class="custom-mb-15"> 
 
+    @include('partials._navbar')
+    </div>
+
+    {{-- <div class="custom-mb-15">
+        @include('partials._hero')
+    </div> --}}
+
+    <div>
+        @include('partials._search') <!-- Adjust the margin value as needed -->
+    </div>
 
     <div class="container mx-auto px-4 py-8">
         <div class="main_container max-w-screen-lg mx-auto">
@@ -21,5 +29,21 @@
             {{$listings->links()}}
         </div>
     </div>
+<style>
+    .custom-mb-15 {
+        margin-bottom: 6rem; /* Adjust the value as needed */
+    }
+
+    @media (max-width: 768px) {
+
+        .custom-mb-15 {
+        margin-bottom: 3rem; /* Adjust the value as needed */
+    }
+    }
+
+
+</style>
+
+    
 </x-layout>
 

@@ -3,22 +3,32 @@
 
 
 
-<section class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4">
+<section >
     <!-- Background -->
-    <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"></div>
+    {{-- <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"></div> --}}
 
-    <div class="z-10">
+    <div >
         <!-- Text Content -->
-        <p class="moto text-gray-500 my-4">
+        <p class="moto">
             Find your dream remote job without the hassle 💼🔍
         </p>
 
     </div>
+
+
+    <style>
+        .moto{
+            font-size: 1.5rem;
+            color: #9e9ea7;
+        }
+
+    </style>
 </section>
 
         
         
 
+{{-- class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4" --}}
 
 
 
