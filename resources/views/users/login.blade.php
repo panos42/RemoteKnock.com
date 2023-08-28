@@ -102,7 +102,7 @@
 
 
             <div class="mt-8">
-                <p>
+                <p style="color: #8a8a8a">
                     Don't have an account?
                     <a href="/register" class="text-laravel" style="color: blue;">Register</a>
                 </p>
@@ -116,7 +116,7 @@
                             {{-- <a href="{{ route('forget.password.get') }}" class="text-laravel hover:underline">
                                 Reset Password
                             </a> --}}
-                            <div>Forgot Password? Click here to <a href="{{ route('forget.password.get') }}" class=" hover:underline" style="color: blue;">Reset Password</a></div>
+                            <div style="color: #8a8a8a">Forgot Password? Click here to <a href="{{ route('forget.password.get') }}" class=" hover:underline" style="color: blue;">Reset Password</a></div>
 
                         </label>
                     </div>
@@ -164,7 +164,7 @@
 
     .form {
         margin: 0 auto;
-      --background: #ffffff;
+      --background: #d3d3d3;
       --input-focus: #2d8cf0;
       --font-color: #323232;
       --font-color-sub: #666;
@@ -279,7 +279,7 @@
     margin: 0 auto;
     /* width: 95%; 
     height: 100%;  */
-    background: #FFFFFF;
+    background: #d3d3d3;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -324,6 +324,7 @@
 
 
     .right {
+      background-color: #d3d3d3;
   padding: 95px;
   overflow: hidden;
 }

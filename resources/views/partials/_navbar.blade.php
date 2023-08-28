@@ -35,7 +35,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #36393e ; 
+        background-color: #27292c ; 
         z-index: 1000; 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     }
@@ -44,6 +44,8 @@
 
     /* Styling for the post job button */
 .post_job_btn {
+    font-size: 1.3rem;
+
     background-color: #5865F2;
     color: white;
     border-radius: 0.375rem; /* You can adjust this value */
@@ -84,7 +86,7 @@
     }
     
     .nav-link {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #ffffff;
 }

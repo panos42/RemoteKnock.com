@@ -20,6 +20,8 @@
         padding-right: 10px; 
         border: 1px solid rgb(139, 139, 139); /* Change this line to modify the border color */
         border-radius: 15px;
+        /* align-items: center; 
+        justify-content: center;  */
 
 
     }
@@ -89,6 +91,7 @@
             margin: 5px auto;
             padding-left: 10px;
             padding-right: 10px; 
+            
         }
 
        

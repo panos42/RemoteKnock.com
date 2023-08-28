@@ -10,7 +10,7 @@
 </head>
 {{--  --}}
 @auth
-@if (!auth()->user()->hasVerifiedEmail())
+@if (!auth()->user()->hasVerifiedEmail() && (auth()->user()->google_id==""))
   <div class="bg-yellow-200 p-4 rounded mb-4">
     <p>
       Please verify your email before creating a job listing. Check your email for a verification link, or
