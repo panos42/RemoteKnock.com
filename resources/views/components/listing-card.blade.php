@@ -35,18 +35,9 @@
         border-radius: 50%;
         object-fit: contain; 
     } */
-/* 
+
     .text-2xl {
-        font-size: 1.5rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        margin: 5px 0;
-        
-    } */
-    .text-2xl {
-    font-size: 1.75rem; /* Increase the font size */
+    font-size: 1.5rem; /* Increase the font size */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -57,7 +48,15 @@
     }
 
 
-    .text-xl, .text-lg {
+    .text-lg {
+        font-size: 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    .text-xl{
+        color: #9e9ea7;
         font-size: 1.25rem;
         white-space: nowrap;
         overflow: hidden;
@@ -105,19 +104,15 @@
     }
 
 
-
-       
-
     .circular-logo {
-    /* Adjust the size and alignment of the logo on mobile devices */
-    padding-right: 50x;
-    min-height: 5rem;
-    min-width: 5rem;
-    width: 5.2rem;
-    height: 5.2rem;
-    border-radius: 25%; /* Adjust the border-radius to make it a perfect circle */
-    object-fit: contain; /* Add this line to maintain aspect ratio without stretching */
-    padding-right: 10px; /* Adjust this value as needed */
+        padding-right: 50x;
+        min-height: 5rem;
+        min-width: 5rem;
+        width: 5.2rem;
+        height: 5.2rem;
+        border-radius: 25%; 
+        object-fit: contain;
+        padding-right: 10px;
     }
 
     td.circular-logo {
@@ -176,7 +171,7 @@
                 <div class="text-xl">
                     {{$listing->company}}
                 </div>
-                <div class="flex items-center"> <!-- Flex container to align location and salary -->
+                <div class="flex items-center"> 
                     <div class="card2 ml-4">
                         <div class="location_card">
 
@@ -200,7 +195,7 @@
             </td>
             
             
-            <td class="px-5" style="width: 72.8px;"> <!-- Set specific width -->
+            <td class="px-5" style="width: 72.8px;"> 
                 <div class="date_card" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}
                 </div>
@@ -253,7 +248,7 @@
         align-items: center;  */
     }
 
-        .salary_card {
+    .salary_card {
     padding: 5px;
     font-size: 1rem;
     text-align: center; 
@@ -288,7 +283,7 @@
             height: min-content;
 
         }
-        </style>
+    </style>
 
 
 <!-- Add this script section at the bottom of your template, before the closing </body> tag -->

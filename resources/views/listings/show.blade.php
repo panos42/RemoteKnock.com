@@ -2,10 +2,8 @@
 
 
 <!doctype html>
-
+<html>
 <head>
-
-    <!-- ... Other meta tags and stylesheets ... -->
 
     <!-- Include Quill from CDN -->
     {{-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> --}}
@@ -17,20 +15,23 @@
 
 
 <body>
-<x-layout>
+<x-layout >
     {{-- @include('partials._search') --}}
     @include('partials._navbar')
-    @include('partials._hero')
+    {{-- @include('partials._hero') --}}
 
-    <a href="/" class="inline-block text-white ml-4 mb-4">
-        <i class="fa-solid fa-arrow-left"></i> Back
-    </a>
+
 
     <div>
+
         <x-card class="whole_card">
+            
             <div>
-                <div class="card-content">
-                <img class=" w-48 mr-6 md:block" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt=""/>
+                {{-- <a href="/" class="inline-block text-white ml-4 mb-4">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a> --}}
+                <div class="card-content"  style="margin-top: 50px;">
+                <img class="logo-container" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt=""/>
                 <h3 class="job-title">{{$listing->title}}</h3>
                 <div class="job-company">{{$listing->company}}</div>
                 <x-listing-tags :tagsCsv="$listing->tags" />
@@ -39,7 +40,7 @@
                 {{$listing->location}} 
                 </div>
 
-                <div class="border border-gray-200 w-full mb-6"></div>
+                <div class="border_line"></div>
 
 
 
@@ -61,75 +62,104 @@
                             {!! $listing->description !!}
                         </div>
                     </div>
-
-
-
-                    
+      
                 </div>
             </div>
         </x-card>
     </div>
 </x-layout>
 
-<!-- ... Your existing HTML code ... -->
 
-  <style>/* Global styles */
+  <style>
+    
+        @layer base {
+        ul,
+        ol {
+        list-style: revert;
+        }
+    }
 
-  .job-company{
-    font-size: 1.5rem;
-  }
+    .border_line{
+        border: 1px solid #E5E7EB;
+        width: 100%;
+        margin-bottom: 6px;
+    }
 
-  .job-location{
-    font-size: 1.5rem;
-  }
-  .listing-views{
-    font-size: 1.5rem;
-  }
+    .job-company{
+        font-size: 1.5rem;
+    }
+
+    .job-location{
+        font-size: 1.5rem;
+    }
+    .listing-views{
+        font-size: 1.5rem;
+    }
 
 
-.contact-employer {
-    display: block;
-    width: 80%;
-    margin: 0 auto; /* Center horizontally */
-    padding: 10px 0; /* Add some vertical spacing */
-    text-align: center;
-    background-color: #5865f2;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-}
+    .contact-employer {
+        display: block;
+        width: 80%;
+        margin: 0 auto; 
+        padding: 10px 0;
+        text-align: center;
+        background-color: #5865f2;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
 
     .description-title{
         font-size: 2rem;
     }
-  @layer base {
-    ul,
-    ol {
-      list-style: revert;
-    }
-  }
 
-    .description-font {
+
+
+    /* .description-font {
         font-size: 1.3rem;
         line-height:1.6;
         font-family: Sen, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-        padding: 0 10px; /* Add padding to both sides */
-    }
+        padding: 0 10px; 
+        
+    } */
+
+    .description-font {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-family: Sen, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    padding: 0 10px;
+    word-wrap: break-word; /* Add this property to wrap long words */
+    max-width: 100%; /* Set the maximum width of the description */
+    box-sizing: border-box; /* Include padding in the max-width calculation */
+}
+
 
         /* Center content within the card */
-        .card-content {
+    .card-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .test{
+        width: 100%;
+    }
+
     .whole_card{
-        background: #222425;
+        background: #252525;
         color: white;
         padding: 20px;
+        width: 100%;
     }
 
     
@@ -150,29 +180,28 @@
     }
     
 
-
-            /* Global styles */
-            body {
-            font-family: 'Sen', sans-serif;
-            margin: 0;
-            padding: 0;
+    body {
+        font-family: 'Sen', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+        
+    /* Adjustments for small screens */
+    @media (max-width: 768px) {
+        .card-content {
+            padding: 25px; 
+            text-align: left;
+        }
+        .card-content img {
+            width: 25%; 
+        }
+        .job-title {
+            margin-top: 25px;
         }
         
-        /* Adjustments for small screens */
-        @media (max-width: 768px) {
-            .card-content {
-                padding: 25px; /* Increase padding for better spacing */
-                text-align: left; /* Align text to the left */
-            }
-            .card-content img {
-                width: 25%; /* Make the logo image responsive */
-            }
-            .job-title {
-                margin-top: 25px; /* Increase margin for the job title */
-            }
-        }
 
-    
+    }
+
     </style>
 
 

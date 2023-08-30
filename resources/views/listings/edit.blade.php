@@ -17,7 +17,7 @@
   <div class="edit-layout">
 
 <x-layout>
-  <x-card class="p-10 max-w-lg mx-auto mt-24">
+  <x-card class="main_edit_card">
     <header class="text-center">
       <h2 class="text-2xl font-bold uppercase mb-1">Edit Gig</h2>
       <p class="mb-4">Edit: {{$listing->title}}</p>
@@ -28,7 +28,7 @@
       @method('PUT')
       <div class="mb-6">
         <label for="company" class="inline-block text-lg mb-2">Company Name</label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company"
+        <input type="text" class="input_fields" name="company"
           value="{{$listing->company}}" />
 
         @error('company')
@@ -38,7 +38,7 @@
 
       <div class="mb-6">
         <label for="title" class="inline-block text-lg mb-2">Job Title</label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
+        <input type="text" class="input_fields" name="title"
           placeholder="Example: Senior Laravel Developer" value="{{$listing->title}}" />
 
         @error('title')
@@ -58,7 +58,7 @@
 
       <div class="mb-6">
         <label for="location" class="inline-block text-lg mb-2">Job Location</label>
-        <select class="border border-gray-200 rounded p-2 w-full" name="location">
+        <select class="input_fields" name="location">
             @php
                 $countries = include(resource_path('data/countries.php'));
                 $savedLocation = $listing->location; // Replace with the actual variable that holds the saved location value
@@ -80,7 +80,7 @@
         <label for="email" class="inline-block text-lg mb-2">
           Contact Email
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{$listing->email}}" />
+        <input type="text" class="input_fields" name="email" value="{{$listing->email}}" />
 
         @error('email')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -91,7 +91,7 @@
         <label for="website" class="inline-block text-lg mb-2">
           Website/Application URL
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website"
+        <input type="text" class="input_fields" name="website"
           value="{{$listing->website}}" />
 
         @error('website')
@@ -103,7 +103,7 @@
         <label for="tags" class="inline-block text-lg mb-2">
           Tags (Comma Separated)
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
+        <input type="text" class="input_fields" name="tags"
           placeholder="Example: Laravel, Backend, Postgres, etc" value="{{$listing->tags}}" />
 
         @error('tags')
@@ -138,7 +138,7 @@
       <div class="mb-6 flex items-center">
         <div class="mr-4">
           <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
-          <select class="border border-gray-200 rounded p-2 w-full" name="min_salary">
+          <select class="input_fields" name="min_salary">
             <option value="">Select minimum salary</option>
             <option value="10000" @if ($listing->min_salary == 10000) selected @endif>USD 10,000 per year</option>
             <option value="20000" @if ($listing->min_salary == 20000) selected @endif>USD 20,000 per year</option>
@@ -168,7 +168,7 @@
         
         <div>
           <label for="max_salary" class="inline-block text-lg mb-2">Maximum Salary</label>
-          <select class="border border-gray-200 rounded p-2 w-full" name="max_salary">
+          <select class="input_fields" name="max_salary">
             <option value="">Select maximum salary</option>
             <option value="10000" @if ($listing->max_salary == 10000) selected @endif>USD 10,000 per year</option>
             <option value="20000" @if ($listing->max_salary == 20000) selected @endif>USD 20,000 per year</option>
@@ -231,11 +231,11 @@
       </div>
 
       <div class="mb-6">
-        <button class="text-white rounded py-2 px-4 bg-black">
+        <button class="update_button">
           Update Gig
         </button>
 
-        <a href="/" class="text-black ml-4"> Back </a>
+        <a href="/" class="text-white ml-4"> Back </a>
       </div>
     </form>
   </x-card>
@@ -269,6 +269,30 @@
 
      
     <style>
+      .update_button{
+        color: white; /* text color */
+        background-color: #5865F2; /* background color */
+        border-radius: 0.25rem; /* rounded corners */
+        padding-top: 0.5rem; /* vertical padding */
+        padding-bottom: 0.5rem; /* vertical padding */
+        padding-left: 1rem; /* horizontal padding */
+        padding-right: 1rem; /* horizontal padding */
+      }
+
+      .input_fields{
+        border: 1px solid #e2e8f0;
+        background: #181818;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        width: 100%; 
+      }
+
+      .main_edit_card{
+        color: #bfbfbf;
+        /* background: #222222; */
+      }
+
+
     .modal {
       display: none;
       position: fixed;

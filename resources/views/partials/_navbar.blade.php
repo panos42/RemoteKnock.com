@@ -75,9 +75,11 @@
         align-items: center;
         z-index: 1000; /* A higher value than the hero section */
     }
+
     .nav-menu.active{
         padding: 20px;
     }
+
     .nav-item {
         list-style-type: none; /* This removes the bullets/dots */
         margin-left: 5rem;
@@ -86,10 +88,10 @@
     }
     
     .nav-link {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #ffffff;
-}
+    }
     
     .nav-link:hover{
         color: white;
@@ -105,59 +107,59 @@
      
     
     @media only screen and (max-width: 768px) {
-        .nav-menu {
-            color: white;
-            position: fixed;
-            left: -100%;
-            top: 5rem;
-            flex-direction: column;
-            background-color: #36393e;
-            width: 100%;
-            justify-content: center; /* Vertically center the items */
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow:
-                0 10px 27px rgba(0, 0, 0, 0.05);
-        }
-    
-        .nav-menu.active {
-            left: 0;
-        }
-        .nav-menu.active .nav-link {
-            color: white; /* Set the color to white */
-        }
-            
-        .nav-item {
-        list-style-type: none;
-        margin: 1rem 0; /* Adjust the margin values */
-        font-size: 1.3rem;
+    .nav-menu {
         color: white;
-        
-        }
-        .nav-item {
-        list-style-type: none;
-        margin: 1rem 0; /* Adjust the vertical margin as needed */
-        font-size: 1.3rem;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #36393e;
+        width: 100%;
+        justify-content: center; /* Vertically center the items */
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-menu.active .nav-link {
+        color: white; /* Set the color to white */
+    }
+            
+    .nav-item {
+    list-style-type: none;
+    margin: 1rem 0; /* Adjust the margin values */
+    font-size: 1.3rem;
+    color: white;
+    
+    }
+    .nav-item {
+    list-style-type: none;
+    margin: 1rem 0; /* Adjust the vertical margin as needed */
+    font-size: 1.3rem;
     }
 
     
-        .hamburger {
-            display: block;
-            cursor: pointer;
-        }
-    
-        .hamburger.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-    
-        .hamburger.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-    
-        .hamburger.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
     }
     

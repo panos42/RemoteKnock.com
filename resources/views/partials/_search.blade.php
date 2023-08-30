@@ -43,8 +43,6 @@
             color: white;
             transition: .4s ease;
             border-color: rgba(255, 255, 255, 0.604);
-
-
         }
 
         .input2{
@@ -54,7 +52,6 @@
             border-radius: 8px;
             padding: 5px;
             color: white;
-
             /* padding-left: 2.5rem; */
             background-color:  #333333;
         }
@@ -63,6 +60,11 @@
             color: #9e9ea7;
         }
 
+        .input2:focus,.input2:hover{
+            box-shadow: 0 0 0 2px rgba(11, 142, 172, 0.604), 0 0 2px rgba(1, 63, 77, 0.604);
+            border-color: rgba(14, 207, 250, 0.604);
+
+        }
         .input:focus, input:hover {
             outline: none;
             border-color: rgba(14, 207, 250, 0.604);
@@ -89,9 +91,6 @@
             font-weight: bold; /* Make the icon bold */
         }
 
-
-
-
         .main-search {
             display: flex;
             flex-direction: column;
@@ -102,8 +101,6 @@
             text-align: center;
         }
 
-
-
         .search-container {
             display: flex;
             justify-content: center;
@@ -111,17 +108,15 @@
             /* height: 100vh; */
         }
 
-  
-
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
-            .input {
-                width: max-content;
-                height: 40px; /* Adjust height for smaller screens */
-                font-size: 20px; /* Adjust font size for smaller screens */
-            }
-            .input-group {
-                
+        .input {
+            width: max-content;
+            height: 40px; /* Adjust height for smaller screens */
+            font-size: 20px; /* Adjust font size for smaller screens */
+        }
+
+        .input-group {                
             flex-direction: column; /* Stack input fields vertically on smaller screens */
             gap: 10px; /* Vertical gap between input fields */
         }
@@ -134,9 +129,9 @@
             /* height: 100vh; */
         }
 
-            .group {
-                flex-direction: column;
-            }
+        .group {
+            flex-direction: column;
+        }
         }
     </style>
 </head>

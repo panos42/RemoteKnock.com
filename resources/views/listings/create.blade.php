@@ -5,8 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  
   <!-- Include Quill CSS -->
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+  <!-- Include Select2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet">
+
+<!-- Include jQuery (required for Select2) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Select2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+
 </head>
 {{--  --}}
 @auth
@@ -26,7 +37,7 @@
 @endauth
 {{--  --}}
 <x-layout>
-  <x-card class="p-10 max-w-5xl mx-auto mt-24"> <!-- Use max-w-5xl or any other desired width class -->
+  <x-card class="main_edit_card"> <!-- Use max-w-5xl or any other desired width class -->
   <header class="text-center">
       <h2 class="text-2xl font-bold uppercase mb-1">Create a Job</h2>
       <p class="mb-4">Post a job to find a developer</p>
@@ -38,7 +49,7 @@
       <div class="mb-6">
         <label for="company" class="inline-block text-lg mb-2">Company Name</label>
         <input type="text"
-         class="border border-gray-200 rounded p-2 w-full"
+         class="input_fields"
          name="company"
          placeholder="Company Name"
           value="{{old('company')}}" />
@@ -49,8 +60,8 @@
       </div>
 
       <div class="mb-6">
-        <label for="title" class="inline-block text-lg mb-2">Job Title</label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
+        <label for="title" class="job_title_class">Job Title</label>
+        <input type="text" class="input_fields" name="title"
           placeholder="Example: Senior Laravel Developer" value="{{old('title')}}" />
 
         @error('title')
@@ -69,7 +80,7 @@
       </div> --}}
 
 
-      <select class="border border-gray-200 rounded p-2 w-full" name="location">
+      <select class="input_fields" name="location">
         @php
             $countries = include(resource_path('data/countries.php'));
             $selectedLocation = old('location'); // Get the previously selected location
@@ -87,13 +98,15 @@
     @error('location')
     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
     @enderror
+
+    
     
 
       <div class="mb-6">
         <label for="email" class="inline-block text-lg mb-2">
           Contact Email
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{old('email')}}" />
+        <input type="text" class="input_fields" name="email" value="{{old('email')}}" />
 
         @error('email')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -104,7 +117,7 @@
         <label for="website" class="inline-block text-lg mb-2">
           Website/Application URL
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website"
+        <input type="text" class="input_fields" name="website"
           value="{{old('website')}}" />
 
         @error('website')
@@ -116,7 +129,7 @@
         <label for="tags" class="inline-block text-lg mb-2">
           Tags (Comma Separated)
         </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
+        <input type="text" class="input_fields" name="tags"
           placeholder="Example: Laravel, Backend, Postgres, etc" value="{{old('tags')}}" />
 
         @error('tags')
@@ -128,7 +141,7 @@
         <div class="mb-6 flex items-center">
           <div class="mr-4">
             <label for="min_salary" class="inline-block text-lg mb-2">Minimum Salary</label>
-            <select class="border border-gray-200 rounded p-2" name="min_salary">
+            <select class="input_fields" name="min_salary">
               <option value="">Select minimum salary</option>
               <option value="10000">USD 10.000 per year</option>
               <option value="20000">USD 20.000 per year</option>
@@ -156,7 +169,7 @@
         
           <div>
             <label for="max_salary" class="inline-block text-lg mb-2">Maximum Salary</label>
-            <select class="border border-gray-200 rounded p-2" name="max_salary">
+            <select class="input_fields" name="max_salary">
               <option value="">Select maximum salary</option>
               <option value="10.000">USD 10.000 per year</option>
               <option value="20.000">USD 20.000 per year</option>
@@ -216,7 +229,7 @@
       </div>
 
       <div class="mb-6">
-        <button class="bg-laravel text-white rounded py-2 px-4 bg-black">
+        <button class="post_button">
           Create Post
         </button>
 
@@ -234,7 +247,7 @@
             </x-card>
           </div> --}}
 
-          <x-card class="Preview-rounded-lg hover:bg-gray-100" style="cursor: pointer;">
+          {{-- <x-card class="Preview-rounded-lg hover:bg-gray-100" style="cursor: pointer;">
             <div class="card-container flex justify-center items-center">
                 <table>
                     <tr>
@@ -275,7 +288,7 @@
                     </tr>
                 </table>
             </div>
-        </x-card>
+        </x-card> --}}
         
 
               </div>
@@ -300,8 +313,82 @@
   });
 </script>
 
+{{-- <script>
+  $(document).ready(function() {
+    const countries = {!! json_encode($countries) !!};
+
+    $('#locationInput').select2({
+      tags: true,
+      tokenSeparators: [','],
+      data: countries
+    });
+  });
+</script> --}}
 
 
+
+
+
+<style>
+
+    .job_title_class {
+      display: inline-block;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+
+    .input_fields{
+      color:white;
+      border: 1px solid #e2e8f0;
+      background: #181818;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      width: 100%; 
+      }
+
+      .post_button{
+        color: white; 
+        background-color: #5865F2; 
+        border-radius: 0.25rem; 
+        padding-top: 0.5rem; 
+        padding-bottom: 0.5rem;
+        padding-left: 1rem; 
+        padding-right: 1rem;
+      }
+
+      .main_edit_card{
+        margin: 10px auto;
+        color: #bfbfbf;
+        padding-left: 10px;
+        padding-right: 10px; 
+        max-width: 100%; 
+      }
+
+
+
+        /* Additional styles for responsiveness */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      .input-fields,
+      .input-fields select {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+      }
+
+      .input-fields select {
+        width: 100%;
+      }
+
+      .post-button {
+        width: auto;
+      }
+    }
+</style>
 
 
 
@@ -336,5 +423,4 @@
 </script> --}}
 
 
-</body>
 </html>
