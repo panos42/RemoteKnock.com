@@ -1,7 +1,15 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&family=Pacifico&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap'); */
+    @font-face {
+    font-family: 'VAGRoundedRegular';
+    src: url('/fonts/VAG_Rounded_Regular_font.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 
     * {
         margin: 0;
@@ -58,14 +66,15 @@
     }
     
     .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: white;
-    }
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    border-radius: 2px; /* Add this property for rounded edges */
+}
     
     .nav-menu {
         /* padding: 20px; */
@@ -81,6 +90,7 @@
     }
 
     .nav-item {
+        font-family: 'VAGRoundedRegular', sans-serif;
         list-style-type: none; /* This removes the bullets/dots */
         margin-left: 5rem;
         font-size: 1.3rem;
@@ -97,12 +107,19 @@
         color: white;
     }
     
-    .nav-logo {
+    /* .nav-logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
     color: #ffffff;
-    }
+    } */
+    .nav-logo {
+    font-family: 'VAGRoundedRegular', sans-serif; /* Use the custom font with a fallback */
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
 
      
     
@@ -169,7 +186,8 @@
     <header class="header">
         
         <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
-            <a href="/" class="nav-logo">RemoteKnock🌍</a>
+            <a href="/" class="nav-logo">remoteknock</a>
+            {{-- 🌍 --}}
             
             
             

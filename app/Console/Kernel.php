@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\ScrapeJobs; // Make sure you include the correct namespace
 
 class Kernel extends ConsoleKernel
 {
@@ -12,7 +13,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command(ScrapeJobs::class)->daily(); // Replace with your actual command class
     }
 
     /**
