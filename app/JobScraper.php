@@ -3,7 +3,6 @@
 namespace App;
 
 use Goutte\Client;
-use Illuminate\Support\Facades\Storage;
 use App\Models\Listing;
 
 class JobScraper
@@ -29,9 +28,6 @@ class JobScraper
 
             $title = $node->filterXPath('.//span[contains(@class, "title")]')->text();
             $company = $node->filterXPath('.//span[contains(@class, "company")]')->text();
-            $logoStyle = $node->filterXPath('.//div[contains(@class, "flag-logo")]/@style')->text();
-            $logoUrl = self::extractLogoUrl($logoStyle);
-            $logoPath = self::downloadLogoImage($logoUrl);
 
             // Check if the entry already exists in the database
             $existingEntry = Listing::where('title', $title)->where('company', $company)->first();
@@ -42,7 +38,6 @@ class JobScraper
                     'title' => $title,
                     'company' => $company,
                     'user_id' => 1, // Set the appropriate user ID if needed
-                    'logo' => $logoPath,
                     'tags' => 'Scrapped...',
                     'location' => 'Scrapped...',
                     'email' => 'Scrapped...',
@@ -63,22 +58,4 @@ class JobScraper
 
         echo "Scraping and saving completed.";
     }
-
-    private static function extractLogoUrl($style)
-    {
-        preg_match('/background-image:url\((.*?)\)/', $style, $matches);
-        return $matches[1] ?? null;
-    }
-
-    private static function downloadLogoImage($url)
-    {
-        $contents = file_get_contents($url);
-        $fileName = basename($url);
-        $path = 'public/logos/' . $fileName;
-
-        Storage::put($path, $contents);
-
-        return Storage::url($path);
-    }
 }
-?> 

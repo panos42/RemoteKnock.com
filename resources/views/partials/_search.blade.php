@@ -3,16 +3,38 @@
 <head>
     <style>
 
+
+        /* Add styles for the filter button and icon */
+        .filter-button {
+            background-color: #007bff; /* Change the button background color */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 50%; /* Make the button round */
+            width: 40px; /* Adjust the button width as needed */
+            height: 40px; /* Adjust the button height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .filter-icon {
+            fill: #fff; /* Icon color */
+            width: 24px; /* Adjust the icon size as needed */
+            height: 24px; /* Adjust the icon size as needed */
+        }
+
         .invisible-box {
+            margin-top: 5%;
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center;
             /* height: 20vh; */
         }
 
-         .input:active {
+         /* .searchInput:active {
         transform: scale(0.95);
-        } 
+        }  */
 
         .group {
             display: flex;
@@ -29,50 +51,7 @@
             gap: 10px; /* Vertical gap between input fields */
         }
 
-        .input {
-            font-size: 1.5rem;
-            width: 1000px;
-            height: 45px;
-            line-height: 28px;
-            padding: 0 1rem;
-            padding-left: 3rem;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            outline: none;
-            background-color: #333333;
-            color: white;
-            transition: .4s ease;
-            border-color: rgba(255, 255, 255, 0.604);
-        }
-
-        .input2{
-            border: 1px solid transparent;
-            border-color: rgba(255, 255, 255, 0.604);;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            padding: 5px;
-            color: white;
-            /* padding-left: 2.5rem; */
-            background-color:  #333333;
-        }
-
-        .input::placeholder {
-            color: #9e9ea7;
-        }
-
-        .input2:focus,.input2:hover{
-            box-shadow: 0 0 0 2px rgba(11, 142, 172, 0.604), 0 0 2px rgba(1, 63, 77, 0.604);
-            border-color: rgba(14, 207, 250, 0.604);
-
-        }
-        .input:focus, input:hover {
-            outline: none;
-            border-color: rgba(14, 207, 250, 0.604);
-            background-color: rgba(129, 129, 129, 0.604);
-            /* box-shadow: 0 0 0 4px rgb(234 76 137 / 10%); */
-            box-shadow: 0 0 0 2px rgba(11, 142, 172, 0.604), 0 0 2px rgba(1, 63, 77, 0.604); /* Neon aqua blue box shadow */
-        }
-
+ 
         /* .icon {
         position: absolute;
         left: 1rem;
@@ -110,7 +89,23 @@
 
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
-        .input {
+
+
+            .filter-button {
+                /* Adjust the button size for smaller screens if needed */
+                width: 30px;
+                height: 30px;
+            }
+
+            .filter-icon {
+                /* Adjust the icon size for smaller screens if needed */
+                width: 20px;
+                height: 20px;
+            }
+
+
+
+        .searchInput {
             width: max-content;
             height: 40px; /* Adjust height for smaller screens */
             font-size: 20px; /* Adjust font size for smaller screens */
@@ -141,25 +136,28 @@
             <div class="main-search">
                 <div class="group">
 
-                {{-- <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg> --}}
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
                 <input
                     placeholder="Search for jobs..."
-                    id="searchInput"
-                    class="input"
+                    {{-- id="searchInput" --}}
+                    class="searchInput"
                     name="search"
                     type="text"
                 >
             </div>
+           
+
+
             <div class="input-group"> <!-- New input-group container -->
                 {{-- <input 
                     name="min_salary"
                     placeholder="Minimum Salary" 
                     type="text" 
-                    class="input2"
+                    class="filterInput"
                     value="{{ request('min_salary') }}"
                 > --}}
-                <select class="input2" name="min_salary">
-                    <option value="">Select minimum salary</option>
+                <select class="filterInput" name="min_salary">
+                    <option value="">💵 Salary</option>
                     <option value="10000">$10.000 per year</option>
                     <option value="20000">$20.000 per year</option>
                     <option value="30000">$30.000 per year</option>
@@ -180,33 +178,18 @@
 
                 <input 
                     name="location"
-                    placeholder="Location" 
+                    placeholder="🌏 Location" 
                     type="text" 
-                    class="input2"
+                    class="filterInput"
                     value="{{ request('location') }}"
                 >
                 <input 
                     name="job_position"
-                    placeholder="Position" 
+                    placeholder="💼 Position" 
                     type="text" 
-                    class="input2"
+                    class="filterInput"
                     value="{{ request('job_position') }}"
                 >
-                {{-- <select class="input2" name="job_position">
-                    <option value="">Select job position</option>
-                    <option value="engineer">Engineer</option>
-                    <option value="manager">Manager</option>
-                    <option value="markeing">Marketer</option>
-
-                </select> --}}
-                
-                {{-- <input 
-                    name="job_position"
-                    placeholder="Enter custom job position"
-                    type="text"
-                    class="input2"
-                    value="{{ request('job_position') }}"
-                > --}}
                 
             </div>
             <button type="submit">Search</button>
