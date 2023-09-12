@@ -217,6 +217,12 @@
         
     /* Adjustments for small screens */
     @media (max-width: 768px) {
+        .whole_card{
+        background: #252525;
+        color: white;
+        padding: 20px;
+        width: 100%;
+    }
         .logo-show-page{
             width: auto;
             height: auto;
