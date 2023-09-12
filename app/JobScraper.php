@@ -22,8 +22,8 @@ class JobScraper
         $count = 0; // To limit the number of scraped listings
 
         $crawler->filterXPath('//li[contains(@class, "feature")]')->each(function ($node) use (&$count, $client) {
-            if ($count >= 5) {
-                return false; // Break the loop if the count reaches 5
+            if ($count >= 3) {
+                return false; // Break the loop if the count reaches 20
             }
 
             $title = $node->filterXPath('.//span[contains(@class, "title")]')->text();
@@ -46,20 +46,20 @@ class JobScraper
 
             if (!$existingEntry) {
                 // Entry doesn't exist, add it to the database
-                $description = self::scrapeJobDescription($client, $link); // Call the description scraping method
+                $jobData = self::scrapeJobDescription($client, $link); // Call the description scraping method
                 Listing::create([
                     'title' => $title,
                     'company' => $company,
                     'user_id' => 1, // Set the appropriate user ID if needed
-                    'tags' => 'Scrapped...',
+                    'tags' => $jobData['tags'], // Updated to include job tags
                     'location' => $location,
                     'email' => 'Scrapped...',
-                    'website' => 'Scrapped...',
-                    'min_salary' => '~',
-                    'max_salary' => '~',
+                    'website' => $jobData['website'], // Updated to include website link
+                    'min_salary' => '',
+                    'max_salary' => '',
                     'listing_views' => 0,
                     'applications_made' => 'Scrapped...',
-                    'description' => $description, // Set the scraped description
+                    'description' => $jobData['description'], // Set the scraped description
                 ]);
                 echo "Added: $title - $company\n";
             } else {
@@ -76,10 +76,32 @@ class JobScraper
     {
         // Fetch the job listing page
         $jobCrawler = $client->request('GET', $link);
-
-        // Extract and return the HTML content of the job description
+    
+        // Extract the HTML content of the job description
         $descriptionHtml = $jobCrawler->filterXPath('//div[@class="listing-container"]')->html();
-
-        return $descriptionHtml;
+    
+        // Extract all tags (Anywhere in the World, etc.) from the job listing page
+        $tags = $jobCrawler->filterXPath('//span[@class="listing-tag"]')->each(function ($tagNode, $i) {
+            return $tagNode->text();
+        });
+    
+        // Limit the number of tags to 4 and filter out empty tags
+        $tags = array_slice(array_filter($tags), 0, 4);
+    
+        // Extract the website link from the job listing page
+        $websiteLink = $jobCrawler->filterXPath('//a[@id="job-cta-alt-2"]')->attr('href');
+    
+        // Combine the description, tags, and website link into an array or other suitable data structure
+        $jobData = [
+            'description' => $descriptionHtml,
+            'tags' => implode(', ', $tags), // Convert tags to a comma-separated string
+            'website' => $websiteLink, // Add the website link
+        ];
+    
+        return $jobData;
     }
+    
+    
 }
+
+?>

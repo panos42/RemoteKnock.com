@@ -79,8 +79,8 @@
 
                     <div>
                         <div class="actions" style="margin-top: 20px;"> <!-- Add margin-top for spacing -->
-                            <a href="mailto:{{$listing->email}}" class="contact-employer">Apply Now</a>
-                            {{-- <a href="{{$listing->website}}" target="_blank" class="visit-website">Visit Website</a> --}}
+                            {{-- <a href="mailto:{{$listing->email}}" class="contact-employer">Apply Now</a> --}}
+                            <a href="{{$listing->website}}" target="_blank" class="contact-employer">Apply Now</a>
                         </div>
                     </div>
       
@@ -187,7 +187,7 @@
     .whole_card{
         background: #252525;
         color: white;
-        padding: 20px;
+        padding: 200px;
         width: 100%;
     }
 

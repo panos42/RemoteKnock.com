@@ -155,7 +155,7 @@ padding: 10px;
         <table>
         <tr>
             <td class="circular-logo" style="vertical-align: middle;">
-                <img class="circular-logo " src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
+                <img class="circular-logo " src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/default-listing.png')}}" alt="" />
             </td>
             <td class="px-4">
           
