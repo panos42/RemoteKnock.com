@@ -5,16 +5,15 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.1|^8.0",
-        "fabpot/goutte": "^4.0",
-        "guzzlehttp/guzzle": "^7.8",
-        "laravel/framework": "^10.10",
+        "php": "^8.1||^8.0",
+        "laravel/framework": "^10.10||^8.0",
         "laravel/sanctum": "^3.2",
         "laravel/socialite": "^5.8",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
         "nesbot/carbon": "^2.68",
-        "spatie/laravel-backup": "^8.1",
+        "spatie/laravel-backup": "^8.1||^8.0",
+        "symfony/browser-kit": "^6.3",
         "wnx/laravel-backup-restore": "^1.0"
     },
     "require-dev": {
