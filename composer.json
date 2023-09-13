@@ -5,7 +5,7 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.1|^8.0",
         "fabpot/goutte": "^4.0",
         "guzzlehttp/guzzle": "^7.8",
         "laravel/framework": "^10.10",
@@ -15,8 +15,6 @@
         "laravel/ui": "^4.2",
         "nesbot/carbon": "^2.68",
         "spatie/laravel-backup": "^8.1",
-        "symfony/browser-kit": "^6.3",
-        "symfony/http-client": "^6.3",
         "wnx/laravel-backup-restore": "^1.0"
     },
     "require-dev": {

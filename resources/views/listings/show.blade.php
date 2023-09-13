@@ -143,10 +143,6 @@
     }
 
 
-
-
-
-
     /* .description-font {
         font-size: 1.3rem;
         line-height:1.6;

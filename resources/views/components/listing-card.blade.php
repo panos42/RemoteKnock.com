@@ -78,10 +78,10 @@ body, html {
 
     .circular-logo {
         /* padding-right: 50x; */
-        min-height: 5rem;
-        min-width: 5rem;
-        width: 4rem;
-        height: 4rem;
+        min-height: 6rem;
+        min-width: 6rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 25%; 
         object-fit: contain;
         padding-right: 2rem;
