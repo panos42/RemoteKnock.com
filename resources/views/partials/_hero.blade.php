@@ -10,7 +10,7 @@
     <div >
         <!-- Text Content -->
         <p class="moto">
-            Find your dream remote job without the hassle 💼🔍
+            Discover your ideal remote job with ease. 💼🔍
         </p>
 
     </div>

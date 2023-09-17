@@ -12,7 +12,7 @@
             
             <a href="/" class="nav-logo">
                 <div class="logo-container">
-                    <img src="/images/logo-test2.png" alt="Logo" class="logo-image">
+                    <img src="/images/logo-test4.png" alt="Logo" class="logo-image">
                     <span class="logo-text">RemoteKnock</span>
                 </div>
             </a>

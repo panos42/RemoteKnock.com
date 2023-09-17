@@ -44,7 +44,7 @@
                     </div> --}}
                 </div>
                 
-                <td class="px-5 hidden md:table-cell tags-cell" style="width: 341.533px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                <td class="px-5 hidden md:table-cell tags-cell" style="width: auto;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     <x-listing-tags :tagsCsv="$listing->tags" />
                 </td>
             </td>
