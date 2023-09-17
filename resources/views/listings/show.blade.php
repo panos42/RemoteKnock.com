@@ -8,8 +8,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        @vite('resources/css/app.css')
-        {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" > --}}
+        {{-- @vite('resources/css/app.css') --}}
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('/css/general.css') }}" rel="stylesheet">    
 
         {{-- <link rel="icon" href="images/favicon.ico" /> --}}
@@ -45,7 +45,7 @@
                     <i class="fa-solid fa-arrow-left"></i> Back
                 </a> --}}
                 <div class="card-content"  style="margin-top: 50px;">
-                <img class="logo-show-page" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt=""/>
+                <img class="logo-show-page" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/default-listing.png')}}" alt=""/>
                 <h3 class="job-title">{{$listing->title}}</h3>
                 <div class="job-company">{{$listing->company}}</div>
                 

@@ -24,14 +24,15 @@
                 @endunless
             </div>
 
-            <div class="mt-6 p-4 ">
+            <div class="pagination-wrapper">
                 {{$listings->links()}}
             </div>
+            
         </div>
     </div>
       
-    @vite('resources/css/app.css')
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" > --}}
+    {{-- @vite('resources/css/app.css') --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     
     {{-- AUTO DHMIOURGEI TO PROVLHMA --}}
     {{-- <link href="{{ asset('/css/general.css') }}" rel="stylesheet">     --}}
@@ -49,6 +50,12 @@
 
 
 <style>
+    .pagination-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Adjust the margin-top as needed */
+    }
+
     .content-wrapper {
         /* display: flex; */
         /* flex-direction: column; */

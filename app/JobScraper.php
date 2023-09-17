@@ -22,7 +22,7 @@ class JobScraper
         $count = 0; // To limit the number of scraped listings
 
         $crawler->filterXPath('//li[contains(@class, "feature")]')->each(function ($node) use (&$count, $client) {
-            if ($count >= 3) {
+            if ($count >= 20) {
                 return false; // Break the loop if the count reaches 20
             }
 
