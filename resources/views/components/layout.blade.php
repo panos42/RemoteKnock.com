@@ -11,7 +11,7 @@
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('/css/general.css') }}" rel="stylesheet">    
 
-        <link rel="icon" href="images/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/favicon.png') }}">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -22,7 +22,8 @@
         <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-        <title>RemoteKnock.com | Find your dream remote job without the hassle</title>
+        <title>RemoteKnock.com | Discover your ideal remote job with ease. 💼🔍
+        </title>
         
         
     </head>
