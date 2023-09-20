@@ -17,6 +17,7 @@
         <table>
         <tr>
             <td class="circular-logo" style="vertical-align: middle;">
+
                 <img class="circular-logo " src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/default-listing.png')}}" alt="" />
             </td>
             <td class="px-4">
@@ -51,7 +52,7 @@
            
             
             
-            <td class="px-5" style="width: 52.8px;"> 
+            <td class="px-5" style="width: 72.8px;"> 
                 <div class="date_card" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}
                 </div>

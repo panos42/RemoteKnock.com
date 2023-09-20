@@ -22,7 +22,7 @@ class ListingController extends Controller
         return view('listings.index', [
             'listings' => Listing::latest()
                 ->filter(request(['tag', 'search', 'min_salary', 'location','job_position']))
-                ->simplePaginate(20)
+                ->simplePaginate(25)
         ]);
     }
     
@@ -64,6 +64,7 @@ class ListingController extends Controller
             'min_salary'=>'required',
             'max_salary' => 'required',
             //'description' => 'required'
+            'listing_views' => 0,
             'description' => 'required|min:50',
         ]);
 

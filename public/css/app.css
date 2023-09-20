@@ -406,13 +406,14 @@
     .circular-logo {
         width: 7rem;
         height: 7rem;
-        border-radius: 25%;
+        border-radius: 50%;
         object-fit: contain; 
         align-items: center;
         justify-content: center;
         /* padding-right: 10px; xalaei */
         margin:auto;
-        padding-right: 2rem;
+        /* left: 10; */
+        /* padding-right: 2rem; */
   
     }
 
@@ -466,7 +467,7 @@
         height: 6rem;
         border-radius: 25%; 
         object-fit: contain;
-        padding-right: 1rem;
+        /* padding-right: 1rem; */
     }
 
     td.circular-logo {

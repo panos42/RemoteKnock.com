@@ -215,10 +215,10 @@
                     {{-- <h2 class="text-2xl font-bold uppercase mb-1"> --}}
                       <p class="welcome">
 
-                        Register
+                        Register to RemoteKnock
                       </p>
                     {{-- </h2> --}}
-                    <p class="mb-4">Create an account to post job listings</p>
+                    <p class="mb-4">...and start posting :)</p>
                 </header>
                 @csrf
 

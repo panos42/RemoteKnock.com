@@ -132,65 +132,72 @@
 </head>
 <body>
     <div class="invisible-box">
-        <form action="/" class="search-container" id="jobSearchForm">
+        <form action="/" class="search-container">
             <div class="main-search">
                 <div class="group">
-                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <!-- Add your SVG path here -->
-                    </svg>
-                    <input
-                        placeholder="Search for jobs..."
-                        class="searchInput"
-                        name="search"
-                        type="text"
-                        id="searchInput"
-                    >
-                </div>
-                <div class="input-group">
-                    <select class="filterInput" name="min_salary">
-                        <!-- Add your options here -->
-                    </select>
-                    <input 
-                        name="location"
-                        placeholder="🌏 Location" 
-                        type="text" 
-                        class="filterInput"
-                    >
-                    <input 
-                        name="job_position"
-                        placeholder="💼 Position" 
-                        type="text" 
-                        class="filterInput"
-                    >
-                </div>
+
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                <input
+                    placeholder="Search for jobs..."
+                    {{-- id="searchInput" --}}
+                    class="searchInput"
+                    name="search"
+                    type="text"
+                >
+            </div>
+           
+
+
+            <div class="input-group"> <!-- New input-group container -->
+                {{-- <input 
+                    name="min_salary"
+                    placeholder="Minimum Salary" 
+                    type="text" 
+                    class="filterInput"
+                    value="{{ request('min_salary') }}"
+                > --}}
+                <select class="filterInput" name="min_salary">
+                    <option value="">💵 Salary</option>
+                    <option value="10000">$10.000 per year</option>
+                    <option value="20000">$20.000 per year</option>
+                    <option value="30000">$30.000 per year</option>
+                    <option value="40000">$40.000 per year</option>
+                    <option value="50000">$50.000 per year</option>
+                    <option value="60000">$60.000 per year</option>
+                    <option value="70000">$70.000 per year</option>
+                    <option value="80000">$80.000 per year</option>
+                    <option value="90000">$90.000 per year</option>
+                    <option value="100000">$100.000 per year</option>
+                    <option value="110000">$110.000 per year</option>
+                    <option value="120000">$120.000 per year</option>
+                    <option value="130000">$130.000 per year</option>
+                    <option value="140000">$140.000 per year</option>
+                    <option value="150000">$150.000 per year</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <input 
+                    name="location"
+                    placeholder="🌏 Location" 
+                    type="text" 
+                    class="filterInput"
+                    value="{{ request('location') }}"
+                >
+                <input 
+                    name="job_position"
+                    placeholder="💼 Position" 
+                    type="text" 
+                    class="filterInput"
+                    value="{{ request('job_position') }}"
+                >
+                
+            </div>
+            <button type="submit"></button>
             </div>
         </form>
+        
     </div>
 
-    <script>
-        // Get the form element by its ID
-        const form = document.getElementById("jobSearchForm");
 
-        // Get all filter input elements
-        const filterInputs = document.querySelectorAll(".filterInput");
-
-        // Add event listeners to each filter input
-        filterInputs.forEach(input => {
-            input.addEventListener("change", function() {
-                // Automatically submit the form when there's a change in any filter
-                form.submit();
-            });
-        });
-
-        // Add an event listener to the search input
-        const searchInput = document.getElementById("searchInput");
-        searchInput.addEventListener("input", function() {
-            // Implement your search logic here based on the search input value
-            // You can update the search results without submitting the form
-            // For example, you can send an AJAX request to fetch and display search results
-            const searchValue = searchInput.value;
-            // Implement your search logic here
-        });
-    </script>
 </body>
 </html>

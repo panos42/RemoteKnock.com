@@ -4,6 +4,7 @@ namespace App;
 
 use Goutte\Client;
 use App\Models\Listing;
+use Illuminate\Support\Facades\Storage;
 
 class JobScraper
 {
@@ -47,6 +48,20 @@ class JobScraper
             if (!$existingEntry) {
                 // Entry doesn't exist, add it to the database
                 $jobData = self::scrapeJobDescription($client, $link); // Call the description scraping method
+                
+                // Check if the logo URL is available
+                if (isset($jobData['logo'])) {
+                    $logoUrl = $jobData['logo'];
+                    $logoFileName = 'logo_' . time() . '.jpg'; // Generate a unique file name
+                    $logoPath = storage_path('app/public/logos/') . $logoFileName; // Define the storage path
+                    
+                    // Download and save the logo image
+                    file_put_contents($logoPath, file_get_contents($logoUrl));
+                    
+                    // Add the logo file path to the job data
+                    $jobData['logo'] = 'logos/' . $logoFileName;
+                }
+
                 Listing::create([
                     'title' => $title,
                     'company' => $company,
@@ -60,6 +75,7 @@ class JobScraper
                     'listing_views' => 0,
                     'applications_made' => 'Scrapped...',
                     'description' => $jobData['description'], // Set the scraped description
+                    'logo' => isset($jobData['logo']) ? $jobData['logo'] : null, // Add logo path
                 ]);
                 echo "Added: $title - $company\n";
             } else {
@@ -73,35 +89,40 @@ class JobScraper
     }
 
     public static function scrapeJobDescription($client, $link)
-    {
-        // Fetch the job listing page
-        $jobCrawler = $client->request('GET', $link);
-    
-        // Extract the HTML content of the job description
-        $descriptionHtml = $jobCrawler->filterXPath('//div[@class="listing-container"]')->html();
-    
-        // Extract all tags (Anywhere in the World, etc.) from the job listing page
-        $tags = $jobCrawler->filterXPath('//span[@class="listing-tag"]')->each(function ($tagNode, $i) {
-            return $tagNode->text();
-        });
-    
-        // Limit the number of tags to 4 and filter out empty tags
-        $tags = array_slice(array_filter($tags), 0, 4);
-    
-        // Extract the website link from the job listing page
-        $websiteLink = $jobCrawler->filterXPath('//a[@id="job-cta-alt-2"]')->attr('href');
-    
-        // Combine the description, tags, and website link into an array or other suitable data structure
-        $jobData = [
-            'description' => $descriptionHtml,
-            'tags' => implode(', ', $tags), // Convert tags to a comma-separated string
-            'website' => $websiteLink, // Add the website link
-        ];
-    
-        return $jobData;
-    }
-    
-    
+{
+    // Fetch the job listing page
+    $jobCrawler = $client->request('GET', $link);
+
+    // Extract the HTML content of the job description
+    $descriptionHtml = $jobCrawler->filterXPath('//div[@class="listing-container"]')->html();
+
+    // Extract all tags (Anywhere in the World, etc.) from the job listing page
+    $tags = $jobCrawler->filterXPath('//span[@class="listing-tag"]')->each(function ($tagNode, $i) {
+        return $tagNode->text();
+    });
+
+    // Limit the number of tags to 4 and filter out empty tags
+    $tags = array_slice(array_filter($tags), 0, 4);
+
+    // Extract the website link from the job listing page
+    $websiteLink = $jobCrawler->filterXPath('//a[@id="job-cta-alt-2"]')->attr('href');
+
+    // Extract the logo image URL if available
+    $logoNode = $jobCrawler->filterXPath('//img[contains(@alt, "is hiring a remote")]');
+    $logoUrl = $logoNode->count() > 0 ? $logoNode->attr('src') : null;
+
+    // Combine the description, tags, website link, and logo URL into an array or other suitable data structure
+    $jobData = [
+        'description' => $descriptionHtml,
+        'tags' => implode(', ', $tags), // Convert tags to a comma-separated string
+        'website' => $websiteLink, // Add the website link
+        'logo' => $logoUrl, // Add the logo image URL if available
+    ];
+
+    return $jobData;
 }
+
+}
+
 
 ?>
