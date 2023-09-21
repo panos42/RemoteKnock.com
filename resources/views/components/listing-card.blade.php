@@ -52,7 +52,7 @@
            
             
             
-            <td class="px-5" style="width: 72.8px;"> 
+            <td class="px-5" style="width: 62.8px;"> 
                 <div class="date_card" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                     {{ Carbon::parse($listing->created_at)->diffForHumans() }}
                 </div>

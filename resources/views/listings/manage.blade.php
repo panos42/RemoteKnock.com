@@ -1,92 +1,109 @@
-{{--  --}}
-@auth
-@if (!auth()->user()->hasVerifiedEmail() && (auth()->user()->google_id==""))
-  <div class="bg-yellow-200 p-4 rounded mb-4">
-    <p>
-      Please verify your email before managing job listings. Check your email for a verification link, or
-      <form action="{{ route('verification.send') }}" method="POST" class="d-inline">
-        @csrf
-        <button type="submit" class="d-inline btn btn-link p-0 text-blue-500 focus:outline-none">
-          click here to request another
-        </button>
-      </form>
-    </p>
-  </div>
-@endif
-@endauth
-{{--  --}}
-
-<x-layout >
+<x-layout>
   <x-card class="p-10">
-
     <header>
       <h1 class="text-3xl text-center font-bold my-6 uppercase" style="color: #ccc">
         Manage Job Listings
       </h1>
     </header>
 
-  
+    <div class="grid grid-cols-1 gap-4">
+      {{-- Loop through listings --}}
+      @unless($listings->isEmpty())
+      @foreach($listings as $listing)
+      <div class="edit-card shadow-md">
+        <div class="job-info">
+          <a href="/listings/{{$listing->id}}" class="listing_class">{{$listing->title}} - {{$listing->company}}</a>
+        </div>
+        <div class="button-container">
+          <a href="/listings/{{$listing->id}}/edit" class="custom-link"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+          <form method="POST" action="/listings/{{$listing->id}}">
+            @csrf
+            @method('DELETE')
+            <button class="custom-button"><i class="fa-solid fa-trash"></i> Delete</button>
+          </form>
+        </div>
+      </div>
+      @endforeach
+      @else
+      {{-- No listings found --}}
+      <tr class="border-gray-300">
+        <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+          <p class="text-center">No Listings Found</p>
+        </td>
+      </tr>
+      @endunless
+    </div>
+
+    <style>
+      /* Define your custom classes */
+      .edit-card {
+        width: 70%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .job-info {
+        color: #ccc;
+        font-size: 20px;
+        width: 70%;
+        margin-right: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .button-container {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Rest of your custom styles for other elements */
+      .custom-td {
+        color: #0073e6;
+        padding: 8px 4px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      .custom-link {
+        color: #0073e6;
+        padding: 2px 6px;
+        border-radius: 8px;
+        text-decoration: none;
+      }
+
+      .custom-button {
+        color: #ff0000;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
 
 
-    <table class="w-full table-auto rounded-sm" >
-      <tbody  style="color: blue">
-        {{-- Loop through listings --}}
-        @unless($listings->isEmpty())
-        @foreach($listings as $listing)
-        <tr class="border-gray-300" >
-          <td  class="custom-td">
-            <a href="/listings/{{$listing->id}}"class="listing_class"> {{$listing->title}} </a>
-          </td>
-          <td class="custom-td">
-            <a href="/listings/{{$listing->id}}/edit" class="custom-link"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-          </td>
-          <td class="custom-td">
-            <form method="POST" action="/listings/{{$listing->id}}">
-              @csrf
-              @method('DELETE')
-              <button class="custom-button"><i class="fa-solid fa-trash"></i> Delete</button>
-            </form>
-          </td>
-        </tr>
-        @endforeach
-        @else
-        {{-- No listings found --}}
-        <tr class="border-gray-300">
-          <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-            <p class="text-center">No Listings Found</p>
-          </td>
-        </tr>
-        @endunless
-      </tbody>
-    </table>
-  </x-card>
-
-  <style>
-  /* Define your custom classes */
-
-    .listing_class{
-      color: #ccc;
-    }
-    .custom-td {
-      color: #0073e6;
-      padding: 8px 4px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      font-size: 16px; /* Text size equivalent to text-lg */
-    }
-    
-    .custom-link {
-      color: #0073e6; /* Blue color for links */
-      padding: 2px 6px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    
-    .custom-button {
-      color: #ff0000; /* Red color for buttons */
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
+      @media (max-width: 767px) {
+        .edit-card {
+        width: 90%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      }
     </style>
+  </x-card>
 </x-layout>
