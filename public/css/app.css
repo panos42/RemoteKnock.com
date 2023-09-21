@@ -404,12 +404,13 @@
     }
 
     .circular-logo {
-        width: 7rem;
-        height: 7rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 50%;
         object-fit: contain; 
         align-items: center;
         justify-content: center;
+        padding: 1rem;
         /* padding-right: 10px; xalaei */
         margin:auto;
         /* left: 10; */
@@ -461,17 +462,17 @@
 
     .circular-logo {
         /* padding-right: 50x; */
-        min-height: 6rem;
-        min-width: 6rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 25%; 
+        min-height: 5rem;
+        min-width: 5rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%; 
         object-fit: contain;
         /* padding-right: 1rem; */
     }
 
     td.circular-logo {
-        min-width: 58.8667;
+        /* min-width: 58.8667; */
         /* width: 58.866px; */
     }
 

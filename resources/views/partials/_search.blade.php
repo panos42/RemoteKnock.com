@@ -86,6 +86,10 @@
             align-items: center;
             /* height: 100vh; */
         }
+          /* Hide the submit button */
+    button[type="submit"] {
+        display: none;
+    }
 
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
