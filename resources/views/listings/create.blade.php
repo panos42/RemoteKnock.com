@@ -39,8 +39,7 @@
 <x-layout>
   <x-card class="main_edit_card"> <!-- Use max-w-5xl or any other desired width class -->
   <header class="text-center">
-      <h2 class="text-2xl font-bold uppercase mb-1">Create a Job</h2>
-      <p class="mb-4">Post a job to find a developer</p>
+      <h2 class="text-2xl font-bold uppercase mb-1">Post a job to find a developer</h2>
     </header>
 
 
@@ -62,7 +61,7 @@
       <div class="mb-6">
         <label for="title" class="job_title_class">Job Title</label>
         <input type="text" class="input_fields" name="title"
-          placeholder="Example: Senior Laravel Developer" value="{{old('title')}}" />
+          placeholder="Example: Senior Front-end Developer" value="{{old('title')}}" />
 
         @error('title')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -106,7 +105,7 @@
         <label for="email" class="inline-block text-lg mb-2">
           Contact Email
         </label>
-        <input type="text" class="input_fields" name="email" value="{{old('email')}}" />
+        <input type="text" class="input_fields" name="email" value="{{old('email')}}" placeholder="test@mail.com"/>
 
         @error('email')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -117,7 +116,7 @@
         <label for="website" class="inline-block text-lg mb-2">
           Website/Application URL
         </label>
-        <input type="text" class="input_fields" name="website"
+        <input type="text" class="input_fields" name="website" placeholder="acme.com"
           value="{{old('website')}}" />
 
         @error('website')
@@ -233,65 +232,6 @@
           Create Post
         </button>
 
-        <div id="previewCard" class="mb-6">
-
-          {{-- <div class="mb-6">
-            <x-card class="p-4 max-w-md mx-auto">
-                <div class="text-center">
-                    <img class="circular-logo w-48 h-48 mx-auto mb-4" src="/images/no-image.png" alt="Company Logo" class="logoPreview"/>
-                    <h3 class="text-2xl font-bold">Job Title</h3>
-                    <p class="text-xl">Company Name</p>
-                    <p class="text-lg">Job Location</p>
-                    <!-- Add more fields as needed -->
-                </div>
-            </x-card>
-          </div> --}}
-
-          {{-- <x-card class="Preview-rounded-lg hover:bg-gray-100" style="cursor: pointer;">
-            <div class="card-container flex justify-center items-center">
-                <table>
-                    <tr>
-                        <td class="circular-logo" style="padding-right: 20px;">
-                            <img class="circular-logo w-64 h-64 md:w-48 md:h-48 mr-6 md:w-auto"
-                                src="{{ asset('/images/no-image.png') }}" alt="" />
-                        </td>
-                        <td class="px-4">
-                            <h3 class="text-2xl font-bold" style="max-width: 426.933px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                Job Title
-                            </h3>
-                            <div class="text-xl" style="max-width: 300px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                Company Name
-                            </div>
-                            <div class="flex items-center">
-                                <div class="card2 ml-4">
-                                    <div class="card__content2">
-                                        <div class="text-lg" style="max-width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                            Job Location
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ml-4">
-                                    <div class="card__content">
-                                        <span class="salary">10000</span> - <span class="salary">150000</span>💸
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-5 hidden md:table-cell" style="width: 341.533px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                            <x-listing-tags tagsCsv="Laravel, Backend, Postgres" />
-                        </td>
-                        <td class="px-5" style="width: 72.8px;">
-                            <div class="text-sm text-gray-500" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                2 hours ago
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </x-card> --}}
-        
-
-              </div>
       
         {{-- <a href="/" class="text-black ml-4"> Back </a> --}}
       </div>
@@ -331,31 +271,33 @@
 
 <style>
 
-    .job_title_class {
-      display: inline-block;
-      font-size: 1.125rem;
-      margin-bottom: 0.5rem;
-    }
+.job_title_class {
+  display: inline-block;
+  font-size: 1.125rem;
+  margin: 0.5rem 0; /* Add margin to the top and bottom */
+}
+
+.input_fields {
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid #e2e8f0;
+  background: #181818;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0.5rem 0; /* Add margin to the top and bottom */
+}
 
 
-    .input_fields{
-      color:white;
-      border: 1px solid #e2e8f0;
-      background: #181818;
-      border-radius: 0.25rem;
-      padding: 0.5rem;
-      width: 100%; 
-      }
+.post_button {
+  color: white;
+  background-color: #5865F2;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  margin-top: 1rem; /* Add margin to the top */
+  margin-bottom: 1rem; /* Add margin to the bottom */
+}
 
-      .post_button{
-        color: white; 
-        background-color: #5865F2; 
-        border-radius: 0.25rem; 
-        padding-top: 0.5rem; 
-        padding-bottom: 0.5rem;
-        padding-left: 1rem; 
-        padding-right: 1rem;
-      }
 
       .main_edit_card{
         margin: 10px auto;
@@ -390,23 +332,6 @@
     }
 </style>
 
-
-
-
-
-
-
-
-<!-- Add the following script before the closing </body> tag -->
-{{-- <script>
-  const descriptionDiv = document.getElementById('description');
-  const descriptionInput = document.getElementById('descriptionInput');
-
-  // Update the hidden input field with the content of the editable div
-  descriptionDiv.addEventListener('input', () => {
-    descriptionInput.value = descriptionDiv.innerText;
-  });
-</script> --}}
 
 <!--  FUNCTION FOR LOWER CHAR LIMIT -->
 {{-- <script>

@@ -35,8 +35,8 @@
                 @auth
                 <li class="nav-item ">
                     <a href="/listings/manage" class="nav-link">
-                        {{-- <i class="fa-solid fa-gear"></i> --}}
-                         Manage Listings
+                        <i class="fa-solid fa-wrench"></i>
+                        Manage Listings
                     </a>
                 </li>
                 <li class="nav-item ml-6">

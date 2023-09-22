@@ -126,7 +126,7 @@
     }
 
     .nav-item {
-        font-family: 'VAGRoundedRegular', sans-serif;
+        /* font-family: 'VAGRoundedRegular', sans-serif; */
         list-style-type: none; /* This removes the bullets/dots */
         margin-left: 5rem;
         font-size: 2rem;

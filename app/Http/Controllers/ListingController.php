@@ -64,7 +64,7 @@ class ListingController extends Controller
             'min_salary'=>'required',
             'max_salary' => 'required',
             //'description' => 'required'
-            'listing_views' => 0,
+            'listing_views' => "0",
             'description' => 'required|min:50',
         ]);
 

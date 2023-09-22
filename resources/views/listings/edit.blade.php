@@ -19,8 +19,7 @@
 <x-layout>
   <x-card class="main_edit_card">
     <header class="text-center">
-      <h2 class="text-2xl font-bold uppercase mb-1">Edit Gig</h2>
-      <p class="mb-4">Edit: {{$listing->title}}</p>
+      <h2 class="text-2xl font-bold uppercase mb-1">Editing Listing - {{$listing->title}}</h2>
     </header>
 
     <form id="update-form" method="POST" action="/listings/{{$listing->id}}" enctype="multipart/form-data" onsubmit="return confirmUpdate()">
@@ -39,7 +38,7 @@
       <div class="mb-6">
         <label for="title" class="inline-block text-lg mb-2">Job Title</label>
         <input type="text" class="input_fields" name="title"
-          placeholder="Example: Senior Laravel Developer" value="{{$listing->title}}" />
+          placeholder="Example: Senior Front-end Developer" value="{{$listing->title}}" />
 
         @error('title')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -280,6 +279,8 @@
       }
 
       .input_fields{
+        font-size: 1.5rem;
+        color: white;
         border: 1px solid #e2e8f0;
         background: #181818;
         border-radius: 0.25rem;
@@ -364,6 +365,10 @@
 
 <style>
   /* Existing styles... */
+  .mb-6 {
+  margin-bottom: 1rem; /* Adjust margin as needed */
+}
+
 
   /* New styles for mobile devices */
   @media only screen and (max-width: 768px) {
@@ -394,10 +399,7 @@
       width: 80%;
     }
   }
-</style>
 
-
-<style>
   /* Existing styles... */
 
   /* New styles for mobile devices */
