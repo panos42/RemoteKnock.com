@@ -87,7 +87,7 @@
             /* height: 100vh; */
         }
           /* Hide the submit button */
-    button[type="submit"] {
+    button[type="search_hidden_submit"] {
         display: none;
     }
 
@@ -196,7 +196,7 @@
                 >
                 
             </div>
-            <button type="submit"></button>
+            <button type="search_hidden_submit"></button>
             </div>
         </form>
         
