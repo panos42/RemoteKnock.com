@@ -64,13 +64,15 @@ class ListingController extends Controller
             'min_salary'=>'required',
             'max_salary' => 'required',
             //'description' => 'required'
-            'listing_views' => "0",
+            'listing_views' => "",
             'description' => 'required|min:50',
         ]);
 
         if($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
+        $formFields['listing_views'] = 0; // Set a default value
+        $formFields['applications_made'] = 0; // Set a default value
 
         $formFields['user_id'] = auth()->id();
 

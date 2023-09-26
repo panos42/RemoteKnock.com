@@ -25,13 +25,11 @@ return new class extends Migration
             $table->string('website');
             $table->string('min_salary');
             $table->string('max_salary');
-            $table->string('listing_views');
-            $table->string('applications_made');            
+            $table->integer('listing_views')->default(0); // Set a default value of 0
+            $table->integer('applications_made')->default(0); // Set a default value of 0
             $table->timestamps();
             $table->longText('description');
         });
-
-
     }
 
     /**
@@ -42,7 +40,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('listings');
-
-
     }
-};
+}
+;

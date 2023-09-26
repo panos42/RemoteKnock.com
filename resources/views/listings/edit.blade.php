@@ -364,10 +364,7 @@
 
 
 <style>
-  /* Existing styles... */
-  .mb-6 {
-  margin-bottom: 1rem; /* Adjust margin as needed */
-}
+ 
 
 
   /* New styles for mobile devices */

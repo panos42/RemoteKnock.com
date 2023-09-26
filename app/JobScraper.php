@@ -49,18 +49,23 @@ class JobScraper
                 // Entry doesn't exist, add it to the database
                 $jobData = self::scrapeJobDescription($client, $link); // Call the description scraping method
                 
-                // Check if the logo URL is available
-                if (isset($jobData['logo'])) {
-                    $logoUrl = $jobData['logo'];
-                    $logoFileName = 'logo_' . time() . '.jpg'; // Generate a unique file name
-                    $logoPath = storage_path('app/public/logos/') . $logoFileName; // Define the storage path
-                    
-                    // Download and save the logo image
-                    file_put_contents($logoPath, file_get_contents($logoUrl));
-                    
-                    // Add the logo file path to the job data
-                    $jobData['logo'] = 'logos/' . $logoFileName;
-                }
+if (isset($jobData['logo'])) {
+    $logoUrl = $jobData['logo'];
+    $logoFileName = self::generateUniqueLogoFileName(); // Generate a unique file name
+    $logoPath = storage_path('app/public/logos/') . $logoFileName; // Define the storage path
+
+    // Download and save the logo image
+    if (file_put_contents($logoPath, file_get_contents($logoUrl))) {
+        // Logo saved successfully with image name
+        echo "Logo saved ($logoFileName)\n";
+    } else {
+        // Logo could not be saved
+        echo "Logo could not be saved\n";
+    }
+
+    // Add the logo file path to the job data
+    $jobData['logo'] = 'logos/' . $logoFileName;
+}
 
                 Listing::create([
                     'title' => $title,
@@ -122,7 +127,14 @@ class JobScraper
     return $jobData;
 }
 
+
+public static function generateUniqueLogoFileName()
+{
+    $timestamp = time();
+    $randomString = bin2hex(random_bytes(8)); // Generate a random string
+    return "logo_" . $timestamp . "_" . $randomString . ".jpg";
 }
 
+}
 
 ?>
