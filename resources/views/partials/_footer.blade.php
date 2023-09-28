@@ -55,7 +55,7 @@
 
 
 .kilimanjaro_part {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 
@@ -70,7 +70,7 @@
     font-size: 2rem; /* Adjust the font size as desired */
 }
 .kilimanjaro_part h4, .kilimanjaro_part h5 {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 2rem;
 }
 
@@ -149,8 +149,8 @@
     <footer class="footer-text">
       <div class="kilimanjaro_part">
         <h5>About Us</h5>
-        <p>It includes rich features & contents. It's designed & developed based on One Page/ Multi-page Layout,blog themes,world press themes and blogspot. You can use any layout from any demo anywhere.</p>
-        <p>Our company is completely creative, clean & 100% responsive website. Put your business into next level with us.</p>
+        <p>We aim at making a great aggregating tool that will manage to cover and promote many remote work positions</p>
+        <p>Your feedback is always appreciated!</p>
     </div>
         <div class="footer_card_socials">
             <a href="#" class="socialContainer containerOne">
