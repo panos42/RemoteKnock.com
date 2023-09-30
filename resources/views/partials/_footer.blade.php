@@ -7,7 +7,7 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 5px;
         }
         /* Optional: Add more styles as needed */
 
@@ -31,7 +31,7 @@
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column; /* Display children in a column */
     align-items: center; /* Center horizontally */
@@ -43,26 +43,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px 25px;
+    padding: 15px 15px;
     gap: 20px;
 }
 
 /* Your existing socialContainer styles go here */
 
 .footer-copyright {
-    margin-top: 10px; /* Add margin to separate from social icons */
+    margin-top: 5px; /* Add margin to separate from social icons */
 }
 
 
 .kilimanjaro_part {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
 
 .kilimanjaro_part > p {
     color: rgba(255,255,255,.5);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .kilimanjaro_part > h5 {
@@ -70,7 +70,7 @@
     font-size: 2rem; /* Adjust the font size as desired */
 }
 .kilimanjaro_part h4, .kilimanjaro_part h5 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 2rem;
 }
 
@@ -128,6 +128,25 @@
   animation: slide-in-top 0.3s both;
 }
 
+
+/*  */
+.gradient-text-panos {
+  background: linear-gradient(45deg, #FF5733, #FFC300); /* Gradient colors for "Panos" */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-twitter {
+  background: linear-gradient(45deg, #33FF57, #00BFFF); /* Gradient colors for "Twitter" */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+
 @keyframes slide-in-top {
   0% {
     transform: translateY(-50px);
@@ -153,7 +172,10 @@
     <footer class="footer-text">
       <div class="kilimanjaro_part">
         <h5>About Us</h5>
-        <p>We aim at making a great aggregating tool that will manage to cover and promote many remote work positions</p>
+        <p>Hey there👋 I'm <span class="gradient-text-panos">Panos</span>, creator of RemoteKnock.
+          I built this tool to help you find the perfect remote job for you!
+          You can follow my work on <span class="gradient-text-twitter"> <a href="https://twitter.com/RemoteKnock" >Twitter</a> </span>.</p>
+
         <p>Your feedback is always appreciated!</p>
     </div>
         <div class="footer_card_socials">
@@ -176,7 +198,7 @@
 
 
           <div class="footer-copyright">
-            &copy; 2023 RemoteKnock.com | All rights reserved.
+           Copyright &copy; 2023 RemoteKnock.com | All rights reserved.
         </div>
           
          
