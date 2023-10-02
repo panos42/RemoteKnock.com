@@ -104,7 +104,7 @@
 .menu-list {
     background-color: transparent;
     padding: 0;
-    margin: 0;
+    margin: 1.5rem;
     list-style: none;
 }
 
@@ -127,7 +127,11 @@
 
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
+            .horizontal-scroll-menu{
+                width: 300px ;
+            }
 
+           
 
             .filter-button {
                 /* Adjust the button size for smaller screens if needed */
