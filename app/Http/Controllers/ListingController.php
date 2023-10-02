@@ -12,11 +12,7 @@ class ListingController extends Controller
 {
 
 
-    // public function index() {
-    //     return view('listings.index', [
-    //         'listings' => Listing::latest()->filter(request(['tag', 'search', 'min_salary']))->paginate(20)
-    //     ]);
-    // }
+
 
     public function index() {
         return view('listings.index', [
@@ -26,6 +22,7 @@ class ListingController extends Controller
         ]);
     }
     
+ 
     
 
     //Show single listing

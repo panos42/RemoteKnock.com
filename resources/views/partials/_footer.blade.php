@@ -160,6 +160,19 @@
 }
 
 
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 768px) {
+
+          .footer-text {
+          font-size: 1.2rem;
+
+          .kilimanjaro_part > p {
+        color: rgba(255,255,255,.5);
+        font-size: 1.1rem;
+        }
+        }
+      }
+
 
     </style>
 </head>

@@ -91,6 +91,9 @@
         display: none;
     }
 
+
+    
+
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
 
@@ -136,6 +139,8 @@
 </head>
 <body>
     <div class="invisible-box">
+
+
         <form action="/" class="search-container">
             <div class="main-search">
                 <div class="group">
@@ -146,7 +151,8 @@
                     {{-- id="searchInput" --}}
                     class="searchInput"
                     name="search"
-                    type="text"
+                    type="search"
+                    value="{{ request('search') }}"
                 >
             </div>
            
@@ -160,7 +166,7 @@
                     class="filterInput"
                     value="{{ request('min_salary') }}"
                 > --}}
-                <select class="filterInput" name="min_salary">
+                {{-- <select class="filterInput" name="min_salary">
                     <option value="">💵 Salary</option>
                     <option value="10000">$10.000 per year</option>
                     <option value="20000">$20.000 per year</option>
@@ -178,19 +184,19 @@
                     <option value="140000">$140.000 per year</option>
                     <option value="150000">$150.000 per year</option>
                     <!-- Add more options as needed -->
-                </select>
+                </select> --}}
 
                 <input 
                     name="location"
                     placeholder="🌏 Location" 
-                    type="text" 
+                    type="search" 
                     class="filterInput"
                     value="{{ request('location') }}"
                 >
                 <input 
                     name="job_position"
                     placeholder="💼 Position" 
-                    type="text" 
+                    type="search" 
                     class="filterInput"
                     value="{{ request('job_position') }}"
                 >
@@ -202,6 +208,7 @@
         
     </div>
 
-
+   
+    
 </body>
 </html>
