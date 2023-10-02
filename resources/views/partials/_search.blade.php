@@ -91,6 +91,37 @@
         display: none;
     }
 
+/*  */
+
+/* styles.css */
+.horizontal-scroll-menu {
+    width: 1000px;
+    background-color: rgba(0, 123, 255, 0.2); /* Transparent blue background */    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks for list items */
+    background-color: transparent;
+}
+
+.menu-list {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 25px; /* Make the items round */
+    margin-right: 10px; /* Adjust spacing between items */
+}
+
+.menu-item:hover {
+    background-color: #0056b3; /* Change color on hover */
+}
 
     
 
@@ -202,6 +233,23 @@
                 >
                 
             </div>
+            <div class="horizontal-scroll-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">AI/ML</li>
+                    <li class="menu-item">Cybersecurity</li>
+                    <li class="menu-item">Education</li>
+                    <li class="menu-item">Marketing</li>
+                    <li class="menu-item">Engineer</li>
+                    <li class="menu-item">Tutor</li>
+                    <li class="menu-item">Sales</li>
+                    <li class="menu-item">Freelance</li>
+                    <li class="menu-item">Backend</li>
+                    <li class="menu-item">Education</li>
+                    <li class="menu-item">Education</li>
+
+                    <!-- Add more list items for additional industries -->
+                </ul>
+            </div>
             <button type="search_hidden_submit"></button>
             </div>
         </form>
@@ -209,6 +257,20 @@
     </div>
 
    
-    
+    <script>
+        // JavaScript example to dynamically populate menu items
+document.addEventListener("DOMContentLoaded", function() {
+    const menuList = document.querySelector(".menu-list");
+    const industries = ["Industry 1", "Industry 2", "Industry 3", /* Add more industries */];
+
+    industries.forEach(industry => {
+        const listItem = document.createElement("li");
+        listItem.className = "menu-item";
+        listItem.textContent = industry;
+        menuList.appendChild(listItem);
+    });
+});
+
+    </script>
 </body>
 </html>

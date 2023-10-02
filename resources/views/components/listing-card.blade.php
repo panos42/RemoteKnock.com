@@ -13,8 +13,8 @@
 
 
 
-<x-card class="rounded-lg" onclick="window.location='/listings/{{$listing->id}}';" style="cursor: pointer;">
-        <table>
+<x-card class="rounded-lg" onclick="window.open('/listings/{{$listing->id}}', '_blank');" style="cursor: pointer;">
+    <table>
         <tr>
             <td class="circular-logo" style="vertical-align: middle;">
 

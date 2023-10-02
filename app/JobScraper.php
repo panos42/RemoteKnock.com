@@ -28,15 +28,24 @@ class JobScraper
             }
 
             $title = $node->filterXPath('.//span[contains(@class, "title")]')->text();
+            echo "Title: $title\n"; // Debug message
             $company = $node->filterXPath('.//span[contains(@class, "company")]')->text();
+            echo "Company: $company\n"; // Debug message
             $location = $node->filterXPath('.//span[contains(@class, "region company")]')->text();
+            echo "Location: $location\n"; // Debug message
             // Extract the job listing link
             $linkNode = $node->filterXPath('.//a[contains(@href, "/remote-jobs/")]');
+            $linkText = $linkNode->attr('href');
+            echo "job-listing-link: $linkText\n"; // Debug message
+            
             if ($linkNode->count() > 0) {
                 $link = $linkNode->attr('href'); // Get the job listing link
                 // You may need to prepend the base URL to the relative link
                 $baseURL = 'https://weworkremotely.com'; // Replace with the actual base URL
+                echo "baseUrl: $baseURL\n"; // Debug message
                 $link = $baseURL . $link;
+                echo "Link: $link\n"; // Debug message
+
             } else {
                 echo "Skipped (no link found): $title - $company\n";
                 return; // Skip this iteration and move to the next listing
@@ -44,15 +53,27 @@ class JobScraper
 
             // Check if the entry already exists in the database
             $existingEntry = Listing::where('title', $title)->where('company', $company)->first();
+            echo "ftanw ws to existing entry\n"; // Debug message
 
             if (!$existingEntry) {
                 // Entry doesn't exist, add it to the database
+                echo "test0\n"; // Debug message
+
                 $jobData = self::scrapeJobDescription($client, $link); // Call the description scraping method
-                
+
+          ///////////////////////// 
 if (isset($jobData['logo'])) {
+    ///////////////////////
+
     $logoUrl = $jobData['logo'];
+    echo "test1\n"; // Debug message
+
     $logoFileName = self::generateUniqueLogoFileName(); // Generate a unique file name
+    echo "test2:\n"; // Debug message
+
     $logoPath = storage_path('app/public/logos/') . $logoFileName; // Define the storage path
+
+    echo "test3\n"; // Debug message
 
     // Download and save the logo image
     if (file_put_contents($logoPath, file_get_contents($logoUrl))) {
@@ -93,10 +114,14 @@ if (isset($jobData['logo'])) {
         echo "Scraping and saving completed.";
     }
 
+
     public static function scrapeJobDescription($client, $link)
 {
     // Fetch the job listing page
+    echo "link test : $link\n"; // Debug message
+
     $jobCrawler = $client->request('GET', $link);
+    echo "test4\n"; // Debug message
 
     // Extract the HTML content of the job description
     $descriptionHtml = $jobCrawler->filterXPath('//div[@class="listing-container"]')->html();
@@ -115,6 +140,7 @@ if (isset($jobData['logo'])) {
     // Extract the logo image URL if available
     $logoNode = $jobCrawler->filterXPath('//img[contains(@alt, "is hiring a remote")]');
     $logoUrl = $logoNode->count() > 0 ? $logoNode->attr('src') : null;
+    echo "test99\n"; // Debug message
 
     // Combine the description, tags, website link, and logo URL into an array or other suitable data structure
     $jobData = [
@@ -126,6 +152,7 @@ if (isset($jobData['logo'])) {
 
     return $jobData;
 }
+
 
 
 public static function generateUniqueLogoFileName()
