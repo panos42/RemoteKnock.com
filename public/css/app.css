@@ -367,7 +367,7 @@
 
 
 .rounded-lg {
-    margin: 2rem auto; /* Use 'auto' for horizontal centering */
+    margin: 1.5rem auto; /* Use 'auto' for horizontal centering */
     background: #333333;
     color: white;
     max-width: 70%; /* Set a maximum width for the card */
@@ -529,7 +529,7 @@ padding: 10px;
 
     @media (max-width: 767px) {
     .job_title{
-        font-size: 1rem;
+        font-size: 1.2rem;
         width: 400px;
         max-width: 400px;
     }
