@@ -1,7 +1,7 @@
 <x-layout>
   <x-card class="p-10">
     <header>
-      <h1 class="text-3xl text-center font-bold my-6 uppercase" style="color: #ccc">
+      <h1 class="text-3xl manage-listings-title font-bold my-6 uppercase" style="color: #ccc">
         Manage Job Listings
       </h1>
     </header>
@@ -35,6 +35,16 @@
     </div>
 
     <style>
+          .text-center{
+        color: rgb(255, 72, 0);
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+    .manage-listings-title{
+      text-align: center;
+      font-size: 3rem;
+    }
       /* Define your custom classes */
       .edit-card {
         width: 70%;
@@ -75,13 +85,16 @@
       }
 
       .custom-link {
+        font-size:1.5rem;
         color: #0073e6;
         padding: 2px 6px;
         border-radius: 8px;
         text-decoration: none;
+        margin-right: 1rem;
       }
 
       .custom-button {
+        font-size:1.5rem;
         color: #ff0000;
         border: none;
         background: none;
@@ -90,6 +103,28 @@
 
 
       @media (max-width: 767px) {
+
+        .custom-link {
+        font-size:1rem;
+        color: #0073e6;
+        padding: 2px 6px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-right: 0.2rem;
+      }
+
+      .custom-button {
+        font-size:1rem;
+        color: #ff0000;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+
+
+        .manage-listings-title{
+          font-size: 1.5rem;
+        }
         .edit-card {
         width: 90%;
         border: 1px solid #ccc;

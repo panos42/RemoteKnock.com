@@ -50,6 +50,12 @@
 
 
 <style>
+    .text-center{
+        color: rgb(255, 72, 0);
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
     .pagination-wrapper {
         display: flex;
         justify-content: center;
