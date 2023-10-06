@@ -50,4 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function listings() {
         return $this->hasMany(Listing::class, 'user_id');
     }
+
+    public function cvProfile()
+    {
+        return $this->hasOne(CVProfile::class);
+    }
+
 }

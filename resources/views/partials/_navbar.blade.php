@@ -39,6 +39,14 @@
                         Manage Listings
                     </a>
                 </li>
+
+                <li class="nav-item ">
+                    <a href="/cv/builder" class="nav-link">
+                        <i class="fa-solid fa-drivers-license"></i>
+                        Build CV
+                    </a>
+                </li>
+
                 <li class="nav-item ml-6">
                     {{-- <form class="inline" method="POST" action="/logout" onsubmit="return confirmLogout()">
                         @csrf

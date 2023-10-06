@@ -13,7 +13,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(ScrapeJobs::class)->daily(); // Replace with your actual command class
+        // $schedule->command(ScrapeJobs::class)->daily();
+
+        $schedule->command('app:scrape-jobs')->everyMinute();
     }
 
     /**
