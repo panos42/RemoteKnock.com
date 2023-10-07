@@ -40,13 +40,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item ">
-                    <a href="/cv/builder" class="nav-link">
-                        <i class="fa-solid fa-drivers-license"></i>
-                        Build CV
-                    </a>
-                </li>
-
                 <li class="nav-item ml-6">
                     {{-- <form class="inline" method="POST" action="/logout" onsubmit="return confirmLogout()">
                         @csrf
@@ -90,6 +83,15 @@
                 <li class="nav-item ml-6">
                     <a href="/listings/create" class="post_job_btn">Post a Job</a>
                </li>
+
+               
+               <li class="nav-item ">
+                <a href="/cv-builder" class="nav-link">
+                    <i class="fa-solid fa-drivers-license"></i>
+                    Build CV
+                </a>
+            </li>
+
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

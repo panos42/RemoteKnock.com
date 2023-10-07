@@ -6,10 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ListingController;
-
+use App\Http\Controllers\CVProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\CVProfileController;
+
+
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
@@ -96,25 +97,9 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
-
-
-// Route::middleware(['auth'])->group(function () {
-
-//     Route::get('/cv/builder', [CVProfileController::class, 'create'])->name('cv.builder');
-//     Route::post('/cv', [CVProfileController::class, 'store'])->name('cv.store');
-//     Route::get('/cv/{cvProfile}', [CVProfileController::class, 'show'])->name('cv.show');
-// });
-
-Route::middleware(['auth'])->group(function () {
-    // ... other routes
-
-    // Define a GET route for the CV builder page
-    Route::get('/cv/builder', [CVProfileController::class, 'create'])->name('cv.cv_sidemenu');
-
-    // This is your existing POST route for storing CV profiles
-    Route::post('/cv', [CVProfileController::class, 'store'])->name('cv.store');
-
-    // ... other routes
+Route::middleware('auth')->group(function () {
+    Route::get('/cv-builder', [CvProfileController::class, 'index']);
+    Route::post('/cv-builder', [CvProfileController::class, 'store']);
 });
 
 

@@ -1,42 +1,56 @@
 <?php
 
-// app/Http/Controllers/CVProfileController.php
-
 namespace App\Http\Controllers;
 
-use App\Models\CVProfile;
+use App\Models\CvProfile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CVProfileController extends Controller
+class CvProfileController extends Controller
 {
-    public function create()
+    public function index()
     {
-        $user = Auth::user();
-        $CVProfile = $user->cvProfile; // Assuming you have a relationship set up
-    
-        return view('cv.cv_sidemenu', compact('CVProfile'));
+        $cvProfile = auth()->user()->cvProfile;
+
+        return view('cv.index', compact('cvProfile'));
     }
-    
 
 
     public function store(Request $request)
-    {
-        $user = Auth::user();
-        $data = $request->validate([
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'required|string',
-            'Job_Experience' => 'required|string',
-            'Education' => 'required|string',
-            'Skills' => 'required|string',
-            'Languages' => 'required|string',
-            'Objective' => 'required|string',
-            // Add validation rules for other fields
-        ]);
+{
+    $user = auth()->user();
 
-        $cvProfile = CVProfile::create([
+    $data = $request->validate([
+        'first_name' => 'required|string|max:255',
+        'last_name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|string|max:20',
+        'Job_Experience' => 'required|string',
+        'Education' => 'required|string',
+        'Skills' => 'required|string',
+        'Languages' => 'required|string',
+        'Objective' => 'required|string',
+    ]);
+
+    // Check if a CV profile already exists for the user
+    $cvProfile = CvProfile::where('user_id', $user->id)->first();
+
+    if ($cvProfile) {
+        // Update existing CV profile
+        $cvProfile->update([
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'Job_Experience' => $data['Job_Experience'],
+            'Education' => $data['Education'],
+            'Skills' => $data['Skills'],
+            'Languages' => $data['Languages'],
+            'Objective' => $data['Objective'],
+            // Update other fields as needed
+        ]);
+    } else {
+        // Create a new CV profile
+        CvProfile::create([
             'user_id' => $user->id,
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -49,14 +63,10 @@ class CVProfileController extends Controller
             'Objective' => $data['Objective'],
             // Set other fields here
         ]);
-
-        return redirect()->route('cv.show', $cvProfile->id);
     }
 
-    public function show(CVProfile $cvProfile)
-    {
-        return view('cv.show', compact('cvProfile'));
-    }
+    return redirect('/cv-builder')->with('success', 'CV profile saved successfully.');
+}
 
-    // Implement edit, update, and delete methods as needed
+    
 }

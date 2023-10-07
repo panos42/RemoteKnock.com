@@ -17,7 +17,7 @@
   </div> --}}
 
 <div class="cv_form_card">
-    <form method="POST" action="{{ route('cv.store') }}">
+    <form method="POST" action="/cv">
         @csrf
 
         
@@ -26,7 +26,7 @@
                 First Name
             </label> --}}
             <input type="text" class="cv_input_fields" name="first_name" placeholder="First Name"
-              value="{{$CVProfile->first_name}}" />
+              value="{{$cvProfile->first_name}}" />
     
             @error('first_name')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -39,7 +39,7 @@
                 Last Name
             </label> --}}
             <input type="text" class="cv_input_fields" name="last_name" placeholder="Last Name"
-              value="{{$CVProfile->last_name}}" />
+              value="{{$cvProfile->last_name}}" />
     
             @error('last_name')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -52,7 +52,7 @@
                 Email
             </label> --}}
             <input type="text" class="cv_input_fields" name="email" placeholder="Email Address"
-              value="{{$CVProfile->email}}" />
+              value="{{$cvProfile->email}}" />
     
             @error('email')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -64,7 +64,7 @@
                 Phone
             </label> --}}
             <input type="text" class="cv_input_fields" name="phone" placeholder="Phone Number"
-              value="{{$CVProfile->phone}}" />
+              value="{{$cvProfile->phone}}" />
     
             @error('phone')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -77,7 +77,7 @@
                 Job Experience
             </label> --}}
             <input type="text" class="cv_input_fields" name="Job_Experience" placeholder="Job Experience"
-              value="{{$CVProfile->Job_Experience}}" />
+              value="{{$cvProfile->Job_Experience}}" />
     
             @error('Job_Experience')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -90,7 +90,7 @@
                 Education
             </label> --}}
             <input type="text" class="cv_input_fields" name="Education" placeholder="Education"
-              value="{{$CVProfile->Education}}" />
+              value="{{$cvProfile->Education}}" />
     
             @error('Education')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -103,7 +103,7 @@
                 Skills
             </label> --}}
             <input type="text" class="cv_input_fields" name="Skills" placeholder="Skills"
-              value="{{$CVProfile->Skills}}" />
+              value="{{$cvProfile->Skills}}" />
     
             @error('Skills')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -116,7 +116,7 @@
                 Languages
             </label> --}}
             <input type="text" class="cv_input_fields" name="Languages" placeholder="Languages"
-              value="{{$CVProfile->Languages}}" />
+              value="{{$cvProfile->Languages}}" />
     
             @error('Languages')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -128,7 +128,7 @@
                 Objective
             </label> --}}
             <input type="text" class="cv_input_fields" name="Objective" placeholder="Objective"
-              value="{{$CVProfile->Objective}}" />
+              value="{{$cvProfile->Objective}}" />
     
             @error('Objective')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -145,17 +145,6 @@
         </div>
 
         
-
-        {{-- <div class="card">
-
-            <button type="submit" class="my-button">
-              <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-                <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
-              </svg>
-              Create CV
-            </button>
-        </div> --}}
-
         <button>
           
           <span class="text">
@@ -266,5 +255,4 @@ button:active {
     
 </body>
 </html>
-
 
