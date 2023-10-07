@@ -9,8 +9,9 @@ class CvProfileController extends Controller
 {
     public function index()
     {
-        $cvProfile = auth()->user()->cvProfile;
-
+        $user = auth()->user();
+        $cvProfile = CvProfile::where('user_id', $user->id)->first();
+    
         return view('cv.index', compact('cvProfile'));
     }
 

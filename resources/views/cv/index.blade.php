@@ -171,6 +171,12 @@
 
   </div>
 
+    
+  <div class="custom-mb-15"> 
+    @include('cv.faq')
+</div>
+
+
 <style>
 
 
