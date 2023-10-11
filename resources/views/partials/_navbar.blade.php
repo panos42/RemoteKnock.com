@@ -1,5 +1,5 @@
     
-    <header class="header">
+    {{-- <header class="header"> --}}
         
         <nav class="navbar">
             {{-- <a href="/" class="nav-logo">remoteknock</a> --}}
@@ -30,9 +30,24 @@
             {{-- <li class="nav-item">
                     <a href="#" class="nav-link">About</a>
                 </li>   --}}
+
+                <li class="nav-item">
+                    <a href="/listings/create" class="nav-link" >Post a Job</a>
+                </li>
+    
+               
+               <li class="nav-item ">
+                    <a href="/cv-builder" class="nav-link">
+                        <i class="fa-solid fa-drivers-license"></i>
+                        Build CV
+                    </a>
+                </li>
     
     
                 @auth
+
+
+
                 <li class="nav-item ">
                     <a href="/listings/manage" class="nav-link">
                         <i class="fa-solid fa-wrench"></i>
@@ -60,37 +75,37 @@
                     </form>
                     
                 </li>
+
+
+
+
             @else
+
+
+
+                            
+            <li class="nav-item ml-6">
+                <a href="/login" class="nav-link">
+                    {{-- <i class="fa-solid fa-arrow-right-to-bracket"></i> --}}
+                     Login
+                </a>
+            </li>
+
                 <li class="nav-item  ml-6">
-                    <a href="/register" class="nav-link">
+                    <a href="/register" class="sign_up_btn">
                         {{-- <i class="fa-solid fa-user-plus"></i> --}}
                          Register
                     </a>
                 </li>
-                <li class="nav-item ml-6">
-                    <a href="/login" class="nav-link">
-                        {{-- <i class="fa-solid fa-arrow-right-to-bracket"></i> --}}
-                         Login
-                    </a>
-                </li>
+
+
             @endauth
             
-    
                 {{-- <li class="nav-item ml-6">
                     <a href="{{ route('about') }}">About</a>
                 </li> --}}
 
-                <li class="nav-item ml-6">
-                    <a href="/listings/create" class="post_job_btn">Post a Job</a>
-               </li>
 
-               
-               <li class="nav-item ">
-                <a href="/cv-builder" class="nav-link">
-                    <i class="fa-solid fa-drivers-license"></i>
-                    Build CV
-                </a>
-            </li>
 
             </ul>
             <div class="hamburger">
@@ -99,7 +114,7 @@
                 <span class="bar"></span>
             </div>
         </nav>
-    </header>
+    {{-- </header> --}}
     
     
     <script>

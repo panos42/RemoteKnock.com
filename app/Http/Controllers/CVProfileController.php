@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
+use Illuminate\Support\Facades\View;
 use App\Models\CvProfile;
 use Illuminate\Http\Request;
 
@@ -67,6 +69,41 @@ class CvProfileController extends Controller
     }
 
     return redirect('/cv-builder')->with('success', 'CV profile saved successfully.');
+}
+
+
+
+
+
+public function generatePdf()
+{
+    $user = auth()->user();
+    $cvProfile = $user->cvProfile;
+
+    if (!$cvProfile) {
+        return redirect('/cv-builder')->with('error', 'CV profile not found.');
+    }
+
+    // Use the Blade view to render the HTML template with data
+    $htmlTemplate = View::make('pdf_template', compact('cvProfile'))->render();
+
+    // Initialize Dompdf
+    $dompdf = new Dompdf();
+    $dompdf->loadHtml($htmlTemplate);
+
+    // (Optional) Set paper size and orientation
+    $dompdf->setPaper('A4', 'portrait');
+
+    // Render the HTML as PDF
+    $dompdf->render();
+
+    // Generate a unique file name for the PDF
+    $filename = 'cv_' . $user->id . '.pdf';
+
+    // Save the PDF to a file or serve it for download
+    $dompdf->stream($filename);
+
+    // You can also save the PDF to a file using $dompdf->output() and save it to a storage location
 }
 
     

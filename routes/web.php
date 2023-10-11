@@ -97,9 +97,12 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/cv-builder', [CvProfileController::class, 'index']);
     Route::post('/cv-builder', [CvProfileController::class, 'store']);
+    Route::get('/generate-pdf', [CvProfileController::class, 'generatePdf']);
+
 });
 
 

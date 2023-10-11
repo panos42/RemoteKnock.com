@@ -25,7 +25,7 @@
         }
 
         .invisible-box {
-            margin-top: 5%;
+            margin-top: 7%;
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center;
@@ -178,7 +178,11 @@
     </style>
 </head>
 <body>
+            
+
     <div class="invisible-box">
+
+
 
 
         <form action="/" class="search-container" id="searchForm">
@@ -244,61 +248,40 @@
             </div>
             <div class="horizontal-scroll-menu">
                 <ul class="menu-list">
-                    <li class="menu-item" onclick="selectMenuItem('AI')">
-                        {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
-                            <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-                          </svg> --}}
-                          🤖 AI/ML</li>
 
-                    <li class="menu-item" onclick="selectMenuItem('Cybersecurity')">
-                        {{-- <svg width="16" height="18" class="text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1" d="M7 3 6 2V1m5 2 1-1V1M9 7v11M9 7a5 5 0 0 1 5 5M9 7a5 5 0 0 0-5 5m5-5a4.959 4.959 0 0 1 2.973 1H12V6a3 3 0 0 0-6 0v2h.027A4.959 4.959 0 0 1 9 7Zm-5 5H1m3 0v2a5 5 0 0 0 10 0v-2m3 0h-3m-9.975 4H2a1 1 0 0 0-1 1v2m13-3h2.025a1 1 0 0 1 1 1v2M13 9h2.025a1 1 0 0 0 1-1V6m-11 3H3a1 1 0 0 1-1-1V6"/>
-                          </svg> --}}
-                          🔒 Cybersecurity</li>
-
-                    <li class="menu-item" onclick="selectMenuItem('Education')"> 
-                        {{-- <svg width="16" height="18" class="text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15V9m4 6V9m4 6V9m4 6V9M2 16h16M1 19h18M2 7v1h16V7l-8-6-8 6Z"/>
-                          </svg> --}}
-                          🏫 Education</li>
-                          
                     <li class="menu-item" onclick="selectMenuItem('Marketing')">🚀 Marketing</li>
 
+                    <li class="menu-item" onclick="selectMenuItem('Media')">🤩 Media</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('Writer')">📝 Writer</li>
+
+
+                    <li class="menu-item" onclick="selectMenuItem('Education')">🏫 Education</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('AI')">🤖 AI/ML</li>
+                          
                     <li class="menu-item" onclick="selectMenuItem('Engineer')">😎 Engineer</li>
                     
+                    <li class="menu-item" onclick="selectMenuItem('Blockchain')">🔗 Blockchain</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('Cybersecurity')">🔒 Cybersecurity</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('PHP')">🐘 PHP</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('Teacher')">🎓Teacher</li>
+
                     <li class="menu-item" onclick="selectMenuItem('Tutor')"> 👨‍🎓 Tutor</li>
 
                     <li class="menu-item" onclick="selectMenuItem('Finance')">📊Finance</li>
 
                     <li class="menu-item" onclick="selectMenuItem('Backend')">🗄️ Backend</li>
 
-                    <li class="menu-item" onclick="selectMenuItem('Teacher')">🎓Teacher</li>
+                    <li class="menu-item" onclick="selectMenuItem('Sales')">🤑 Sales</li>
 
-                    <li class="menu-item" onclick="selectMenuItem('Sales')">
-                        🤑 Sales</li>
-
-                    <li class="menu-item" onclick="selectMenuItem('Media')">🤩 Media</li>
-
-                    <li class="menu-item" onclick="selectMenuItem('Writer')">
-                        {{-- <svg width="16" height="18" class="text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"/>
-                            <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"/>
-                            <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"/>
-                          </svg> --}}
-                          📝 Writer</li>
-                    <li class="menu-item" onclick="selectMenuItem('Blockchain')">🔗 Blockchain</li>
                     <li class="menu-item" onclick="selectMenuItem('SEO')">SEO</li>
 
-
-                    <li class="menu-item" onclick="selectMenuItem('LAW')">
-                        {{-- <svg width="16" height="18" class="text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1" d="M2 19h16m-8 0V5m0 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 8l-2.493 5.649A1 1 0 0 0 2.443 15h3.114a1.001 1.001 0 0 0 .936-1.351L4 8Zm0 0V6m12 2-2.493 5.649A1 1 0 0 0 14.443 15h3.114a1.001 1.001 0 0 0 .936-1.351L16 8Zm0 0V6m-4-2.8c3.073.661 3.467 2.8 6 2.8M2 6c3.359 0 3.192-2.115 6.012-2.793"/>
-                          </svg> --}}
-                          ⚖️Law</li>
-                          <li class="menu-item" onclick="selectMenuItem('PHP')">🐘 PHP</li>
-
-                          
-              
+                    <li class="menu-item" onclick="selectMenuItem('LAW')">⚖️Law</li>
+                        
                     <!-- Add more list items for additional industries -->
                 </ul>
             </div>

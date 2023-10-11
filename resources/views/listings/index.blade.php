@@ -7,6 +7,8 @@
             @include('partials._navbar')
         </div>
 
+
+
         <div>
             @include('partials._search') <!-- Adjust the margin value as needed -->
         </div>
