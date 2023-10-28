@@ -2,7 +2,12 @@
 <html>
 <head>
     <style>
-
+  @font-face {
+    font-family: 'VAGRoundedRegular';
+    src: url('/fonts/VAG_Rounded_Regular_font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
 
         /* Add styles for the filter button and icon */
         .filter-button {
@@ -128,6 +133,16 @@
     background-color: #75b5d2; /* Change color on hover */
 }
 
+            /* Additional styles for the label */
+            .label-text {
+            font-family: 'VAGRoundedRegular', sans-serif; 
+            width: max-content;
+            color: #fff; /* White text color */
+            font-size: 3rem; /* Adjust the font size as needed */
+            text-align: center; /* Center the text */
+            margin-bottom: 2rem; /* Add some space between label and input */
+        }
+
     
 
         /* Media query for smaller screens */
@@ -174,7 +189,24 @@
         .group {
             flex-direction: column;
         }
+
+              .label-text {
+                font-family: 'VAGRoundedRegular', sans-serif; 
+
+            width: 25rem;
+            color: #fff; /* White text color */
+            font-size: 1.5rem; /* Adjust the font size as needed */
+            text-align: center; /* Center the text */
+            margin-bottom: 2rem; /* Add some space between label and input */
         }
+
+        }
+
+
+
+        
+
+
     </style>
 </head>
 <body>
@@ -183,10 +215,17 @@
     <div class="invisible-box">
 
 
-
-
         <form action="/" class="search-container" id="searchForm">
             <div class="main-search">
+                
+
+                <label for="searchInput" class="label-text">
+                    Find your dream remote job without the hassle !
+                    
+           
+                    </label>
+                
+
                 <div class="group">
 
                 <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>

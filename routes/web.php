@@ -10,7 +10,8 @@ use App\Http\Controllers\CVProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
-
+use App\Http\Controllers\PdfController;
+use App\Models\CVProfile;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
@@ -100,8 +101,12 @@ Route::post('/users', [UserController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/cv-builder', [CvProfileController::class, 'index']);
-    Route::post('/cv-builder', [CvProfileController::class, 'store']);
-    Route::get('/generate-pdf', [CvProfileController::class, 'generatePdf']);
+    Route::get('/cv-builder/{templateName}',  [CvProfileController::class, 'getTemplate']);
+    Route::post('/generate-pdf', [CvProfileController::class, 'generatePDF']);
+
+    Route::post('/cv-builder/checkout',[CVProfileController::class, 'checkout'])->name("checkout");
+
+    // Route::post('/generate-pdf', 'PdfController@generatePdf');
 
 });
 

@@ -88,7 +88,7 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1 contenteditable="true">{first_name} {last_name}</h1>
+					<h1 contenteditable="true">John Doe</h1>
 					<h2 contenteditable="true">Web Designer, Director</h2>
 				</div>
 
