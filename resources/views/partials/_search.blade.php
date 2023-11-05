@@ -205,7 +205,10 @@
 
 
         
-
+        ::selection {
+    background-color: #16706c; /* Change to the desired text selection color (e.g., green) */
+    color: #ffffff; /* Change the text color within the selection */
+}
 
     </style>
 </head>
@@ -220,8 +223,8 @@
                 
 
                 <label for="searchInput" class="label-text">
-                    Find your dream remote job without the hassle !
-                    
+                    {{-- Find your dream remote job without the hassle ! --}}
+                    Work Anywhere, Thrive Everywhere 
            
                     </label>
                 

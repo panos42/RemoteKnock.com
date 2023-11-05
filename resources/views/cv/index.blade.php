@@ -109,32 +109,50 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-mo
 
    <!-- Sidebar -->
    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+    <button onclick="w3_close()" class="w3-bar-item w3-large" style="color: red">Close &times;</button>
     <a href="#" class="w3-bar-item w3-button" onclick="loadTemplate('resume_1')">Template 1</a>
     <a href="#" class="w3-bar-item w3-button" onclick="loadTemplate('resume_2')">Template 2</a>
     <!-- Add more template links as needed -->
-</div>
+   </div>
 
-<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()" id="mySidebar-hamburger">☰</button>
+{{-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()" id="mySidebar-hamburger">☰</button> --}}
+
+<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()" id="mySidebar-hamburger"> ☰ Templates</button>
 
     {{-- @include('cv_templates.resume_1') --}}
 
     {{-- <button class="download_button" onclick="generate_pdf()">
       <span class="download_button-content">Download </span>
   </button> --}}
-  <button class="download_button" onclick="downloadHTML()">
-    <span class="download_button-content">Download as HTML</span>
-  </button>
+  <div class="toolbar-card">
 
-  <button class="download_button" onclick="downloadPDF()">
-    <span class="download_button-content">Download as PDF</span>
-  </button>
+    <button class="download_button" onclick="downloadHTML()">
+      <span class="download_button-content">Download as HTML</span>
+    </button>
+  
+    {{-- <button class="download_button" onclick="downloadPDF()">
+      <span class="download_button-content">Download as PDF</span>
+    </button> --}}
+  
+    {{-- <select id="fontSelector">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Palatino Linotype">Palatino Linotype</option>
+      <option value="Trebuchet MS">Trebuchet MS</option>
+      <!-- Add more font options here -->
+    </select> --}}
+
+  </div>
 
 
-  <form action="{{route('checkout')}}" method="POST">
+
+  {{-- <form action="{{route('checkout')}}" method="POST">
     @csrf
     <button>Checkout</button>
-  </form>
+  </form> --}}
   
 
     <!-- Template Card -->
@@ -170,6 +188,9 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-mo
 // }
 
 function loadTemplate(templateFileName) {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("mySidebar-hamburger").style.display = "block";
+
     const templateCard = document.getElementById("template-card");
 
     fetch(`/cv-builder/${templateFileName}`)
@@ -275,8 +296,31 @@ function downloadPDF() {
 
 
 
+<script>
+  document.getElementById('fontSelector').addEventListener('change', function() {
+    const selectedFont = this.value;
+    changeFont(selectedFont);
+  });
+  
+  function changeFont(selectedFont) {
+    // Define CSS rules to change the font of the "template-card" component
+    const templateCard = document.getElementById("template-card");
+    templateCard.style.fontFamily = selectedFont;
+  }
+  </script>
+
+
 
 <style>
+
+.toolbar-card{
+  display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically, if needed */
+    flex-direction: row; /* Stack contents vertically */
+    text-align: center; /* Center text within the card */
+}
+
 .template-card{
   width: auto;
   border-radius: 2rem;
@@ -309,7 +353,7 @@ function downloadPDF() {
 .download_button::before {
   content: '';
   position: absolute;
-  /* top: 0; */
+  top: 0;
   left: 0;
   transform: scaleX(0);
   transform-origin: 0 50%;

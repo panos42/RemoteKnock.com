@@ -54,7 +54,7 @@
           value="{{old('company')}}" />
 
         @error('company')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -64,7 +64,7 @@
           placeholder="Example: Senior Front-end Developer" value="{{old('title')}}" />
 
         @error('title')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -95,7 +95,7 @@
         @endforeach
     </select>
     @error('location')
-    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+    <p class="warning_message">{{ $message }}</p>
     @enderror
 
     
@@ -108,7 +108,7 @@
         <input type="text" class="input_fields" name="email" value="{{old('email')}}" placeholder="test@mail.com"/>
 
         @error('email')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -120,7 +120,7 @@
           value="{{old('website')}}" />
 
         @error('website')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -132,7 +132,7 @@
           placeholder="Example: Laravel, Backend, Postgres, etc" value="{{old('tags')}}" />
 
         @error('tags')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -162,7 +162,7 @@
               <!-- Add more options as needed -->
             </select>
             @error('min_salary')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            <p class="warning_message">{{$message}}</p>
             @enderror
           </div>
         
@@ -189,7 +189,7 @@
               <!-- Add more options as needed -->
             </select>
             @error('max_salary')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            <p class="warning_message">{{$message}}</p>
             @enderror
           </div>
         </div>
@@ -203,7 +203,7 @@
         <img id="logoPreview" src="#" alt="Uploaded Logo" style="display: none; max-width: 200px;" />
       
         @error('logo')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
       
@@ -223,7 +223,7 @@
           <div id="editor"> </div> 
 
         @error('description')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -271,6 +271,11 @@
 
 <style>
 
+.warning_message{
+  color: red;
+}
+
+
 .job_title_class {
   display: inline-block;
   font-size: 1.125rem;
@@ -286,7 +291,7 @@
   padding: 0.5rem;
   width: 100%;
   margin-top: 1rem;
-  margin-bottom: 1rem;}
+  margin-bottom: 2rem;}
 
 
 .post_button {
@@ -294,8 +299,10 @@
   background-color: #5865F2;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem; /* Adjust padding as needed */
-  margin-top: 1rem; /* Add margin to the top */
+  margin-top: 2rem; /* Add margin to the top */
   margin-bottom: 1rem; /* Add margin to the bottom */
+  width: 15rem;
+  font-size: 1.5rem;
 }
 
 

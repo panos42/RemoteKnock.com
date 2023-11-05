@@ -31,7 +31,7 @@
           value="{{$listing->company}}" />
 
         @error('company')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -41,7 +41,7 @@
           placeholder="Example: Senior Front-end Developer" value="{{$listing->title}}" />
 
         @error('title')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -70,7 +70,7 @@
             @endforeach
         </select>
         @error('location')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
     </div>
     
@@ -82,7 +82,7 @@
         <input type="text" class="input_fields" name="email" value="{{$listing->email}}" />
 
         @error('email')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -94,7 +94,7 @@
           value="{{$listing->website}}" />
 
         @error('website')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -106,7 +106,7 @@
           placeholder="Example: Laravel, Backend, Postgres, etc" value="{{$listing->tags}}" />
 
         @error('tags')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
 
         {{--  --}}
@@ -161,7 +161,7 @@
             <!-- Add more options as needed -->
           </select>
           @error('min_salary')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          <p class="warning_message">{{$message}}</p>
           @enderror
         </div>
         
@@ -189,7 +189,7 @@
             <!-- Add more options as needed -->
           </select>
           @error('max_salary')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          <p class="warning_message">{{$message}}</p>
           @enderror
         </div>
       </div>
@@ -207,7 +207,7 @@
           src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
 
         @error('logo')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
@@ -225,13 +225,13 @@
 
 
         @error('description')
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        <p class="warning_message">{{$message}}</p>
         @enderror
       </div>
 
       <div class="mb-6">
         <button class="update_button">
-          Update Gig
+          Update Listing
         </button>
 
         <a href="/" class="text-white ml-4"> Back </a>
@@ -268,6 +268,11 @@
 
      
     <style>
+
+
+.warning_message{
+  color: red;
+}
 
       .job_title_class {
 

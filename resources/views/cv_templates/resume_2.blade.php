@@ -14,9 +14,9 @@
       <span class="phone-val">111-222-3333</span>
     </div>
     
-    <div class="about">
+    <div class="about" contenteditable="true">
       <span class="position">Front-End Developer </span>
-      <span class="desc" contenteditable="true">
+      <span class="desc">
         I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
       </span>
     </div>

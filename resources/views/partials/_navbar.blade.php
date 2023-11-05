@@ -38,19 +38,29 @@
                
                <li class="nav-item ">
                     <a href="/cv-builder" class="nav-link">
-                        <i class="fa-solid fa-drivers-license"></i>
-                        Build CV
+                        {{-- <i class="fa-solid fa-drivers-license"></i> --}}
+                        Build Resume
                     </a>
                 </li>
-    
-    
+
+
+                {{--  --}}
+                {{-- <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
+                <label for="dark-light"></label>
+          
+                <div class="light-back"></div>  --}}
+       
+          
+            
+
+
                 @auth
 
 
 
                 <li class="nav-item ">
                     <a href="/listings/manage" class="nav-link">
-                        <i class="fa-solid fa-wrench"></i>
+                        {{-- <i class="fa-solid fa-wrench"></i> --}}
                         Manage Listings
                     </a>
                 </li>
@@ -140,3 +150,4 @@
     
     
     </script>
+
