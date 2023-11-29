@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command(ScrapeJobs::class)->daily();
 
-        $schedule->command('app:scrape-jobs')->everyTwoHours();
+        $schedule->command('app:scrape-jobs')->everyMinute();
     }
 
     /**

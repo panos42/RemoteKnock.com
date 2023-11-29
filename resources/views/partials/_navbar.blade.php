@@ -12,7 +12,7 @@
             
             <a href="/" class="nav-logo">
                 <div class="logo-container">
-                    <img src="/images/logo-test4.png" alt="Logo" class="logo-image">
+                    <img src="/images/Frame7.png" alt="Logo" class="logo-image">
                     <span class="logo-text">RemoteKnock</span>
                 </div>
             </a>
@@ -36,12 +36,11 @@
                 </li>
     
                
-               <li class="nav-item ">
+               {{-- <li class="nav-item ">
                     <a href="/cv-builder" class="nav-link">
-                        {{-- <i class="fa-solid fa-drivers-license"></i> --}}
                         Build Resume
                     </a>
-                </li>
+                </li> --}}
 
 
                 {{--  --}}
@@ -92,6 +91,9 @@
             @else
 
 
+            <li class="nav-item ml-6">
+                <a href="{{ route('blog') }}" class="nav-link">Blog</a>
+            </li>
 
                             
             <li class="nav-item ml-6">
@@ -111,9 +113,7 @@
 
             @endauth
             
-                {{-- <li class="nav-item ml-6">
-                    <a href="{{ route('about') }}">About</a>
-                </li> --}}
+              
 
 
 

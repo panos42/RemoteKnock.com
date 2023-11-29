@@ -122,15 +122,16 @@
     padding: 7px 15px; /* Adjust padding as needed */
     font-size: 16px; /* Adjust font size as needed */
     cursor: pointer;
-    background-color: #a7d1e5;
+    background-color: #24292b;
+    border: 1px solid teal;
     align-items: center; /* Center vertically */
-    color:#10445c;
+    color:#cfcfcf;
     border-radius: 25px; /* Make the items round */
     margin-right: 3px; /* Adjust spacing between items */
 }
 
 .menu-item:hover {
-    background-color: #75b5d2; /* Change color on hover */
+    background-color: #1d7aa5; /* Change color on hover */
 }
 
             /* Additional styles for the label */

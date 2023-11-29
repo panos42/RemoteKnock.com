@@ -4,7 +4,7 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\CVProfileController;
 use App\Http\Controllers\GoogleAuthController;
@@ -69,7 +69,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 //  Auto leitourgei gia kapoio logo....
 Route::get('/email/verify', function () {

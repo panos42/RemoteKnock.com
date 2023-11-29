@@ -18,6 +18,8 @@
 <!-- Include Select2 JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
 
+
+
 </head>
 {{--  --}}
 @auth

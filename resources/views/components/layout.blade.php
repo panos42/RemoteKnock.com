@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TRYYB0D06"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6TRYYB0D06');
+</script>
        
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,6 +31,9 @@
         <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
+
+
+ 
         <title>RemoteKnock: Job Finder
         </title>
         
