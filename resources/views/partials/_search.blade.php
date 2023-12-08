@@ -298,6 +298,11 @@
 
                     <li class="menu-item" onclick="selectMenuItem('Writer')">📝 Writer</li>
 
+                    <li class="menu-item" onclick="selectMenuItem('Sales')">🤑 Sales</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('Teacher')">🎓Teacher</li>
+
+                    <li class="menu-item" onclick="selectMenuItem('Tutor')"> 👨‍🎓 Tutor</li>
 
                     <li class="menu-item" onclick="selectMenuItem('Education')">🏫 Education</li>
 
@@ -311,15 +316,9 @@
 
                     <li class="menu-item" onclick="selectMenuItem('PHP')">🐘 PHP</li>
 
-                    <li class="menu-item" onclick="selectMenuItem('Teacher')">🎓Teacher</li>
-
-                    <li class="menu-item" onclick="selectMenuItem('Tutor')"> 👨‍🎓 Tutor</li>
-
                     <li class="menu-item" onclick="selectMenuItem('Finance')">📊Finance</li>
 
                     <li class="menu-item" onclick="selectMenuItem('Backend')">🗄️ Backend</li>
-
-                    <li class="menu-item" onclick="selectMenuItem('Sales')">🤑 Sales</li>
 
                     <li class="menu-item" onclick="selectMenuItem('SEO')">SEO</li>
 
@@ -327,8 +326,50 @@
                         
                     <!-- Add more list items for additional industries -->
                 </ul>
+
+
+                
             </div>
             <button type="search_hidden_submit"></button>
+
+
+            {{-- <a class="frontpage-featured-customers" href="/hire-remotely">
+<p style="font-size:10px;font-weight:normal;opacity:0.5;margin:0;margin-right:7px;display:inline-block;vertical-align:middle;">
+    trusted by
+    </p>
+    <img style="margin-top:14px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/microsoft.png?1634054013" height="30" alt="Microsoft" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/microsoft.png?1634054013">
+    <img style="margin-top:16px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/ibm.png?1691252594" height="30" alt="Ibm" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/ibm.png?1691252594">
+    <img style="margin-top:33px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/amazon.png?1642846833" height="30" alt="Amazon" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/amazon.png?1642846833">
+    <img style="margin-top:12px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/scale-ai.png?1686399169" height="30" alt="Scale-Ai" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/scale-ai.png?1686399169">
+    <img style="margin-top:20px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/cloudflare.png?1635928865" height="30" alt="Cloudflare" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/cloudflare.png?1635928865">
+    <img style="margin-top:20px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/stripe.png?1634054013" height="30" alt="Stripe" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/stripe.png?1634054013">
+    <img style="margin-top:14px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/shopify.png?1634054013" height="30" alt="Shopify" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/shopify.png?1634054013">
+    <img style="margin-top:21px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/ycombinator.png?1634054013" height="30" alt="Ycombinator" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/ycombinator.png?1634054013">
+    <img style="margin-top:18px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/github.png?1633381266" height="30" alt="Github" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/github.png?1633381266">
+    <img style="margin-top:21px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/intercom.png?1524913324" height="30" alt="Intercom" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/intercom.png?1524913324">
+    <img style="margin-top:20px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/upwork.png?1634371831" height="30" alt="Upwork" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/upwork.png?1634371831">
+    <img style="margin-top:17px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/angellist.png?1642846752" height="30" alt="Angellist" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/angellist.png?1642846752">
+            </a> --}}
+
+            <section id="trusted-by">
+                {{-- <div class="container"> --}}
+                    <div class="logos">
+                        <h2 class="trusted_by_text">Trusted By</h2>
+
+                        <!-- Add your trusted partner logos or images here -->
+                        <img src="/images/microsoft_logo.png" alt="Partner 1">
+                        <img src="/images/stripe.png" alt="Partner 2">
+                        <img src="/images/github.png" alt="Partner 3">
+                        <img src="/images/lemonio_logo.png" alt="Partner 3">
+                        <img src="/images/scaleai_logo.png" alt="Partner 3">
+                        <img src="/images/ycombinator.png" alt="Partner 3">
+                        <img src="/images/lime_logo.png" alt="Partner 3">
+
+                        <!-- Add more logos as needed -->
+                    </div>
+                {{-- </div> --}}
+            </section>
+
             </div>
         </form>
         
@@ -350,3 +391,80 @@
         
 </body>
 </html>
+
+
+<style>
+
+    .trusted_by_text{
+        color: grey;
+        font-size: 0.5rem;
+    }
+         #trusted-by {
+            /* background-color: #f8f8f8; */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #trusted-by h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-family: 'VAGRoundedRegular';
+    src: url('/fonts/VAG_Rounded_Regular_font.ttf') format('truetype');
+        }
+
+    
+/* .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos img {
+    width: 150px; 
+    height: 150px;
+    object-fit: contain;
+    margin: 0 15px;
+} */
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow-x: auto; */
+            -webkit-overflow-scrolling: touch;
+            padding: 0 15px;
+        }
+
+        .logos img {
+            min-width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin: 0 15px;
+        }
+
+
+
+/* Add this inside your existing media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .logos {   
+    width: 350px;
+     /* display: flex; */
+     justify-content: flex-start;
+
+    -webkit-overflow-scrolling: touch; 
+    overflow-x: scroll;
+    white-space: nowrap;
+    background-color: transparent;
+     /* scrollbar-width: thin;   */
+    scrollbar-color: #00000000 rgba(0, 0, 0, 0);  
+
+    }
+
+    .logos img {
+        min-width: 100px; /* Set the minimum desired width */
+        height: auto; /* Auto-adjust the height to maintain aspect ratio */
+    }
+}
+
+
+</style>

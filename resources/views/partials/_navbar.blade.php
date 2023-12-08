@@ -12,7 +12,9 @@
             
             <a href="/" class="nav-logo">
                 <div class="logo-container">
-                    <img src="/images/Frame7.png" alt="Logo" class="logo-image">
+                    {{-- <img src="/images/Frame7.png" alt="Logo" class="logo-image"> --}}
+                    <img src="/images/logo_christmas_edition.png" alt="Logo" class="logo-image">
+
                     <span class="logo-text">RemoteKnock</span>
                 </div>
             </a>
@@ -92,7 +94,7 @@
 
 
             <li class="nav-item ml-6">
-                <a href="{{ route('blog') }}" class="nav-link">Blog</a>
+                <a href="{{ route('blog_posts.blog') }}" class="nav-link">Blog</a>
             </li>
 
                             

@@ -26,7 +26,8 @@
         {{--  --}}
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-
+    <title>RemoteKnock: Listing by {{$listing->company}}
+    </title>
 </head>
 
 

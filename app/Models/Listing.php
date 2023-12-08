@@ -10,7 +10,12 @@ class Listing extends Model
     use HasFactory;
 
     // protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags'];
-
+    protected $fillable = [
+        'title', 'company', 'location', 'website', 'email',
+        'tags', 'min_salary', 'max_salary', 'description',
+        'listing_views', 'applications_made', 'logo', 'user_id', 'company_id',
+    ];
+    
     // public function scopeFilter($query, array $filters) {
     //    // dd($filters); // Check if the min_salary value is being passed correctly
     //     if($filters['tag'] ?? false) {

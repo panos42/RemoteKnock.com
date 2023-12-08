@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>RemoteKnock - Blog</title>
+    <title>RemoteKnock - Building the perfect CV</title>
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
@@ -36,10 +36,10 @@
       {{-- <h1>🤠 CV Writing Guide</h1> --}}
 
       <h2 class="step_title"> <b>☎️ Contact Information </b></h2>
-      <p>Start with your full name, phone number, professional email address, and a link to your LinkedIn profile if applicable. Ensure your email address is professional and straightforward, creating a positive first impression for potential employers.</p>
+      <p class="step">Start with your full name, phone number, professional email address, and a link to your LinkedIn profile if applicable. Ensure your email address is professional and straightforward, creating a positive first impression for potential employers.</p>
 
       <h2  class="step_title"> <b>Personal Statement (Optional)</b></h2>
-      <p>Create a powerful personal statement that succinctly highlights your career goals, key skills, and what sets you apart. Tailor this section to align with the specific job you're applying for, making it a compelling introduction to your CV.</p>
+      <p class="step">Create a powerful personal statement that succinctly highlights your career goals, key skills, and what sets you apart. Tailor this section to align with the specific job you're applying for, making it a compelling introduction to your CV.</p>
 
       <h2  class="step_title">📜 <b> CV Layout </b></h2>
       <p>Choose a clean, professional layout that enhances readability. Clearly define sections such as "Education," "Experience," and "Skills." Consistent formatting makes your CV easy to navigate and ensures a polished presentation.</p>
@@ -73,7 +73,7 @@
       <h2 class="step_title"><b>Proofread</b></h2>
       <p>Thoroughly proofread your CV to eliminate grammatical errors and typos. Consider asking a friend or mentor to review it as well. A polished CV reflects your attention to detail and professionalism.</p>
 
-      <h2 class="step_title"><b>Design Elements (Optional)</b></h2>
+      <h2 class="step_title">🎨 <b>Design Elements (Optional)</b></h2>
       <p>While keeping it professional, consider adding subtle design elements to make your CV visually appealing. Use color sparingly to ensure readability and create a visually engaging document.</p>
 
       <h2 class="step_title">🎯 <b>Online Presence</b></h2>
@@ -88,6 +88,35 @@
     </div>
 </div>
 
+<!-- Add this section after your existing content -->
+<div class="blog-posts-section">
+    <h2 class="section-title">More Blog Posts</h2>
+
+    <div class="blog-cards-container">
+        <!-- Blog Card 1 -->
+        <a href="blog-job-tips" class="blog-card-link">
+            <div class="blog-card">
+                <img src="images/job_tips_pic.jpg" alt="Blog Post 1 Image">
+                <h3 class="blog-title">20 Tips on How to Work From Home or Remotely | Remote Year</h3>
+            </div>
+        </a>
+
+        <!-- Blog Card 2 -->
+        <a href="blog-interview-tips" class="blog-card-link">
+
+        <div class="blog-card">
+            <img src="images/interview_pic.jpg" alt="Blog Post 2 Image">
+            <h3 class="blog-title">Mastering Job Interviews: 20 Tips for Creating a Lasting Impression</h3>
+        </div>
+    </a>
+
+
+        <!-- Add more blog cards as needed -->
+
+    </div>
+</div>
+
+
 </body>
 
 
@@ -97,10 +126,27 @@
 </div>
 <style>
 
+
+.blog-card-link {
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color from the parent */
+}
+
 .step_title{
- font-size: 2rem;
+ font-size: 2.2rem;
  font-family: "Nunito","Helvetica Neue","Helvetica","sans-serif";
  font-weight: 800;
+ margin-bottom: 10px;
+}
+
+
+.step {
+    margin-bottom: 20px; /* Add more bottom margin */
+}
+
+/* Additional styles for better readability */
+.chapter {
+    margin-bottom: 40px; /* Add more bottom margin between chapters */
 }
 
     .title{
@@ -123,7 +169,7 @@
     .about-section {
         padding: 80px 50px;
         text-align: center;
-        background-color: #335f63;
+        background-color: #319ba5;
         color: white;
         font-size: 2.2rem;
     }
@@ -151,6 +197,58 @@
     }
 
 
+
+
+
+/* Styles for the new blog posts section */
+.blog-posts-section {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.blog-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    border-radius: 8px;
+
+    width: 300px;
+    margin: 15px;
+    /* padding: 5px; */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-title {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+
+
     
     @media screen and (max-width: 650px) {
     .column {
@@ -158,9 +256,29 @@
         display: block;
     }
 
+    #cv-container{
+        font-size: 1.3rem;}
+
+        .chapter{
+            margin: 10px;
+        }
+
+    .step_title{
+        font-size: 1.5rem;
+    }
+
 
     .about-section{
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
     }
+
+
+
+
+
+
+
+
+    
 </style>

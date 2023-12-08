@@ -69,7 +69,11 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog_posts.blog');
+
+Route::get('/blog-interview-tips', [BlogController::class, 'interview_tips'])->name('interview-tips');
+Route::get('/blog-job-tips', [BlogController::class, 'job_tips'])->name('job-tips');
+
 
 //  Auto leitourgei gia kapoio logo....
 Route::get('/email/verify', function () {
