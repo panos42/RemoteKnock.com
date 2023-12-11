@@ -99,7 +99,7 @@ if (isset($jobData['logo'])) {
                     'min_salary' => '',
                     'max_salary' => '',
                     'listing_views' => 0,
-                    'applications_made' => 'Scrapped...',
+                    'applications_made' => 0,
                     'description' => $jobData['description'], // Set the scraped description
                     'logo' => isset($jobData['logo']) ? $jobData['logo'] : null, // Add logo path
                 ]);
@@ -165,3 +165,5 @@ public static function generateUniqueLogoFileName()
 }
 
 ?>
+
+

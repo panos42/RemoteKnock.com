@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -65,6 +66,19 @@ class ListingController extends Controller
             'description' => 'required|min:50',
         ]);
 
+         // Check if the company already exists
+    $existingCompany = Company::where('name', $formFields['company'])->first();
+
+    if (!$existingCompany) {
+        // Company doesn't exist, create a new one
+        $existingCompany = Company::create([
+            'name' => $formFields['company'],
+            'email' => $formFields['email'],
+            'website' => $formFields['website'],
+            // Add other fields if needed
+        ]);
+    }
+
         if($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
@@ -75,8 +89,17 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
+        
+
         return redirect('/')->with('message', 'Listing created successfully!');
     }
+
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+    
 
     // Show Edit Form
     public function edit(Listing $listing) {
