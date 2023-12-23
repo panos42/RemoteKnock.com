@@ -436,8 +436,8 @@
         }
 
         .logos img {
-            min-width: 50px;
-            height: 50px;
+            min-width: 45px;
+            height: 45px;
             object-fit: contain;
             margin: 0 15px;
         }

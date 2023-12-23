@@ -107,12 +107,14 @@
   <style>
 
 .view-card {
-  white-space: nowrap;
-  border-radius: 9999px; 
-  background-color: #f3e8fd; /* Purple-100 color code */
-  padding: 5px 10px; /* Adjust the values as needed */
-  font-size: 1.2rem; /* 2xl size */
-  color: #5a3798; /* Purple-700 color code */
+    white-space: nowrap;
+    border-radius: 9999px;
+    background-color: #f3e8fd;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    color: #5a3798;
+    margin-top: 30px; /* Increase the top margin */
+    margin-bottom: 20px; /* Increase the bottom margin */
 }
 
     
@@ -131,12 +133,14 @@
 
     .job-company{
         font-size: 1.5rem;
+        margin-top: 10px; /* Increase the top margin */
+        margin-bottom: 20px; /* Increase the bottom margin */
     }
 
     .job-location{
         font-size: 1.5rem;
-        margin-top:1rem;
-        margin-bottom:1rem;
+        margin-top: 30px; /* Increase the top margin */
+        margin-bottom: 10px; /* Increase the bottom margin */
     }
     .listing-views{
         font-size: 1.5rem;
@@ -180,9 +184,11 @@
         /* Center content within the card */
     .card-content {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Increase the top margin */
+    margin-bottom: 20px; /* Increase the bottom margin */
     }
     body, html {
         margin: 0;
@@ -205,8 +211,9 @@
     
     /* Center the logo */
     .logo-show-page {
-        width: 100px;
-        height: 100px;
+        border-radius: 2rem;
+        width: 150px;
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -215,8 +222,8 @@
     /* Adjust margin for the job title */
     .job-title {
         font-size: 2rem;
-        margin-top: 10px;
-        margin-bottom: 5px;
+        margin-top: 50px;
+        margin-bottom: 10px;
     }
     
 

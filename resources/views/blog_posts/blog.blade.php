@@ -97,7 +97,7 @@
         <a href="blog-job-tips" class="blog-card-link">
             <div class="blog-card">
                 <img src="images/job_tips_pic.jpg" alt="Blog Post 1 Image">
-                <h3 class="blog-title">20 Tips on How to Work From Home or Remotely | Remote Year</h3>
+                <h3 class="blog-title">10 Tips on How to Work From Home or Remotely | Remote Year</h3>
             </div>
         </a>
 

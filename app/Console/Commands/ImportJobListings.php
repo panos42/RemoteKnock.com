@@ -53,6 +53,12 @@ class ImportJobListings extends Command
                     file_put_contents($logoPath, $logoContents);
                 }
 
+                // Create or update the company record with the logo
+                $company = Company::updateOrCreate(
+                    ['name' => (string)$item['company']],
+                    ['logo' => 'logos/' . $logoFileName, 'email' => 'test'] // Set a default email value
+                );
+
                 Listing::create([
                     'title' => (string) $item['title'],
                     'company' => (string) $item['company'],
@@ -68,18 +74,6 @@ class ImportJobListings extends Command
                     'description' => $description,
                     'logo' => 'logos/' . $logoFileName, // Save the filename in the database
                 ]);
-
-                // Check if the company already exists before creating a new one
-                $existingCompany = Company::where('name', (string)$item['company'])->first();
-
-                if (!$existingCompany) {
-                    // Create a new company
-                    Company::create([
-                        'name' => (string)$item['company'],
-                        'email' => 'test_' . uniqid() . '@example.com', // Generate a unique email value
-                        'website' => 'test', // Replace with the actual website value
-                    ]);
-                }
 
                 $this->info('Listing imported: ' . $item['title']);
             } else {

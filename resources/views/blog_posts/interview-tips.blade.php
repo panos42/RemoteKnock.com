@@ -100,7 +100,7 @@
 
 
     <!-- Add this section after your existing content -->
-    <div class="blog-posts-section">
+    {{-- <div class="blog-posts-section">
         <h2 class="section-title">More Blog Posts</h2>
 
         <div class="blog-cards-container">
@@ -124,7 +124,7 @@
             <!-- Add more blog cards as needed -->
 
         </div>
-    </div>
+    </div> --}}
 
 </body>
 
