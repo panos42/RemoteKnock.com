@@ -100,14 +100,20 @@
 
 /* styles.css */
 .horizontal-scroll-menu {
+
     width: 1000px;
     background-color: rgba(0, 123, 255, 0.2);
-    overflow-x: auto;
     white-space: nowrap;
     background-color: transparent;
-    scrollbar-width: thin; /* Set the width of the scrollbar */
-    scrollbar-color: #204368 rgba(0, 0, 0, 0.2); /* Set the thumb and track colors */
 }
+
+
+/* .menu-list {
+    background-color: transparent;
+    padding: 0;
+    margin: 1.5rem;
+    list-style: none;
+} */
 
 
 .menu-list {
@@ -115,19 +121,36 @@
     padding: 0;
     margin: 1.5rem;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
-.menu-item {
+/* .menu-item {
     display: inline-block;
-    padding: 7px 15px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
+    padding: 7px 15px;
+    font-size: 16px; 
     cursor: pointer;
     background-color: #24292b;
     border: 1px solid teal;
-    align-items: center; /* Center vertically */
+    align-items: center;
     color:#cfcfcf;
-    border-radius: 25px; /* Make the items round */
-    margin-right: 3px; /* Adjust spacing between items */
+    border-radius: 25px;
+    margin-right: 3px; 
+} */
+
+
+.menu-item {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #24292b;
+    border: 1px solid teal;
+    align-items: center;
+    color: #cfcfcf;
+    border-radius: 25px;
+    margin-right: 3px;
+    margin-bottom: 3px; /* Add margin between items to create space */
 }
 
 .menu-item:hover {
@@ -148,6 +171,12 @@
 
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
+
+            .menu-list {
+        width: 100%; /* Make the menu take the full width on smaller screens */
+    }
+
+
             .horizontal-scroll-menu{
                 width: 350px ;
             }
@@ -280,13 +309,13 @@
                     class="filterInput"
                     value="{{ request('location') }}"
                 >
-                <input 
+                {{-- <input 
                     name="job_position"
                     placeholder="💼 Position" 
                     type="search" 
                     class="filterInput"
                     value="{{ request('job_position') }}"
-                >
+                > --}}
                 
             </div>
             <div class="horizontal-scroll-menu">
@@ -306,7 +335,7 @@
 
                     <li class="menu-item" onclick="selectMenuItem('Education')">🏫 Education</li>
 
-                    <li class="menu-item" onclick="selectMenuItem('AI')">🤖 AI/ML</li>
+                    <li class="menu-item" onclick="selectMenuItem('AI')">🤖 AI</li>
                           
                     <li class="menu-item" onclick="selectMenuItem('Engineer')">😎 Engineer</li>
                     
@@ -350,11 +379,11 @@
     <img style="margin-top:20px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/upwork.png?1634371831" height="30" alt="Upwork" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/upwork.png?1634371831">
     <img style="margin-top:17px;" class="lazyloaded" src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/angellist.png?1642846752" height="30" alt="Angellist" data-src="/cdn-cgi/image/height=60,quality=85/https://remoteok.com/assets/angellist.png?1642846752">
             </a> --}}
+            <h2 class="trusted_by_text">Trusted By</h2>
 
             <section id="trusted-by">
                 {{-- <div class="container"> --}}
                     <div class="logos">
-                        <h2 class="trusted_by_text">Trusted By</h2>
 
                         <!-- Add your trusted partner logos or images here -->
                         <img src="/images/microsoft_logo.png" alt="Partner 1">
@@ -362,13 +391,21 @@
                         <img src="/images/github.png" alt="Partner 3">
                         <img src="/images/lemonio_logo.png" alt="Partner 3">
                         <img src="/images/scaleai_logo.png" alt="Partner 3">
-                        <img src="/images/ycombinator.png" alt="Partner 3">
+                        {{-- <img src="/images/ycombinator.png" alt="Partner 3"> --}}
                         <img src="/images/lime_logo.png" alt="Partner 3">
+                        <img src="/images/reddit_logo.png" alt="Partner 3">
 
                         <!-- Add more logos as needed -->
                     </div>
                 {{-- </div> --}}
             </section>
+
+
+            <p class="share_to_twitter">
+                🤍 If you like RemoteKnock, share it on <a href="https://twitter.com/intent/tweet?text=RemoteKnock%20is%20my%20favorite%20site%20to%20browse%20remote%20jobs!%20remoteknock.com" target="_blank">Twitter</a>
+            </p>
+            
+            
 
             </div>
         </form>
@@ -395,13 +432,22 @@
 
 <style>
 
+.share_to_twitter{
+    width: 400px;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+
+}
+
     .trusted_by_text{
         color: grey;
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
          #trusted-by {
             /* background-color: #f8f8f8; */
-            padding: 50px 0;
+            /* padding: 50px 0; */
             text-align: center;
         }
 

@@ -27,15 +27,16 @@
  
 
         .footer-text {
+          margin-top:2rem;
           font-size: 1.5rem;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    display: flex;
-    flex-direction: column; /* Display children in a column */
-    align-items: center; /* Center horizontally */
-}
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 15px;
+          display: flex;
+          flex-direction: column; /* Display children in a column */
+          align-items: center; /* Center horizontally */
+      }
 
 .footer_card_socials {
     width: fit-content;
@@ -165,7 +166,7 @@
 
           .footer-text {
           font-size: 1.2rem;
-
+          margin-top:2rem;
           .kilimanjaro_part > p {
         color: rgba(255,255,255,.5);
         font-size: 1.1rem;
@@ -186,7 +187,7 @@
       <div class="kilimanjaro_part">
         <h5>About Us</h5>
         <p>Hey there👋 I'm <span class="gradient-text-panos">Panos</span>, creator of RemoteKnock.
-          I built this tool to help you find the perfect remote job for you!
+          I built this tool to help you find the perfect remote job!
           You can follow my work on <span class="gradient-text-twitter"> <a href="https://twitter.com/RemoteKnock" >Twitter</a> </span>.</p>
 
         <p>Your feedback is always appreciated!</p>

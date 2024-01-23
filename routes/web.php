@@ -13,7 +13,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\PdfController;
 use App\Models\CVProfile;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-
+use App\Http\Controllers\CompaniesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +73,8 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog_posts.blog');
 
 Route::get('/blog-interview-tips', [BlogController::class, 'interview_tips'])->name('interview-tips');
 Route::get('/blog-job-tips', [BlogController::class, 'job_tips'])->name('job-tips');
+
+Route::get('/companies', [CompaniesController::class, 'index'])->name('companies.index');
 
 
 //  Auto leitourgei gia kapoio logo....
