@@ -212,8 +212,10 @@
 
 
           <div class="footer-copyright">
-           Copyright &copy; 2023 RemoteKnock.com | All rights reserved.
+           Copyright &copy; 2024 RemoteKnock.com | All rights reserved.
         </div>
+
+        <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
           
          
     </footer>

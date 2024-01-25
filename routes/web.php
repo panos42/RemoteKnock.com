@@ -97,6 +97,11 @@ Route::post('/email/verification-notification', function (Request $request) {
 // ////////////////////////////////////////
 
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
+
 
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
@@ -104,17 +109,6 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
-
-Route::middleware('auth')->group(function () {
-    Route::get('/cv-builder', [CvProfileController::class, 'index']);
-    Route::get('/cv-builder/{templateName}',  [CvProfileController::class, 'getTemplate']);
-    Route::post('/generate-pdf', [CvProfileController::class, 'generatePDF']);
-
-    Route::post('/cv-builder/checkout',[CVProfileController::class, 'checkout'])->name("checkout");
-
-    // Route::post('/generate-pdf', 'PdfController@generatePdf');
-
-});
 
 
 

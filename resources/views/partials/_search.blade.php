@@ -386,7 +386,7 @@
                     <div class="logos">
 
                         <!-- Add your trusted partner logos or images here -->
-                        <img src="/images/microsoft_logo.png" alt="Partner 1">
+                        {{-- <img src="/images/microsoft_logo.png" alt="Partner 1"> --}}
                         <img src="/images/stripe.png" alt="Partner 2">
                         <img src="/images/github.png" alt="Partner 3">
                         <img src="/images/lemonio_logo.png" alt="Partner 3">
@@ -473,6 +473,7 @@
 } */
 
         .logos {
+        margin-top:1rem;
             display: flex;
             justify-content: center;
             align-items: center;

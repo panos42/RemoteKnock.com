@@ -20,7 +20,7 @@
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('/css/general.css') }}" rel="stylesheet">    
 
-        <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/favicon.png') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/favicon1.png') }}">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -41,7 +41,7 @@
     </head>
          <!-- Change the background color here -->  
 
-    <body class="mb-48" style="background-color:#222222;">
+    <body class="mb-48" style="background-color:#1a1a1a;">
         <main >
             {{$slot}}
          </main>
