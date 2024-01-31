@@ -19,7 +19,7 @@ class ListingController extends Controller
         return view('listings.index', [
             'listings' => Listing::latest()
                 ->filter(request(['tag', 'search', 'min_salary', 'location','job_position']))
-                ->simplePaginate(50)
+                ->simplePaginate(35)
         ]);
     }
     
@@ -38,10 +38,15 @@ class ListingController extends Controller
             // Add the listing ID to the viewed listings in the session
             session(['viewed_listings' => array_merge($viewedListings, [$listing->id])]);
         }
-    
-        return view('listings.show', [
-            'listing' => $listing
-        ]);
+            
+
+
+        // return view('listings.show', [
+        //     'listing' => $listing
+        // ]);
+
+
+        return view('listings.show', compact('listing'));
     }
 
     // Show Create Form

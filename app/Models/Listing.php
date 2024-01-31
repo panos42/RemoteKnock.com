@@ -42,7 +42,9 @@ class Listing extends Model
     //     return $query;
     // }
 
-
+    public function getRouteKeyName() {
+        return 'id'; // Use 'slug' column for route model binding
+    }
 
 
 

@@ -56,6 +56,8 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 
+
+
 // Testing Something about keeping track of applications_made
 // Route::post('/listings/{listing}/track-application', [ListingController::class, 'trackApplication'])->name('listings.trackApplication');
 
@@ -65,7 +67,9 @@ Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware
 // });
 
 // Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+// Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('listings.show');
 
 
 

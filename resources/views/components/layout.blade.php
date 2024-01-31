@@ -41,7 +41,7 @@
     </head>
          <!-- Change the background color here -->  
 
-    <body class="mb-48" style="background-color:#1a1a1a;">
+    <body class="mb-48" style="background-color:#fbfaf8;">
         <main >
             {{$slot}}
          </main>

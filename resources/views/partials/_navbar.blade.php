@@ -1,4 +1,5 @@
-    
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+
     {{-- <header class="header"> --}}
         
         <nav class="navbar">
@@ -15,7 +16,7 @@
                     {{-- <img src="/images/Frame7.png" alt="Logo" class="logo-image"> --}}
                     <img src="/images/rocket-lunch(1).png" alt="Logo" class="logo-image">
 
-                    <span class="logo-text">RemoteKnock</span>
+                    <span class="logo-text">remoteknock.com</span>
                 </div>
             </a>
             
@@ -152,4 +153,14 @@
     
     
     </script>
+
+
+<style>
+
+body {
+        font-family: 'Sen', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
 

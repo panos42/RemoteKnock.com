@@ -117,6 +117,7 @@
 
 
 .menu-list {
+    width: 100%;
     background-color: transparent;
     padding: 0;
     margin: 1.5rem;
@@ -144,10 +145,10 @@
     padding: 7px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #24292b;
+    background-color: white;
     border: 1px solid teal;
     align-items: center;
-    color: #cfcfcf;
+    color: black;
     border-radius: 25px;
     margin-right: 3px;
     margin-bottom: 3px; /* Add margin between items to create space */
@@ -161,12 +162,16 @@
             .label-text {
             font-family: 'VAGRoundedRegular', sans-serif; 
             width: max-content;
-            color: #fff; /* White text color */
+            color: black; /* White text color */
             font-size: 3rem; /* Adjust the font size as needed */
             text-align: center; /* Center the text */
             margin-bottom: 2rem; /* Add some space between label and input */
         }
 
+
+        .label-text:hover{
+            opacity: 60%;
+        }
     
 
         /* Media query for smaller screens */
@@ -224,7 +229,7 @@
                 font-family: 'VAGRoundedRegular', sans-serif; 
 
             width: 25rem;
-            color: #fff; /* White text color */
+            color: black; /* White text color */
             font-size: 1.5rem; /* Adjust the font size as needed */
             text-align: center; /* Center the text */
             margin-bottom: 2rem; /* Add some space between label and input */
@@ -388,8 +393,7 @@
                         <!-- Add your trusted partner logos or images here -->
                         {{-- <img src="/images/microsoft_logo.png" alt="Partner 1"> --}}
                         <img src="/images/stripe.png" alt="Partner 2">
-                        <img src="/images/github.png" alt="Partner 3">
-                        <img src="/images/lemonio_logo.png" alt="Partner 3">
+                        {{-- <img src="/images/github.png" alt="Partner 3"> --}}
                         <img src="/images/scaleai_logo.png" alt="Partner 3">
                         {{-- <img src="/images/ycombinator.png" alt="Partner 3"> --}}
                         <img src="/images/lime_logo.png" alt="Partner 3">
@@ -402,7 +406,7 @@
 
 
             <p class="share_to_twitter">
-                🤍 If you like RemoteKnock, share it on <a href="https://twitter.com/intent/tweet?text=RemoteKnock%20is%20my%20favorite%20site%20to%20browse%20remote%20jobs!%20remoteknock.com" target="_blank">Twitter</a>
+                ❤️ If you like RemoteKnock, share it on <a class="share_link" href="https://twitter.com/intent/tweet?text=RemoteKnock.com%20is%20my%20favorite%20site%20to%20browse%20remote%20jobs!%20" target="_blank">Twitter</a>
             </p>
             
             
@@ -432,10 +436,14 @@
 
 <style>
 
+    .share_link{
+        color:rgb(15, 43, 79);
+    }
+
 .share_to_twitter{
     width: 400px;
-    color: white;
-    font-size: 1.2rem;
+    color: grey;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
     margin-top: 4rem;
 
@@ -493,6 +501,17 @@
 
 /* Add this inside your existing media query for smaller screens */
 @media only screen and (max-width: 768px) {
+
+
+    .share_to_twitter{
+        /* width: 100%; */
+        margin-top:2rem;
+        width: 240px;
+    }
+
+
+
+
     .logos {   
     width: 350px;
      /* display: flex; */

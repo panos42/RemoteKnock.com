@@ -202,8 +202,8 @@
     }
 
     .whole_card{
-        background: #252525;
-        color: white;
+        background: white;
+        color: black;
         padding: 200px;
         width: 100%;
     }
@@ -236,8 +236,8 @@
     /* Adjustments for small screens */
     @media (max-width: 768px) {
         .whole_card{
-        background: #252525;
-        color: white;
+        background: white;
+        color: black;
         padding: 20px;
         width: 100%;
     }

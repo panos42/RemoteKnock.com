@@ -13,7 +13,14 @@
 
 
 
-<x-card class="rounded-lg" onclick="window.open('/listings/{{$listing->id}}', '_blank');" style="cursor: pointer;">
+{{-- <x-card class="rounded-lg" onclick="window.open('/listings/{{$listing->id}}', '_blank');" style="cursor: pointer;"> --}}
+    {{-- <x-card class="rounded-lg" onclick="window.open('{{ route('listings.show', $listing->id) }}', '_blank');" style="cursor: pointer;"> --}}
+
+        {{-- <x-card class="rounded-lg" onclick="window.open('{{ route('listings.show', ['title' => urlencode(trim($listing->title)), 'listing' => $listing])}}', '_blank');" style="cursor: pointer;"> --}}
+
+                    <x-card class="rounded-lg" onclick="window.open('{{ route('listings.show', ['title' => urlencode(str_replace(' ', '-', trim($listing->title))), 'listing' => $listing->id]) }}', '_blank');" style="cursor: pointer;">
+
+
     <table>
         <tr>
             <td class="circular-logo" style="vertical-align: middle;">

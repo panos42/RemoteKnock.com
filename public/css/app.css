@@ -23,7 +23,7 @@
         font-family: 'VAGRoundedRegular', sans-serif; 
         font-size: 2.2rem;
         font-weight: 500;
-        color: #ffffff;
+        color: black;
     }
 
     .description-title{
@@ -62,11 +62,11 @@
      */
     a {
         text-decoration: none;
-        color: #00f6f6;
+        color: black;
     }
     
     .header{
-        border-bottom: 1px solid #E2E8F0;
+        border-bottom: 1px solid black;
     }
     
     .navbar {
@@ -80,7 +80,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #27292c ; 
+        background-color: white ; 
         z-index: 1000; 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     }
@@ -114,7 +114,7 @@
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: white;
+    background-color: black;
     border-radius: 2px; /* Add this property for rounded edges */
     }
     
@@ -142,11 +142,11 @@
     .nav-link {
     font-size: 1.4rem;
     font-weight: 400;
-    color: #ffffff;
+    color: black;
     }
     
     .nav-link:hover{
-        color: white;
+        color: grey;
     }
     
 
@@ -159,15 +159,15 @@
         font-family: 'VAGRoundedRegular', sans-serif; 
         font-size: 2.0rem;
         font-weight: 500;
-        color: #ffffff;
+        color: black;
     }
     .nav-menu {
-        color: white;
+        color: black;
         position: fixed;
         left: -100%;
         top: 5rem;
         flex-direction: column;
-        background-color: #36393e;
+        background-color: white;
         width: 100%;
         justify-content: center; 
         border-radius: 10px;
@@ -182,7 +182,7 @@
         left: 0;
     }
     .nav-menu.active .nav-link {
-        color: white; /* Set the color to white */
+        color: black; /* Set the color to white */
     }
             
     .nav-item {
@@ -197,7 +197,8 @@
     .hamburger {
     display: block;
     cursor: pointer;
-    border: 1px solid #ffffff; /* Add an outline with the desired color */
+    color: black;
+    border: 1px solid black; /* Add an outline with the desired color */
     border-radius: 7px; /* Adjust the border-radius for rounded corners */
     padding: 2px; /* Add padding for spacing around the hamburger icon */
     width: 35px; /* Adjust the width and height as needed */
@@ -235,26 +236,26 @@
         border: 1px solid transparent;
         border-radius: 8px;
         outline: none;
-        background-color: #333333;
-        color: white;
+        background-color: white;
+        color: black;
         transition: .4s ease;
-        border-color: rgba(255, 255, 255, 0.604);
+        border-color: black;
     }
 
     .filterInput{
         width: max-content;
         border: 1px solid transparent;
-        border-color: rgba(255, 255, 255, 0.604);;
+        border-color: black;
         font-size: 1.2rem;
         border-radius: 8px;
         padding: 5px;
-        color: white;
+        color: #484848;
         /* padding-left: 2.5rem; */
-        background-color:  #333333;
+        background-color:  white;
     }
 
     .searchInput::placeholder {
-        color: #9e9ea7;
+        color: #484848;
     }
 
     .filterInput:focus,.filterInput:hover{
@@ -265,7 +266,7 @@
     .searchInput:focus, .searchInput:hover {
         outline: none;
         border-color: rgba(14, 207, 250, 0.604);
-        background-color: rgba(129, 129, 129, 0.604);
+        background-color: white;
         /* box-shadow: 0 0 0 4px rgb(234 76 137 / 10%); */
         box-shadow: 0 0 0 2px rgba(11, 142, 172, 0.604), 0 0 2px rgba(1, 63, 77, 0.604); /* Neon aqua blue box shadow */
     }
@@ -281,10 +282,10 @@
             border: 1px solid transparent;
             border-radius: 8px;
             outline: none;
-            background-color: #333333;
-            color: white;
+            background-color: white;
+            color: black;
             transition: .4s ease;
-            border-color: rgba(255, 255, 255, 0.604);
+            border-color: black;
         }
     }
 
@@ -361,7 +362,7 @@
         max-width: 100%;
     }
     .company_title{
-        color: #9e9ea7;
+        color: #555555;
         font-size: 1.25rem;
         white-space: nowrap;
         overflow: hidden;
@@ -374,8 +375,8 @@
 
 .rounded-lg {
     margin: 1.5rem auto; /* Use 'auto' for horizontal centering */
-    background: #333333;
-    color: white;
+    background: white;
+    color: black;
     max-width: 70%; /* Set a maximum width for the card */
     display: flex;
     flex-direction: column;
@@ -387,9 +388,9 @@
 }
 
 
-    .rounded-lg:hover{
+    /* .rounded-lg:hover{
         background: #252525;
-    }
+    } */
 
 
     /* .circular-logo {
@@ -410,8 +411,8 @@
     }
 
     .circular-logo {
-        width: 6rem;
-        height: 6rem;
+        width: 7rem;
+        height: 7rem;
         border-radius: 50%;
         object-fit: contain; 
         align-items: center;
@@ -430,10 +431,12 @@
         text-decoration: underline;
     }
     .tag {
+    border-radius: 12px;
+    font-weight: bold;
     display: inline-block;
     padding: 4px 8px;
-    color: rgb(48, 5, 178); /* Change text color to red */
-    border: 1px solid rgb(14, 116, 167); /* Change border color to red */
+    color: rgb(0, 0, 0); /* Change text color to red */
+    border: 2px solid rgb(0, 0, 0); /* Change border color to red */
     margin-right: 4px;
     cursor: pointer;
 }
