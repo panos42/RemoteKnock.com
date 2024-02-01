@@ -155,7 +155,7 @@
 }
 
 .menu-item:hover {
-    background-color: #1d7aa5; /* Change color on hover */
+    background-color: #8dd2f1; /* Change color on hover */
 }
 
             /* Additional styles for the label */
@@ -230,7 +230,7 @@
 
             width: 25rem;
             color: black; /* White text color */
-            font-size: 1.5rem; /* Adjust the font size as needed */
+            font-size: 1.6rem; /* Adjust the font size as needed */
             text-align: center; /* Center the text */
             margin-bottom: 2rem; /* Add some space between label and input */
         }
@@ -442,7 +442,7 @@
 
 .share_to_twitter{
     width: 400px;
-    color: grey;
+    color: rgb(96, 96, 96);
     font-size: 1.3rem;
     margin-bottom: 2rem;
     margin-top: 4rem;

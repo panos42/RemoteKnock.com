@@ -188,7 +188,7 @@
         <h5>About Us</h5>
         <p>Hey there👋 I'm <span class="gradient-text-panos">Panos</span>, creator of RemoteKnock.
           I built this tool to help you find the perfect remote job!
-          You can follow my work on <span class="gradient-text-twitter"> <a href="https://twitter.com/RemoteKnock" >Twitter</a> </span>.</p>
+          You can follow my work on <span > <a class="twitter_link" href="https://twitter.com/RemoteKnock" >Twitter</a> </span>.</p>
 
         <p>Your feedback is always appreciated!</p>
     </div>
@@ -214,22 +214,21 @@
 
           <div class="footer_categories">
             <div class="category">
-                <h5>Categories 1</h5>
+                <h5 class="categories_title">Categories</h5>
                 <ul>
-                    <li><a href="#">Category 1.1</a></li>
-                    <li><a href="#">Category 1.2</a></li>
-                    <li><a href="#">Category 1.3</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote Marketing jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote Sales jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote Customer Support jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote UI/UX design jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote graphics designer jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote product manager jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote Devops jobs</a></li>
+                    <li class="footer_list"><a class="categories_list" href="#">Remote Fullstack Developer jobs</a></li>
+
+                    
                 </ul>
             </div>
-            <div class="category">
-                <h5>Categories 2</h5>
-                <ul>
-                    <li><a href="#">Category 2.1</a></li>
-                    <li><a href="#">Category 2.2</a></li>
-                    <li><a href="#">Category 2.3</a></li>
-                </ul>
-            </div>
-            <!-- Add more categories as needed -->
+            
         </div>
 
 
@@ -237,9 +236,36 @@
            Copyright &copy; 2024 RemoteKnock.com | All rights reserved.
         </div>
 
-        <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
+        <a class="privacy_policy" href="{{ route('privacy-policy') }}">Privacy Policy</a>
           
          
     </footer>
 </body>
+
+
+
+<style>
+  .categories_title{font-size: 2rem;}
+
+  .privacy_policy{color:grey;}
+
+  .twitter_link{
+    color:rgb(0, 255, 153);
+  }
+
+      ul, ol {
+            list-style-type: none;
+        }
+
+        .footer_list{
+          margin: 2rem;
+          padding-left: 0;
+          text-align: start;
+        }
+      
+
+  .categories_list{
+    color:rgb(35, 183, 191);  
+  }
+</style>
 </html>

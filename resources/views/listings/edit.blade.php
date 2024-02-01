@@ -19,14 +19,14 @@
 <x-layout>
   <x-card class="main_edit_card">
     <header class="text-center">
-      <h2 class="text-2xl font-bold uppercase mb-1">Editing Listing - {{$listing->title}}</h2>
+      <h2 class="text-2xl font-bold uppercase mb-1" style="font-size: 1.5rem; color: black;">Editing Listing - {{$listing->title}}</h2>
     </header>
 
     <form id="update-form" method="POST" action="/listings/{{$listing->id}}" enctype="multipart/form-data" onsubmit="return confirmUpdate()">
       @csrf
       @method('PUT')
       <div class="mb-6">
-        <label for="company" class="inline-block text-lg">Company Name</label>
+        <label for="company" class="inline-block text-lg"style="font-size: 1.5rem; color: black;">Company Name</label>
         <input type="text" class="input_fields" name="company"
           value="{{$listing->company}}" />
 
@@ -36,7 +36,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="title" class="job_title_class">Job Title</label>
+        <label for="title" class="job_title_class" style="font-size: 1.5rem; color: black;">Job Title</label>
         <input type="text" class="input_fields" name="title"
           placeholder="Example: Senior Front-end Developer" value="{{$listing->title}}" />
 
@@ -56,7 +56,7 @@
       </div> --}}
 
       <div class="mb-6">
-        <label for="location" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Job Location</label>
+        <label for="location" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Job Location</label>
         <select class="input_fields" name="location">
             @php
                 $countries = include(resource_path('data/countries.php'));
@@ -76,7 +76,7 @@
     
     
       <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2"style="font-size: 1.5rem">
+        <label for="email" class="inline-block text-lg mb-2"style="font-size: 1.5rem; color: black;">
           Contact Email
         </label>
         <input type="text" class="input_fields" name="email" value="{{$listing->email}}" />
@@ -87,7 +87,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="website" class="inline-block text-lg mb-2" style="font-size: 1.5rem">
+        <label for="website" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">
           Website/Application URL
         </label>
         <input type="text" class="input_fields" name="website"
@@ -99,7 +99,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="tags" class="inline-block text-lg mb-2" style="font-size: 1.5rem">
+        <label for="tags" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">
           Tags (Comma Separated)
         </label>
         <input type="text" class="input_fields" name="tags"
@@ -136,7 +136,7 @@
 
       <div class="mb-6 flex items-center">
         <div class="mr-4">
-          <label for="min_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Minimum Salary</label>
+          <label for="min_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Minimum Salary</label>
           <select class="input_fields" name="min_salary">
             <option value="">Select minimum salary</option>
             <option value="10000" @if ($listing->min_salary == 10000) selected @endif>USD 10,000 per year</option>
@@ -166,7 +166,7 @@
         </div>
         
         <div>
-          <label for="max_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Maximum Salary</label>
+          <label for="max_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Maximum Salary</label>
           <select class="input_fields" name="max_salary">
             <option value="">Select maximum salary</option>
             <option value="10000" @if ($listing->max_salary == 10000) selected @endif>USD 10,000 per year</option>
@@ -198,7 +198,7 @@
       {{--  --}}
 
       <div class="mb-6">
-        <label for="logo" class="inline-block text-lg mb-2">
+        <label for="logo" class=" inline-block text-lg mb-2"  style="font-size: 1.5rem; color: black;">
           Company Logo
         </label>
         <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" />
@@ -212,7 +212,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="description" class="inline-block text-lg mb-2">
+        <label for="description" class="description_text"  style="font-size: 1.5rem; color: black;">
           Job Description
         </label>
 
@@ -292,9 +292,9 @@
 
       .input_fields{
         font-size: 1.5rem;
-        color: white;
-        border: 1px solid #e2e8f0;
-        background: #181818;
+        color: black;
+        border: 1px solid black;
+        background: rgb(194, 194, 194);
         border-radius: 0.25rem;
         padding: 0.5rem;
         width: 100%; 

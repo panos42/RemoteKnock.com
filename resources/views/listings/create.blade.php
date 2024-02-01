@@ -41,14 +41,14 @@
 <x-layout>
   <x-card class="main_edit_card"> <!-- Use max-w-5xl or any other desired width class -->
   <header class="text-center">
-      <h2 class="text-2xl font-bold uppercase mb-1" style="font-size: 1.5rem">Post a job to find a developer</h2>
+      <h2 class="text-2xl font-bold uppercase mb-1" style="font-size: 1.5rem; color: black;"; color: black;>Post a job here!</h2>
     </header>
 
 
     <form method="POST" action="/listings" enctype="multipart/form-data">
       @csrf
       <div class="mb-6">
-        <label for="company" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Company Name</label>
+        <label for="company" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Company Name</label>
         <input type="text"
          class="input_fields"
          name="company"
@@ -61,7 +61,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="title" class="job_title_class" style="font-size: 1.5rem">Job Title</label>
+        <label for="title" class="job_title_class" style="font-size: 1.5rem; color: black;">Job Title</label>
         <input type="text" class="input_fields" name="title"
           placeholder="Example: Senior Front-end Developer" value="{{old('title')}}" />
 
@@ -104,7 +104,7 @@
     
 
       <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2" style="font-size: 1.5rem">
+        <label for="email" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">
           Contact Email
         </label>
         <input type="text" class="input_fields" name="email" value="{{old('email')}}" placeholder="test@mail.com"/>
@@ -115,9 +115,10 @@
       </div>
 
       <div class="mb-6">
-        <label for="website" class="inline-block text-lg mb-2" style="font-size: 1.5rem">
+        <label for="website" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">
           Website/Application URL
-        </label>
+      </label>
+      
         <input type="text" class="input_fields" name="website" placeholder="acme.com"
           value="{{old('website')}}" />
 
@@ -127,7 +128,7 @@
       </div>
 
       <div class="mb-6">
-        <label for="tags" class="inline-block text-lg mb-2" style="font-size: 1.5rem">
+        <label for="tags" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">
           Tags (Comma Separated)
         </label>
         <input type="text" class="input_fields" name="tags"
@@ -141,7 +142,7 @@
         
         <div class="mb-6 flex items-center">
           <div class="mr-4">
-            <label for="min_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Minimum Salary</label>
+            <label for="min_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Minimum Salary</label>
             <select class="input_fields" name="min_salary">
               <option value="">Select minimum salary</option>
               <option value="10000">USD 10.000 per year</option>
@@ -169,7 +170,7 @@
           </div>
         
           <div>
-            <label for="max_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem">Maximum Salary</label>
+            <label for="max_salary" class="inline-block text-lg mb-2" style="font-size: 1.5rem; color: black;">Maximum Salary</label>
             <select class="input_fields" name="max_salary">
               <option value="">Select maximum salary</option>
               <option value="10.000">USD 10.000 per year</option>
@@ -200,7 +201,7 @@
 
         
       <div class="mb-6">
-        <label for="logo" class="inline-block text-lg mb-2">Company Logo</label>
+        <label for="logo" class="inline-block text-lg mb-2" style="color: black;">Company Logo</label>
         <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" id="logoInput" />
         <img id="logoPreview" src="#" alt="Uploaded Logo" style="display: none; max-width: 200px;" />
       
@@ -211,7 +212,7 @@
       
 
       <div class="mb-6">
-        <label for="description" class="inline-block text-lg mb-2">
+        <label for="description" class="inline-block text-lg mb-2" style="font-size:1.5rem; color: black;">
           Job Description
         </label>
 
@@ -222,7 +223,7 @@
         <input type="hidden" name="description" id="descriptionInput" value="{{ old('description') }}" />
 
         <!-- The div element for the Quill editor -->
-          <div id="editor"> </div> 
+        <div id="editor"> </div> 
 
         @error('description')
         <p class="warning_message">{{$message}}</p>
@@ -246,6 +247,7 @@
 <script>
   var quill = new Quill('#editor', {
     theme: 'snow'
+
   });
 
   // Add an event listener to update the hidden input field when the editor content changes
@@ -286,9 +288,9 @@
 
 .input_fields {
   font-size: 1.5rem;
-  color: white;
-  border: 1px solid #e2e8f0;
-  background: #181818;
+  color: rgb(76, 76, 76);
+  border: 1px solid black;
+  background: white;
   border-radius: 0.25rem;
   padding: 0.5rem;
   width: 100%;
